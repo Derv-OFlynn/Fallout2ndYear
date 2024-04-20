@@ -1,3 +1,4 @@
+#DataComms 
 # <mark style="background: #69E772;">12. High Level Data Link Control</mark>
 
 ### <mark style="background:#69E772;">Data Link Control Requirements:</mark>
@@ -295,21 +296,16 @@ The first three of the <mark style="background:#69E772;">six</mark> Data Link Co
 
 	- <mark style="background:#69E772;">Reservation (will not be covered):</mark>
 		- Medium is divided into <mark style="background:#69E772;">time</mark> slots
-		
 		- Station wishing to send has to <mark style="background:#69E772;">reserve</mark> future slots
-		
 		- Very suited to stream traffic i.e. <mark style="background:#69E772;">long</mark> and <mark style="background:#69E772;">continuous</mark> transmissions on an <mark style="background:#69E772;">irregular</mark> basis
-
-        - <mark style="background:#69E772;">Round Robin:</mark>
-
-            - Each station takes a turn to transmit data
-            
-            - Efficient only if stations have a lot of data to transmit on a <mark style="background:#69E772;">regular</mark> basis
-
-        - <mark style="background:#69E772;">Contention:</mark>
-
-            - Continued.
-
+		
+	- <mark style="background:#69E772;">Round Robin:</mark>
+		- Each station takes a turn to transmit data
+		- Efficient only if stations have a lot of data to transmit on a <mark style="background:#69E772;">regular</mark> basis
+		
+	- <mark style="background:#69E772;">Contention:</mark>
+		- Continued.
+		
 ### <mark style="background:#69E772;">MAC - Contention:</mark>
 
 - Each station contends for access when needed
@@ -353,22 +349,22 @@ The first three of the <mark style="background:#69E772;">six</mark> Data Link Co
 
 - The will lead to a <mark style="background:#69E772;">collision</mark> i.e. a <mark style="background:#69E772;">garbled</mark> transmission. Recall what happens when <mark style="background:#69E772;">digital</mark> signals meet
 
-    - ![](https://i.imgur.com/RkvPZLz.png)
+- ![](https://i.imgur.com/RkvPZLz.png)
 
 
-    - <mark style="background:#69E772;">Collisions</mark> are an example of frames "going missing":
+- <mark style="background:#69E772;">Collisions</mark> are an example of frames "going missing":
 
-        - Recall scenarios outlined in discussions on Go-Back-N and Selective Reject
+	- Recall scenarios outlined in discussions on Go-Back-N and Selective Reject
 
-        - Collisions can lead to "out-of-sequence" frames and/or "missing" RR messages
+	- Collisions can lead to "out-of-sequence" frames and/or "missing" RR messages
 
-    - Recall in the ARQ techniques that a transmitting station:
+- Recall in the ARQ techniques that a transmitting station:
 
-        - Sets a timer for each frame transmission
+	- Sets a timer for each frame transmission
 
-        - Expects an ACK from the destination station
+	- Expects an ACK from the destination station
 
-        - Takes action after a <mark style="background:#69E772;">timeout</mark> period using command-responses (Poll/Final bit)
+	- Takes action after a <mark style="background:#69E772;">timeout</mark> period using command-responses (Poll/Final bit)
 
 ### <mark style="background:#69E772;">CSMA Characteristics:</mark>
 
