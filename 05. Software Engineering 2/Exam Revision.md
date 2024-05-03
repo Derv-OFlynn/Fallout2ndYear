@@ -1,5 +1,9 @@
  #ExamPrep #SWE2 
 
+# <mark style="background: #69E7E4;">Question Occurrences:</mark>
+
+![](https://i.imgur.com/GYXGKQD.png)
+
 # <mark style="background: #69E7E4;">02. Business Modelling</mark>
 
 Early Phase of Development
