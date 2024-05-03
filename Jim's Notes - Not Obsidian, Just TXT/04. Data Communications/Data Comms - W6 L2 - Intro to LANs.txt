@@ -1,0 +1,105 @@
+Data Communications - Intro to LANs
+--------------------------------------------
+
+A local area network is a private communications network.
+
+They are used to interconnet computing resources over a small geographic area, usually
+within a single organisation.
+
+All devices attach to a shared transmission medium.
+
+They can provide data rates up to 1GB/s.
+
+The rationale for connecting devices as such is as follows:
+	> Proliferation of computing devices.
+	> Growth in multimedia applications.
+	> Increased in client/server applications.
+
+LANs have many different applications.
+
+One is a backend LAN, or the core layer.
+
+These are used to connect high-cost devices, like mainframes and supercomputers.
+
+They are mainly used for the bulk transfer of data.
+
+They are used in large organisations, and are costly to implement and maintain.
+
+Consequently, their performance and speed are quite high.
+
+Another application for an LAN is a backbone LAN, or the distribution layer.
+
+These are used to provide connectivity between PC LANs and Backend LANs.
+
+The use of single LAN is not desirable because:
+	> Reliability: If single LAN develops a fault, result is devastating.
+	> Capacity: Most devices connecting to a LAN reduce its performance.
+	> Cost: Connecting a low cost PC device using the same type of LAN used to connect
+		high cost server devices would be impractical.
+
+There are many types of arrangements, or topologies, in which LANs can be set up.
+
+These include Bus, Ring, Tree, and Star.
+
+The three main ones to consider are bus, ring, and star.
+
+Bus LAN characteristics:
+	> Linear transmission medium.
+	> Each station attaches to bus using trap.
+	> No closed loops.
+	> Transmissions travel in both directions.
+	> Bus is terminated by terminator devices which kills signal.
+	> Example of a bus LAN is ethernet.
+
+Ring LAN characteristics:
+	> Consists of a set of interconnected repeaters in a ring configuration.
+	> Repeaters recieve data on one link and transmit them bit by bit into another one.
+	> Links are uni-directional.
+	> Each station attaches at a repeater.
+	> The transmission signal must be physically removed from the network.
+	> An example is the IBM Token Ring.
+
+Star LAN characteristics:
+	> Consists of a central hub component, of which there are two types:
+		- Shared Medium
+		- Switched LAN
+	> Each station is attached by two links.
+	> All transmissions travel via the hub device.
+	> Example of a Star LAN is an ATM.
+
+Common characteristics of LANs:
+	> Data is transmitted in small blocks called frames.
+		- Each contains Data plus Control Info, like HDLC.
+	> Stations must gain access to shared transmission medium.
+		- Access must be provided on a fair and quitable basis (control mechanism).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

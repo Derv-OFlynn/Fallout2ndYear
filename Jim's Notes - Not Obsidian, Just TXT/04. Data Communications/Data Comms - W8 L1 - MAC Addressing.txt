@@ -1,0 +1,43 @@
+Data COmmunications - Hardware Addressing
+------------------------------------------------
+
+LAN tech facilitates sharing of info between all locally connected devices.
+
+Direct communication between specific pairs of stations is achieved using an addressing scheme.
+
+Each station is assigned a unique MAC/Hardware Address (Medium Access Control Address).
+
+An example of an ethernet MAC address is 00:40:05:1c:0e:9f.
+
+Ethernet MAC addresses are 48-bit long and are usually represented in HEX format, 12 digits
+each, each digit usually representing 4 bits.
+
+The header with each transmitted frame contains the addresses of the sender and reciever.
+
+THis allows the LAN interface card, or Network Inferface Card (NIC) to filter out frames
+without conferring with the CPU.
+
+The NIC only interrupts the CPU when it has specific data for the station.
+
+All other frames are discarded.
+
+Different addressing schemes are employed on different LAN topologies.
+
+Each station's address must be unique on the LAN to which it connects.
+
+Address allocation falls into three categories:
+	> Static - Set by the manufacturer.
+	> Dynamic - Station sets their address at bootup.
+	> Configurable - The network admin sets their address.
+
+There are three possible types of communication possible on a LAN:
+	> Unicast - Station-to-Station.
+	> Broadcast - Station-to-All-Stations.
+	> Multicast - Station-to-Some-Stations.
+
+Unicast communications requires the use of unique MAC addresses.
+
+Broadcast communication requires one address to be recognised by all the stations.
+
+Multicast requires one address to be recognisable to some stations.
+

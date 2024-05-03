@@ -1,0 +1,18 @@
+Data Communications - Classless Addressing
+-----------------------------------------------
+
+THe newer approach for addressing, classless addressing, splits prefix and suffix differently.
+
+Your network number is given different amounts of bits, and your host number is given the
+rest, to make up your 32 bit address.
+
+This eliminates a lot of the waste caused by classful addressing, wherein many more
+addresses could be allocated to one network than there were hosts to give them to.
+
+An address mask can tell us how many bits are allocated to host number vs network number.
+
+For example, 255.0.0.0 means you have 24 bits for host numbers, and 8 for network, while
+255.255.255.0 means 24 bits for the network and 8 for hosts.
+
+
+

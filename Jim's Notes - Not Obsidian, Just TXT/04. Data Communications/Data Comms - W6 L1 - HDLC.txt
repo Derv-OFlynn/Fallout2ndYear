@@ -1,0 +1,141 @@
+Data Communications - High Level Data Link Control
+----------------------------------------------------
+The first three of six data link control requirements have been examined through the
+following techniques:
+	> Frame Synchronisation (A/Synchronous)
+	> Flow Control	(Stop and Wait, Sliding Windows)
+	> Error Control (Stop and Wait, Go back N, Selective Reject ARQ)
+	> Addressing
+	> Control and Data on same Link
+	> Link Management
+
+The reason for using these techniques is to turn a transmission link into a fully
+functioning, reliable, effective, data communication link.
+
+The reamining requirements can be considered together under one protocol: High Level Data
+Link Control, or HDLC.
+
+This is a widely used and important protocol.
+
+It defines the following:
+	> The role of each station on the link.
+	> The mode of data transfer.
+	> The structure of the frame.
+	> The exchange of data during each phase of communication.
+
+The protocol defines three types of station:
+	> Primary - Controls operation of link through commands.
+	> Secondary - Operates under control of primary, responds to commands.
+	> Combined - Combines both, sends commands and responses.
+
+Synchronous transmission is used, i.e. data is in the form of frames.
+
+A frame is a block of data delineated by a special flag character or sequence.
+
+Data and Control frames have the same basic format with some minor differences in relation
+to the control fields.
+
+All active stations scan incoming bit streams to determine the start of a frame.
+
+If it recieves one, the station continues to scan, looking for the end of a frame.
+
+The flag pattern, 01111110, cannot be allowed to occur within the frame.
+
+This is achieved via bit stuffing.
+
+The address field in HDLC is used to identify the stations:
+	> This is only relevant on a multi-point link.
+	> Does not apply to a point-to-point link.
+
+The address field is usually 8 bits long but can be extended.
+
+There are three types of frame in HDLC.
+	> Information frames carry data.
+	> Supervisory frames carry FLow and Error control data.
+	> Unnumbered frames provide link control functions like setup and disconnect.
+
+The type of frame is stored in the Control field.
+
+The information field stores the data a frame is carrying, and is present in I-frames.
+
+Its length is variable up to a predefined system limit, but must always be a multiple of
+8 bits.
+
+The FCS field is used in Error Detection. It is an error detection calculated using all bits
+within the frame excluding flags.
+
+Recall Cyclic Redundancy Check (CRC) is a technique used, normally with 16 bits.
+
+All HDLC interactions follow three distinct phases of operation:
+	> Phase 1 - Initialisation. Link is set up, parameters agreed upon.
+	> Phase 2 - Data Transfer. Data is exchanged.
+	> Phase 3 - Termination. Link is disconnected.
+
+Initialisation:	
+	> Either station may initialise the link by sending one of 6 set mode commands
+	   depending on the mode required.
+	> Most commonly used is SABM, Set Asynchonous Balanced Mode, which is used with two
+	   combined stations.
+	> The recieving station responds with an Unnumbered Acknowledgement, to accept,
+	   or Disconnet Mode, to reject it.
+	> UA to accept, DM to reject.
+	> Only U frames are used here.
+
+Data Tranfer:
+
+	> After initialization, data exchange takes place.
+		- Takes place with I frames, which carry the data.
+
+	> Each I -frame contains two sequence numbers.
+		- One relates to the outgoing, current frame.
+		- The ther is a piggybacked ACK for a frame recieved, the next expected.
+		- When piggybacking not used, S frames used for error/flow control.
+		- First frame transmitted is always numbered 0.
+
+Either station can initiate the disconnect phase.
+
+This is achieved using a U frame containing the DISC message.
+
+The remote station must respond with a U frame containing the UA message.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

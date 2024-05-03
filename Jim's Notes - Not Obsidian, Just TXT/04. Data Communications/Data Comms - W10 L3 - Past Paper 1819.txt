@@ -1,0 +1,124 @@
+Data Communications - More on Subnetting
+--------------------------------------------------
+
+2018/19 Paper, Question 5:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+192.168.100.0/24 has 256 addresses.
+
+We need to subnet this to provide at least 25 usable host addresses for LANs A-E.
+
+Each network will need 27 addresses total, to facilitate the unusable ones at the limits.
+
+To do this, we increase the size of the subnet mask up from 24.
+
+The nearest power of 2 to our desired number is 32, which is 2^5. This means we need to give
+the subnets 5 bits.
+
+Because each network needs 5 bits for hosts, the network gets the remaining 32 - 5, or 27.
+
+This means the new subnet mask for each LAN is going to be /27, or 255.255.255.224.
+
+Because we've left 5 bits for the hosts and moved the rest to the network, the smallest
+bit we moved is the 6th bit, or the 32 bit.
+
+This means the magic number here is 32, and our host addresses increment in amounts of 32.
+
+A: 0 - 31
+B: 32 - 63
+C: 64 - 95
+D: 96 - 127
+E: 128 - 159
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+Practice Question
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Subnets A(58) and B(205) are connected to Router 1.
+
+Router 1 links to Router 2.
+
+Subnet C(116) is linked to Router 2.
+
+Effectively, this means we have A(58), B(205), C(116), and R1R2(2).
+
+We need to allocate these on 192.168.0.0/22.
+
+In order of size, that's B, C, A, R1R2. This is the order in which we allocate.
+
+B needs 205 + 2 = 207 addresses.
+
+The closest power of 2 we have to this is 256, 2^8.
+
+This means we must allocate 8 bits to B. 32 - 8 = 24, so we're moving 2 bits.
+
+Using the same steps, we get:
+B: /24 - 255.255.255.0
+C: /25 - 255.255.255.128
+A: /26 - 255.255.255.192
+R1R2: /30 - 255.255.255.252
+
+Getting back to B, the "magic number" is the smallest non-zero bit <= 255.
+
+This would be 1, as 256 - 255 = 1.
+
+However, this is not like ones tackled previously, as it is in octet 3 instead of 4.
+
+This means our address block for B goes from 192.160.0.0 to 192.160.0.255.
+
+For the other 3, their magic numbers (128, 64, and 4 respectively) are in octet 4.
+
+This gives us total ranges:
+B: 192.160.0.0 to 192.160.0.255
+C: 192.160.1.0 to 192.160.1.127
+A: 192.160.1.127 to 192.160.1.191
+R1R2: 192.160.1.192 to 192.160.1.195
+
+First Hosts:
+B: 192.160.0.1
+C: 192.160.1.1
+A: 192.160.1.128
+R1R2: 192.160.1.193
+
+Broadcast Addresses:
+B: 192.160.0.255
+C: 192.160.1.127
+A: 192.160.1.191
+R1R2: 192.160.1.193
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

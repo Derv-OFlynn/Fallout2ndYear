@@ -1,0 +1,138 @@
+Software Engineering - Design By Contract
+----------------------------------------------------
+PDF: https://drive.google.com/file/d/1w2y2_gLQsFQUtIwXBPwuDhyKTLuWXZVB/view
+
+Design by Contract, or Programming by Contract, is an approach to designing software.
+
+It says that designers should define precise and verifiable interface specs for software
+components, with the use of preconditions, postconditions, and invariants.
+	> Preconditions must be fulfilled before a function is run.
+	> Postconditions must be fulfilled upon function completion.
+	> An Invariant is a set of assertions that must always hold true.
+
+These specifications are referred to as "contracts", in the same way that a business contract
+entails certain obligations and conditions.
+
+It was developed by Bertrand Meyer, and forms a central feature of Eiffel, an OO language
+developed also by Bertrand Meyer.
+
+It uses assertions - boolean statements, which, if false, indicate a bug.
+
+While pre- and post-conditions are associated with operations, invariants are more universal.
+
+A pre-condition expresses something about the state of a program that should be true before
+the operation is completed.
+
+It makes explicit that the ccalling routine is responsible for ensuring that something is
+true before an operation is invoked.
+
+Lack of a pre-condition may lead to too little or too much checking (duplicate checking
+code can overcomplicate a program).
+
+A post-condition is a statement of what things should be like after the execution of an
+operation.
+
+It expresses what an operation does, rather than how the operation does it.
+
+It seperates implementation from interfae, and leads to a stronger definition of an exception.
+
+There is a sort of square map of benfits vs. obligations.
+
+Clients are obliged to satisfy pre-conditions, and benefit by not needing to check
+output values, and the result is guaranteed to comply to the post-condition.
+
+The provide has the opposite - no need to check input values, and input values are
+guaranteed to comply to preconditions, but they are obliged to satisfy postconditions.
+
+An invariant is an assertion about a class or method, which must always be true for all class
+instances.
+
+It may be temporarily false during the execution of a method, but must become true by the
+end.
+
+Invariants are added to the pre- and post-conditions of public methods.
+
+Assertions are useful with polymorphism, and can help keep subclass operations consistent
+with those of the superclass.
+
+Invariants and post-conditions must be true for all subclasses, and subclasses can
+strengthen them by making them more restrictive.
+
+It can't, however, strengthen pre-conditions - because of substitutability, it can
+only weaken a pre-condition.
+
+If a subclass strengthened a pre-condition, then a superclass operation could fail when
+applied to an instance of the subclass.
+
+Pre-conditions provide the best payoff for the least overhead.
+
+One of the best languages to support assertions in this way is Eiffel.
+
+The diagram on page 4 of the PDF is to be used with the DbC constraints described in OCL.
+
+DbC does not have to use OCL (object constraint language), but in our case we used it.
+
+OCL is officially a part of UML 2.0.
+
+DbC constraints have two basic purposes: highlight unacceptable corner cases, and express
+key semantics of classes or operations to which they apply.
+
+For example, in the diagram, there is the class RecievablesAccount.
+
+An invariant for this class is:
+	> unprocessedInvoices->intersection(processedInvoices)->isEmpty()
+
+This invariant states that an invoice cannot be both processed and unprocessed.
+
+This is a key trait of the class, and reflects the real world scenario: processed and
+unprocessed are conflicting traits, and one invoice obviously cannot be both.
+
+The post-condition for EndOfMonthUpdate says that current balances need to be rolled over
+to 30 day balances, reflecting a business rule.
+
+The pre-condition for the same method stipulates that there be no unprocessed invoices,
+again reflecting a business rule.
+
+Constraints nail down properties of classes without predetermining platform specific
+techniques for implementing them.
+
+OCL constraints flesh out the model and connect the dots for generators and programmers,
+and help discover design flaws.
+
+The more precisely a classes properties are specfied, the easier it is to reuse the class.
+
+OO and component based development promise reuse as a major advantage, bu developers
+can find class and component reuse difficult without access to source code, because
+the usage contract is not well defined.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

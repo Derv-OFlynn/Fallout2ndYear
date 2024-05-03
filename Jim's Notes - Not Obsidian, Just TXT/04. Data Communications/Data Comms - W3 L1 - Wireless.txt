@@ -1,0 +1,48 @@
+Data Communication - Wireless Transmission
+---------------------------------------------------------
+
+Wireless transmission is usually through something like radio frequencies.
+
+There are two configurations - omnidirectional, and directional.
+
+Networks using EM radio waves are called RF, radio frequency networks.
+
+One method of this transmission is with terrestrial microwaves.
+
+Some of the characteristics of the above are:
+	> Microwaves travel at higher frequency than RF (2 - 40 GHz).
+	> This allows for larger bandwidth, higher data rate.
+	> Waves are focused into a narrow beam by a parabolic dish, and recieved similarly.
+	> Line of sight is required, prone to interference from rainfall and other dishes.
+
+These are back-to-back installations used on long hall links.
+
+Very common with mobile networks, e.g. the 3 network.
+
+Satellite microwaves, or just satellites, can link two or more ground stations, i.e. they
+act like a relay.
+
+Satellites use two different frequency bands to communicate - uplinks and downlinks,
+different frequencies allow full duplex comms.
+
+GEO satellites, or geostrationary earth orbit satellites, remain stationary over a point
+on the Earth.
+
+LEO, or low earth orbit satellites, move rapidly over the sky.
+
+The range of these is usually 1 - 10 GHz, and they are used for television and phone
+transmission.
+
+One example is the Iridium satellite network, and another is Musk's Starlink.
+
+The environmental effect of this is quite poor, as space junk could hamper future space
+travel and block our view of the sky.
+
+We need to know about the limitations and uses of electrical cables and their types.
+
+We also need to know about radio frequencies, the fact they're used for wifi
+
+
+
+
+

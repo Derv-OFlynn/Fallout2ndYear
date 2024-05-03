@@ -1,0 +1,87 @@
+Legal and Professional - Still GDPR
+------------------------------------------
+
+The first step towards GDPR compliance will be a data audit for an organisaton, identifying
+the personal data they already hold, who it has been shared with, and where it is now held,
+and to determine what must be done with that data in order to comply with the GDPR.
+
+This data audit process will necessarily include reviewing existing processes for gathering
+personal data.
+
+This ensures there are clearly identified business and legal grounds for that collection,
+and ensures that all related processes will comply with the new regulation.
+
+Depending on the nature of the business, this could be a broad exercise.
+
+Showing points of egress and ingress of data is a lot.
+
+Organisations also need to be clearabout the info assets that actually constitute personal
+data.
+
+Organisations must also consider where data resides physically. If a cloud solution is
+utilised, where is the supplier based? 
+
+If they are outside the EU, do their services meet the regulation's requirements?
+
+This includes physically and paper records that are kept by an organisation.
+
+They could additionally carry out a DPIA in relation to info already collected.
+
+GDPR requires a lot of documentation.
+
+In addition to the explicit and implicit requirements for specific records, you should
+also ensure you have documented how you comply with the GDPR.
+
+This is so that you have some evidence to support your claims if the supervisory authority
+has any cause to investigate.
+
+If you suffer a data breach, for instance, being able to show that you have an audit trail
+showing that you notified them and any affected data subjects within the required
+timeframes, and that you have taken all the appropriate steps to mitigate the impact.
+
+This will minimise the chance you will be hit by a crippling fine.
+
+There are different documentation requirements for DPs and DCs, but the onus will
+generally be on the controller.
+
+This is due to their likeliness to suffer the consequences regardless of who is at fault.
+
+If you are a controller with a number of processing functions outsourced, it's worth
+gaining assurances that these functions are appropriately documented.
+
+Important documents to have include:
+	> Statements of the informaton collected and process, and the purpose.
+	> Records of consent from data subjects or their holder of parental responsibility.
+	> Records of processing activities under your responsibility.
+	> Documented processes for protecting personal data (Info security policy etc.)
+
+Punishments for breaches can include the following:
+	> 20 million Euros fine.
+	> 4% of global annual turnover.
+	> Whichever is greater of the two.
+
+Certification bodies involved in certification schemes can be fined if they are found to
+be shirking their responsibilities.
+
+As such, it's possible for a single breach to affect a large number of organisations:
+	> The Controller
+	> The Processor(s)
+	> The Certification Body that approved them.
+
+Because these admin penalties can be applied so broadly, it is very important to understand
+what your obligations and exposure are.
+
+You should be certain to consult a legal expert if you are concerned that you might not be
+in compliance with the law.
+
+While fines from other regulators are unlikely to match those given out by GDPR, the
+compounding of other punitive measures can be significant.
+
+Reputational damage can bring loss of clients, suppliers, partners, customers, etc.
+
+Ensuring that your organisation supports compliance with the regulation from the very top
+will be critical to meeting your obligations.
+
+It would be difficult to implement all of the necessary measures without that level of
+support.
+

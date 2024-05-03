@@ -1,0 +1,188 @@
+Data Communications - Error Control
+---------------------------------------------
+
+Errors exist in all transmission systems.
+
+Thus, it is necessary to include some form of error detection.
+
+Error detection capabilities allow the reciever station to detect if any of the bits contained in a recieved frame
+have been modified.
+
+If they have, then something needs to be done about it.
+
+Typically this involves a retransmission of the errored frame.
+
+A general principle of error detection is:
+	> All frames include additional bits which constitute an error detection code.
+	> The code is calculated using an algorithm that includes other bits from the same frame.
+	> The reciever performs the same calculation.
+	> The presence of an error can be indicated by a mismatch in the calculated codes.
+
+There are three typical error checking methods:
+	> Parity Checking
+	> Checksums
+	> Cyclic Redundancy Check
+
+With parity checking, a bit called a "parity bit" is added to the end of every character.
+
+The value of this bit is calculated to make the total number of 1 bits in the character either ODD or EVEN.
+
+The reciever then performs the same calculations, and if the parity bits don't match, there's been an error.
+
+Parity checking is severely kneecapped by the fact that it cannot detect double bit errors, meaning that if
+an even number of bits are in error, it won't be picked up.
+
+The checksum error checking mechanism operates on a frame level.
+
+The transmitter treats the entire frame as a sequence of binary integers and computes their numeric sum (16/32 bit).
+
+If a 16 bit checksum is being determined, the result must be 16 bits long.
+
+The data is seperated into 16 bit quantities, and added together for a result, e.g. 271FA.
+
+The 2 on the 271FA takes the result over 16 bits, and hence is added back onto the A to give 71FC.
+
+Cyclic redundancy check is a much more involved technique.
+
+Here, the transmitter adds a bit sequence to each frame, not just a single integer/bit value like before.
+
+This bit is known as the Frame Check Sequence, or FCS.
+
+The FCS is derived from the bits associated with the message being transmitted, using a pretedermined P-value.
+
+The reciever divides each incoming frame by the same P-value and checks the remainder.
+
+If the remainder is 0, it assumes no errors have occured.
+
+What is required is an FCS such that the recieved frame T is exactly divisible by the P-value.
+
+From the proof given for this, such an FCS can be found from the remainder of the calculation 2^N * M/P.
+
+The transmitter uses this calculation to get the FCS, which is included in the frame with message M.
+
+The FCS is concatenated to M to give the transmitted frame T.
+
+The reciever divided T by the P-value, and concludes that there are no errors if there is no remainder.
+
+Once you have error detection established, it is important to also have error control, a way to rectify errors
+that do appear.
+
+To discuss error control, the following assumptions are made.
+	> Data is sent as a sequence of frames.
+	> Each time a frame is transmitted a timer is set to some value.
+	> Frames must arrive in the order in which they were sent, or an error is assumed.
+	> Each frame suffers an arbitrary, variable delay called propogation delay.
+
+There are two main types of error which can occur:
+	> Lost Frame/ACK - Either a data frame or an ACK is lost in transit (impulse noise etc.).
+	> Damaged Frame - Here a frame arrives, but fails the error detection check applied.
+
+Error control provides a number of techniques to address each of these types of error.
+
+These techniques can be considered a tool-chest:
+	> Each technique can be considered a tool which can be applied when something goes wrong.
+
+Error Control - Elements:
+	> Error Detection - See above, CRC.
+	> Positive ACK - Reciever sents positive ACKS to error-free frames recieved.
+	> Retransmission - Here the transmitter may retransmit a frame that has not been acknowledged after timeout.
+	> Negative ACK - The reciever can send a negative ACK for damaged or out-of-sequence frames.
+
+The most common error control techniques use some mixture of the above four elements (like the Avatar).
+
+Collectively these error techniques are called Automatic Repeat Request, or ARQ.
+
+The three main types of ARQ in uses are:
+	> Stop-And-Wait ARQ
+	> Go-Back-N ARQ
+	> Selective-Reject ARQ
+
+With Stop-And-Wait, we are enhancing the flow control technique of the same name.
+
+The Tx sends a frame, then awaits an ACK before continuing.
+
+If the frame contains an error, the reciever simply discards it and sends no ACK.
+
+If the frame is not acknowledged after a time-out period, the transmitter simply retransmits the frame.
+
+If the ACK is sent, but is damaged in transit, the transmitter will resend the frame after time-out.
+
+This means the reciever will now have two copies of the same frame.
+
+To solve this, frames are alternatively numbered 1 or 0, and ACKs are correspondingly 1 or 0.
+
+Another technique is Go-Back-N ARQ, an enhancement to the Sliding Window flow control technique.
+
+The Tx ca send a number of frames without having to recieve some form of ACK from the Rx.
+
+In relation to the types of error conditions that can occur:
+	> Successful Transmission
+	> Lost Data or Lost ACK frame.
+	> Damaged Data frame.
+
+If NO errors occur, i.e. frames arrive undamaged and in sequence:
+	> The reciever returns a positive ACK, like RR4 or RNR6, with the next number expected.
+	> This ACK can be sent explicitly, or can be piggyback onto a data frame.
+	> These are called explicit and implicit respectively.
+	> The Tx continues to send data frames up to the agreed window size.
+
+If errors occur there are two responses depending on the type of error:
+	> Lost/Damaged Frames
+		- Reciever sends a REJect message with the number of the next frame expected.
+		- Sending station retransmits all frames starting at the number included.
+	> Lost ACKs
+		- The Tx station can continue to send more frames up to window size.
+		- If timer expires, Tx immediately stops sending frames.
+		- Then sends special RR message with poll bit, considered command frame.
+		- Reciever must respond with RR message identifying the next expected frame.
+
+Selective-Reject ARQ is more complex:
+	> Transmitted frames for which a timer has expired.
+	> Transmitted frames which were lost or damaged.
+	> The reciever uses a slightly different negative ACK, selective reject, SREJ.
+	> The number of the frame to be retransmitted is also included.
+
+This is considered more efficient, as it minimises the amount of retransmitted frames.
+
+The reciever must store frames recieved after a damaged frame has been rejected.
+
+It has to re-sequence retransmitted frames as they arrive out of sequence.
+
+Because of the added complexity Go-Back-N is preferred.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

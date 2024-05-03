@@ -1,0 +1,234 @@
+HUman Computer Interaction - Accessibility
+--------------------------------------------------
+
+Universal Design is the design and composition of an environment so that it can be
+accessed, understood, and used, to the greatest possible extent, by all people, regardless
+of age, size, or disability.
+
+In ome countries, universal design is called "design for all" or "inclusive design".
+
+Ireland is the only country which contains a definition of Universal Design in legislation.
+
+UD is closely related to other design processes, such as UC design and UX/CX.
+
+The meet the needs of the widest range of consumers, we must consider the needs of diverse
+user groups.
+
+Oversample the "tails" on the distribution curve when conducting user research and testing.
+
+The more our buildings and places are design to accomodate the widest range of people, the
+more they work for everyone.
+
+UD places diversity at the heart of the design process, so that buildings and environments
+can be used to meet the need of all people.
+
+For any service to be inclusive, the tech, environment, and products used, must all work
+together.
+
+UD is not a euphemism for accessibility.
+
+Accessibility features such as ramps and lifts are "potent symbols of seperateness".
+
+UD promotes equality of access for all people.
+
+UD results in better designs for everyone, and the planet.
+
+UD is better design, and works first time for more people while being comfy and easy to use.
+
+Accessibility is the general term used to describe the degree to which a product is
+accessible by as many people as possible.
+
+It also relates to "ability to access", the funcitonality and possible beneThe fit of some
+system or entity.
+
+The goals of HCI are about allowing users to carry out tasks:
+	> Safely
+	> Effectively
+	> Efficiently
+	> Ejoyably
+
+How do we improve interfaces:
+	> Change attitude of software pros who think you can "just slap an interface on".
+	> Draw on accumulating body of knowledge regarding HCI interface design.
+	> Integrate UI design methods and tech into software dev methodologies.
+
+We need to know the user, and any:
+	> Physical Abilities
+	> Cognitivie Abilities
+	> Personality Differences
+	> Skill Difference
+	> Cultural Diversity
+	> Motivation
+	> Special Needs
+
+An ageing user might suffer impairments due to a progressing age. These include: memory,
+mobility, vision, and hearing.
+
+As an interface desinger, You might decide to simplify screen layouts, provide simple linear
+search spaces, and increase the size of fonts and controls, among other things.
+
+Ability varies between and within individuals, and there is often compensation in another.
+
+Most people have anough abilities in reserve to adapt to changes.
+
+There is some interaction between abilities as systems.
+
+The WHO has the International Classification of Functioning, Disability, and Health.
+
+Their document states:
+	- "As a classification, ICIDH-2 systematically groups different domains
+		for a person in a given health considiton (E.G. what a person with a disease
+		or disordermdoes do or can do). Functioning refers to all body functions,
+		activities, and participation as an umbrella term; similarly, disability
+		serves as an umbrella term for impairments, activity limitations, or
+		participation restrictions."
+
+The WHO ICIDH-2 gets a description of computer use by disablied users.
+
+There are many pieces of legislature, and initiatives worldwide:
+	> Americans with Diabilities Act Standards for Accessible Design.
+	> W3C Web.
+	> WAI, accessibility initiave.
+	> eEurope.
+
+Gerontechnology is a new interdisciplinary scientific research in which tech is directed
+to the aspirations and opportunitues of elderly persons.
+
+Age and Training have several effects on the WWW.
+	> Older users search less efficiently than young.
+	> Older users had the most problems with tasks requiring 3 or more moves.
+	> Older users had diffculty recalling previous information/location.
+
+Aging is a process of dynamic diversity, and designing for an aging population requires
+for the change of user characteristics.
+
+FLexibility is key.
+
+To describe the present situation with GUIs, and the major accessibility problems they
+present to a blind and visually impaired user, we can divide the problem into three major
+categories.
+	> Difference in screen reading arhitecture
+	> Visual metaphors, and
+	> Mouse-driven control and navigation.
+
+Difference in screen reading architecture:
+	> When using a text-based system: the info is displayed using plaintext.
+	> However, GUI interfaces are pixel based, and so a screen reader may not always
+	  be able to read them.
+
+Visual Metaphors:
+	> Instead of using a specialised command language and explicit info, the GUI shows
+	  info using familiar objects or images, which cannot be conveyed by screen reader.
+
+Mouse-driven control and nativation:
+	> With no visual feedback, navigation with the mouse is hard.
+	> There is no real way to track the mouse cursor than to see it on the screen.
+
+Many people with visual impairments use a screen reader, to read aloud the text displayed
+on a screen.
+
+In order to access commands, menus, and mouse movements, keyboard links and shortcuts are used.
+
+The major difference between a GUI and a screen reader is the way the information is
+presented.
+
+Plaintext is a linear or 1D way of presenting info.
+
+For example, in a desktop file system like MacOS or Windows, the files and folders are
+placed on a 2D surface, and different windows are also placed on this surface.
+
+When presenting this info using braille or a screenreader, this 2 or 3D information is
+projected into 1D. Important spatial info is lost in the transfer.
+
+The OSM, or Off-Screen Model, is the data structure that the screen reader has to maintain,
+keeping all the info contained by the screen.
+
+This includes what characters are written where on the screen, the different controls used,
+and the grouping and spatial relationships between different objects.
+
+The problem with maitaining this model is that it could become outdated if the screen
+updates without updating the OSM.
+
+Furthermore, the info in the OSSM could be insufficient if the app uses non-standardized
+controls like a picture instead of a button, or text included in an image file instead of
+OS-written text.
+
+In this case, there is no way for the screen reader to recognise that the image is a button,
+or that the image contains text, and so the user will miss it.
+
+Even though the present development of accessibility in modern OS's has made is easier for
+sreen readers to access screen contents, there is still trouble in translating
+what is represented on the screen into braille or audio.
+
+The 7 principles of Universal Design, to include less abled users, are:
+	> Equitable Use
+	> Flexibility in Use
+	> Simple and Intuitive
+	> Perceptible Information
+	> Tolerance for Error
+	> Low Physical Effort
+	> Size and Space
+
+These seven principles may be applied to:
+	> Evaluating existing designs.
+	> Guiding the design process.
+	> Educating designers and consumers about more usable products and environemts.
+
+Beneficiaries of universal design include:
+	> People in a noisy shopping mall who can't hear a kiosk.
+	> People driving their car who don't have the look at their radio to use it.
+	> People who don't have their glasses with them.
+	> People who are getting older.
+	> People with disabilities.
+	
+Equitable Use: Useful and marketable to people with diverse abilities.
+
+Flexibity in Use: Accomodates a wide range of individual preferences and abilties.
+
+Simple and Intuitive use: Use of design is easy to understand, regardless of experience,
+skill, or concentration level.
+
+Perceptible Information: The design necessary information effectively to the user.
+
+Tolerance for Error: The design minimizes hazards and the adverse consequences of accidental
+or unintended actions.
+
+Low Physical Effort: Design can be used efficiently and comfortably with minimal fatigue.
+
+Size and Space and for Approach and Use: Appropriate size and space for posture, reach,
+manipulation, and use, regardless of user's body size, posture, or mobility.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

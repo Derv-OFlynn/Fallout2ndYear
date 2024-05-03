@@ -1,0 +1,94 @@
+Data Communications - Waves
+-------------------------------------------
+One method of communicating using waves is to consider a peak to be a 1, and a trough to
+be a 0.
+
+This allows for communication in binary code.
+
+A simple, singluar sine wave, will simply transmit 0, 1, 0, 1, and so on, but by combining
+waves we can send more complex signals.
+
+A general equation applies to the sine wave:
+
+	s(t) = A(sin(2π x ft + Φ))
+
+A is the amplitude, the peak value of the waveform.
+
+F is the number of repetitions per second, given in hertz.
+
+Φ is the phase, a measure of the relative position within a cycle.
+
+Spectrum is the range of frequencies contained within a signal.
+
+This means we describe is as being from the lowest to highest frequency.
+
+Absolute Bandwidth is the width of the spectrum.
+
+This means the highest frequency minus the lowest.
+
+Effective Bandwidth - signals with sharp rising and falling edges have wide absolute bandwidth,
+and most energy is contained in a relatively narrow band called the effective bandwidth.
+
+DC components signal with a component at zero frequency.
+
+Square Waves consist of instantaneous transitions between two levels.
+
+Square Wave signals have a massive bandwitdth, and are the type that computers like to use.
+
+However, because of the huge bandwitdth, it runs into problems during transmission.
+
+All transmission systems are limited in the range of frequencies they can carry.
+
+This is known as system bandwidth, and comes from the physical properties of the
+components, and matter and energy.
+
+The bandwidth of a system can be described as "the fastest continually oscillating signal
+that can be sent across the system, represented in hertz (Hz)."
+
+The effect of system bandwidth is to limit the speed of the transmission of data.
+
+If a signal has a bandwidth higher than the maximum of the system it is sent on, it will
+become distorted.
+
+The higher the bandwidth of the system, and the closer it gets to that of the signal,
+the closer the recieved signal gets to what was transmitted.
+
+An example of this is in phone calls: some systems to have a lower bandwidth than the
+bandwidth of the human voice, and so people sound different on the phone.
+
+The source of the signals transmits a digital signal with the bit pattern 010000100.
+
+A transmission system with a low bandwidth, like 500hz, imposes a significant restriction,
+and only one component harmonic makes it through.
+
+A system with a higher bandwidth, 4000hz, allows more component harmonics through, and
+results in a more readable signal on the other side.
+
+Ultimately what we want is to use a bandwidth which will get enough of the harmonics
+through for the signal to still be legible on the other side.
+
+We don't need to pick up every single harmonic, just enough to make out the data.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

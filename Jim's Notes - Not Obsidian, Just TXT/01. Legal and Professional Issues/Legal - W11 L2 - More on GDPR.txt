@@ -1,0 +1,153 @@
+Legal and Professional Studies - GDPR 2
+----------------------------------------------------
+
+THe principles of Article 5.1 state that personal data must be:
+	> Processed lawfully, fairly, and transparently.
+	> Can only be collected for specified, explicit, and legitimate purposes.
+	> Adequate, relevant, and limited to what is necessary for processing.
+	> Accurate and kept up to date.
+	> Kept in a form such that the data subject can be identified only for as long
+	  as is necessary for processing.
+	> Processed in a manner that ensures its security.
+
+GDPR is applicable to organisations within and outwith the EU.
+
+It potentially protects information of all natural persons, whatever their nationality or
+residence.
+
+Personal data is: information relating to an identified or identifiable natural person, or
+a data subject.
+
+An identifiable person is one who can be identified, directly or indirectly, in particular
+by reference to an identifier such as a name, ID number, location data, or factors
+relting to physical, physiological, genetic, mental, or economic identity of that person.
+
+The extended list of identifiable characteristics means that a great deal of anonymised
+data may no longer be suitable for distribution or sharing in public.
+
+Organisations that distribute anonymised data need to carefully assess whether the data
+can be linked, directly or indirectly, to the data subject.
+
+Data Subjects have a number of rights in regard to their data, which are balanced against
+the right to the free flow of data to support "the pursuit of economic activities".
+
+Organisations must ensure that they know what data they collect, and how they use data.
+
+Restrictive rules exist on what can be done without specific consent.
+
+A data subject can seek judicial remedies against Data Controllers and Data Processors.
+
+They also have the right to seek compensation for damages arising from any breaches.
+
+Data controllers are given a vested interest in ensuring the security of any personal data
+they pass to a processor.
+
+Data controllers generally need data subjects' consent to process their data.
+
+There are limited circumstances where they do not, revolving around legal requirements,
+or where consent is provided through a contract with a third party.
+
+Consent must be clear and unambiguous before processing personal data.
+
+Silence, pre-ticked boxes, and inactivity, cannot be considered consent.
+
+Organisations need parental permission for this with children under age 16.
+
+Consent is possible with a check box, but the consent document must be laid out in simple
+terms.
+
+Consent can also be withdrawn at any time, and the data controller must provide a method
+that is as easy to withdraw consent as to give it.
+
+Data subjects have the right to be forgotten. This means they have the right to have their
+data erased under a number of circumstances, which must also occur if they withdraw
+consent for all processing for which the data is held.
+
+Data controllers must take "reasonable steps" to erase any of the data subject's data that
+might be public, such as in news articles, or databases.
+
+The data commisioner will want to see that all appropriate technical and procedural
+measures to erase the data have been employed.
+
+Data subjects can request a copy of any personal data held on them, and can also request
+that this information is transmitted to another data controller. 
+
+It must be structured in a commonly used and machine-readable format.
+
+Some organisations will already have appropriate contact with other organisations to
+facilitate the transfer of data, and these contacts can be leveraged to streamline the process.
+
+Article 6 expands on how the data subject must have given consent, or processing is
+necessary for certain tasks, majority, require consideration of the data subjects' interests.
+
+This is permissible for the purposes of legitimate interests pursued by the controller or
+by a third party, except where such interests are overriden by the interests or
+fundamental rights and freedoms of the data subject which require protection of personal
+data, in particular when the data subject is a child.
+
+Processing certain special categories of data, like ethnicity and sexual orientation,
+is explicitly forbidden, except in very specific circumstances.
+
+Data can only be retained for limited periods, which should be clear to the data subject
+at the point at which they consent.
+
+This is not a hard and fast rule, as some data could be held effectively indefinitely.
+
+While holding data, confidentiality and integrity must be secured.
+
+This includes against accidental loss, destruction, or damage.
+
+Should be an extremely high priority for every organisation, for example due to
+compulsory data breach reporting.
+
+GDPR is itended to be a single scheme across the EU, to maintain common market.
+
+EU Data Protection Board, EDPB, was creted to ensure that laws remain relatively consistent
+and with minimal impact on commerce.
+
+Member states will have Data Protection Authorities, intended to reduce bureacratic load
+for organisations dealing with data protection.
+
+Organisations will deal with the DPA in their primary jurisdiction. This will cover all
+cross-border intra-EU data processing.
+
+Data controllers must retain record of its data processing activities. Types of data being
+being processed, where, how, and why it is processed.
+
+Data processors are also required to keep a record of all processing carried out on
+behalf of the data controller.
+
+Records can be called upon by the Data Protection Authority.
+
+Data controllers must ensure that Data Protection Impact Assessments are a part of their
+risk assessment process regarding personal data.
+
+A set of DPIA can cover a set of similar processing operations with comparable risks.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

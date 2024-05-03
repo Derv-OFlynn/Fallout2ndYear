@@ -1,0 +1,123 @@
+Software Engineering - Testing
+----------------------------------------
+
+There are many proposals for increasing software quality, but in practice, it's mostly
+testing.
+
+Testing is basic to every engineering discipline, from designing drugs to engineering planes.
+
+Our ability to predict how creations might behave is imperfect.
+
+"Optimism is the occupational hazard of programming, testing is the treatment".
+
+Implies that programmers make poor testers, especially if testing their own work.
+
+Human organisations need decision makers, and development and testing must be independent.
+
+Programmers have a hard time sometimes believing they made a mistake.
+
+Design and programming are constructive tasks, whereas testers seek a way to break software.
+
+The wrong conclusions to draw from this are:
+	> The developer should not be testing at all.
+	> Testers only get involved once software is done.
+	> Toss the software over the wall for testing.
+	> Testing teams are responsible for assuring quality.
+
+The purposes of testing are to find bugs, and elucidate the specification.
+
+Good testers clarify the specification, and there is no hope for tools to automate this.
+
+Testing directs upwards from code, through design, then requirements, passing through
+unit tests, integration tests, functional or system tests, and validation testing acceptance.
+
+There is also the "V Model" of testing.
+
+This is split into the developer's life cycle:
+	> Business Req. Specifications
+	> System Req. Specifications
+	> High Level Design
+	> Low Level Design
+	> Coding
+	> CODE
+
+And the teser's life cycle:
+	> CODE
+	> Unit Testing
+	> Component Testing
+	> System Integration Testing
+	> System Testing
+	> Acceptance Testing
+
+Unit Tests focus on the smallest unit of design, whether that be a procedure, class, etc.
+
+They test the following: local data structures, basic algorithms, boundary conditions, and
+error-handling.
+
+It may need drivers and stubs, and it is a good idea to plan unit tests ahead.
+
+Integration Tests ask, "If all parts work, why doesn't the whole?".
+
+For software, the whole is more important than the sum of the parts.
+
+Incremental integration is the best way to go, whether top-down or bottom-up.
+
+Top-down integration involves testing the main control module first,
+and slowly replacing the stubs with real code.
+
+A problem is that you may need complex stubs to test at higher levels.
+
+Bottom-up integration involves already tested modules.
+
+Drivers are used instead of stubs.
+
+Validation Tests are the culmination of integration and functional testing.
+
+Run acceptance tests, alpha tests, and beta tests, with customers defining them, developers
+watching, and at end-user sites respectively.
+
+Other forms of high-level testing include system, security, performance, and stress testing.
+
+Stress testing involves pushing the system into extreme situations to see if it still works:
+	> Feed data at very high or low rates.
+	> Replace interface APIs with badly behaved stubs.
+	> Mess with array sizes, try 1 and 0.
+	> Set memory artificially low, same for connections or files.
+
+Stress testing will find many obscure bugs, some of which may not even be worth fixing.
+
+A corner case now is tomorrow's common case.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

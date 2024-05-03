@@ -1,0 +1,62 @@
+OOP - Java 2
+-------------------------
+Java is different from other programming languages as it was one of the first object
+oriented languages.
+
+Everything in Java is a class. It is impossible to create just a main with no classes.
+
+Methods are what a class does.
+
+Fields are what a class is.
+
+Some things in classes are private, which means they are inaccessible to anything outside
+the class.
+
+These normally have a method that goes with them to allow limited access.
+
+Public items are accessible from anywhere.
+
+A constructor is a method called when an object is created in a class, to give values to the
+fields within it.
+
+Algol is an incredibly old programming language, and a predecessor to many others.
+
+The rise of OOP and the rise of GUI usage came around the same time, as OOP was much more
+effective for a GUI than procedural languages.
+
+Design Patterns: Elements of Reusable Object-Oriented Software is a book released in 1994,
+written by 4 authors often referred to as the Gang of Four.
+
+A singleton is a class of which only one instance can ever be created - the main class is a
+singleton.
+
+Java is run in the Java Virtual Machine.
+
+When a Java program is run, the files composing it are compiled together into a .jar file.
+
+Java was made for certain types of cross platform programming.
+
+When two object are created, A and B, and we say B = A, the pointer to the object B in
+memory now no longer points to B, it points to A.
+
+As a result, when we change the object in A, the same changes will be reflected by B.
+
+The object originally pointed to by B will be freed by the garbage collector, which is a low
+priority thread that will run when the program isn't too busy.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

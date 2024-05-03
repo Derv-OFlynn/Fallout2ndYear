@@ -1,0 +1,116 @@
+Data Communications - Data Encoding
+-------------------------------------------------
+Data are propogated from point-to-point by encoding data onto signals.
+
+The data may be analogue or digital.
+
+Likewise the signals may be analogue or digital.
+
+CODECs produce digital signals, MODEMs produce analogue signals.
+
+A signal element is:
+	> Digital: a voltage pulse of constant amplitude.
+	> Analogue: a pulse of constant frequency, phase, and amplitude.
+
+Unipolar - all signal elements have the same algebraic sign, i.e. positive and negative.
+
+Polar - signal elements can have different algebraic signs.
+
+Mark/Space - refers to binary zero.
+
+Data Element - the bits.
+
+Data Rate - the rate at which data are transmitted (measured in bits per second).
+
+NRZ signals, or Non-Return-to-Zero signals, do not return to zero. They use one long pulse
+to represent multiple bits, rather than dropping back down to zero after every pulse.
+
+The two versions of this are NRZ-L, which is used by computer terminals, and has high
+importance for amplitude and polarity, and NRZI, which is not examinable.
+
+Modulation rate is the rate at which the signal level is changed per second.
+
+Bit duration is the time to transmit one bit.
+
+NRZ techniques make good use of bandwidth, on average one bit per signal element.
+
+However, it is limited to the presence of a DC compinent and has poor sychronisation.
+
+There are two multi-level binary techniques to consider:
+	> Bipolar AMI.
+	> Pseudoternary.
+
+These both use three signal/voltage levels.
+
+Bipolar AMI uses spaces represented by no line signal, i.e. zero volts, and marks represented
+by alternating between positive and negative.
+
+Pseudoternary is very similar, and also not examinable.
+
+Advantages of MB techniques over NRZ:
+	> No DC component.
+	> Easier synchronisation.
+	> Simpler means of error deduction.
+
+Disadvantages over NRZ:
+	> Less efficient in terms of bits per signal level.
+	> More voltage changes for same bit number.
+	> Forces reciever to work harder to interpret.
+
+There are two techniques of biphase encoding to consider:
+	> Manchester.
+	> Differential Manchester (Not examinable).
+
+In comparison with NRZ techniques:
+	> Modulation rate is twice that of NRZ.
+	> Synchronisation is provided with each bit interval.
+	> No DC component.
+	> Better low level error detection.
+	> Good performance in presence of noise.
+
+To interpret a digital signal, the reciever must:
+	> Be able to read the signal elements (e.g. voltage level).
+	> Know when a bit starts and ends (e.g. bit duration, timing).
+
+Successful reception of data depends on:
+	> Adequate signal-to-noise ratio - already covered,
+	> Sufficient bandwidth - already covered,
+	> Sufficiently slow data rate - alredy covered.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

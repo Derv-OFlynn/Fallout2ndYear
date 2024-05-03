@@ -1,0 +1,143 @@
+Human Computer Interaction - Usability and Evaluation
+---------------------------------------------------------------
+
+Usability can be defined as "The capacity to be used by humans easily and effectively where;
+easily means to a specified level of subjective assessment, and effectively means to a
+specfied level of human performance".
+
+Usability affords the user easy access to the product's functions.
+
+Guidelines are a basis for determining a course of action.
+
+Principles are a basic rule that guide or influence thoughts or actions.
+
+Theories are general principles that explain or predict facts or events.
+
+With guidelines, an interface designer can:
+	> Develop a shared language.
+	> Promote consistency in design.
+	> Record best practices (for reporting).
+
+Accessibility addresses discriminatory aspects related to equivalent user experience for
+people with disabilities.
+
+Web accessibility can mean that people with disabilities can equally percieve, understand,
+navigate, and interact with websites and tools.
+
+It also means they can contribute equally without barriers.
+
+Web content has Accessibility Guidelines called the Web Content Accessibility Guidelines.
+
+Some WCAG Guidelines:
+	> Provide a text equivalent for every non-text element.
+	> Ensure that information does not rely on color perception.
+	> Avoid causing the screen to flicker.
+	> Provide an auditory description of the visual info in multimedia presentations.
+	> For multimedia, ensure that timing of alternative descriptions is synced with
+	  the presentation.
+	> Use the simplest and clearest language possible.
+
+Smith and Mosier (1986) offer five high-level objectives as part of their guidelines for
+data entry:
+	> Consistency of data entry transactions.
+	> Minimal input actions by user.
+	> Minimal memory load on users.
+	> Compatibility of data entry with display.
+	> Flexibility of user control of data entry.
+
+Generally, principles:
+	> Are more fundamental, widely available, and enduring than guidelines.
+	> Are largely independent of technology.
+	> Often need more clarification.
+
+For any system or product:
+	> Principles of Universal Design - can be applied to any system or product used by
+	  people.
+
+For computer systems:	
+	> Nielsen's USability Principles - are mostly used as a basis for evaluating
+	  prototypes and existing systems.
+
+There are advantages and disadvantages of running expert usability evaluations:
+	> There can be relatively few ethical and practical issues compared to user testing.
+	> It can be difficult and expensive to fnd experts.
+	> Important problems may be missed.
+	> Many problems identified are trivial.
+	> Experts may have biases too.
+
+There are two types of evaluation:
+	> Formative evaluation is done at different stages of development to check that
+	  the product meets user needs..	
+	> Summative evaluation assesses the quality of a finished product.
+
+What should be evaluated includes early ideas for conceptual models, early prototypes of the
+new system, and later, more complete prototypes.
+
+Evaluation can be done throughout design, from first descriptions, sketches, etc.
+
+Design proceeds through the iterative cycle of design-test-redesign.
+
+Evaluation is a key ingredient for a successful design.
+
+Evaluation paradigms include:
+	> Expert Reviews
+	> USability Testing
+	> Survey Istruments
+	> Acceptance Testing
+
+Expert review methods include heuristic evaluation, guidelines review, cosistency
+inspection, cognitive walthrough, and formal usability inspection.
+
+User centered evaluation approach is an evaluation method for prototypes, and includes
+such methods as Expert Evaluation, Preditcive Evaluation, and Empirical Evaluation.
+
+These use, respectively, heuristics and wlakthroughs, testing against an engineered model
+and watching users use the product.
+
+Usability testing involves measuring typical user's performance on tasks ypical of those
+for which the system was designed.
+
+Performance is generally measured on number of errors and time to complete.
+
+Forms of usability testing:
+	> Paper Mockups
+	> Discount Usability Testing
+	> Competitive Usability Testing
+	> Universal Usability Testing
+	> Field tests.
+	> Remote usability Test
+	> "Can you break this?" Testing
+
+
+
+
+
+
+
+
+
+inc
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

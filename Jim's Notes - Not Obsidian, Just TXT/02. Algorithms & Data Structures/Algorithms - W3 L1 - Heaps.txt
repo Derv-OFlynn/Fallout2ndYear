@@ -1,0 +1,128 @@
+Algorithms - Heaps
+------------------------------------
+
+A priority queue is a queue where each element has a priority and the element with the
+hgihest priority is at the front and will be the first removed.
+
+To be contrasted with the stack and queue data structures which use LIFO and FIFO respectively.
+
+It can be implemented as a sorted or unsorted array.
+
+A binary tree is a recursive structure where each tree node may have 2 child nodes, or left
+and right subtrees.
+
+A complete binary tree is a binary tree where new nodes are added from left to right on the
+same level and a new level is only added when the current level is full.
+
+There are no "gaps" anywhere in the tree between the first and last nodes.
+
+A heap is another way to implement a priority queue. It has the logical structure of a
+complete binary tree, which satisfies the "heap condition".
+
+The heap condition is that the priority of any node is greater than or equal to that of its
+left and right child nodes if it has any.
+
+A heap can be implemented using pointers - each node has a parent (the one it stems from),
+as well as two children (left and right subtrees that stem from it).
+
+More simply, the heap can be implemented in a partially ordered array.
+
+In an array implementation where the highest priority key is in array position 1,
+this is the notation describing where things are in relation to node "i".
+	> Parent Index = (Index of "i")/2
+	> Left Child Index = 2 * (Index of "i")
+	> Right Child Index = 2 * (Index of "i") + 1
+
+A heap is partially ordered by satisfying the heap condition.
+
+A fully sorted or ordered array, but would require much more computation to maintain.
+
+Heaps make for a much more efficient implementation of a priority queue.
+
+
+
+Example to understand partially ordered array implementation:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+X is the parent of T and O, which are in turn parents of G and S, and M and N.
+
+The order in which they are described above is the same order they are stored in:
+	> X, T, O, G, S, M, N
+
+Let's look at node O:
+	> Parent Index = (Index of O)/2 = 3/2 = 1.5 = 1 (rounded down) [X]
+	> Left Child Index = 2 * (Index of O) = 3*2 =  6 [M]
+	> Right Child Index = 2 * (Index of O) + 1 = 3*2 + 1 = 7 [N]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+When a node is added to a heap, it is added at the bottom right part of the tree structure,
+as this is where the end of the array is.
+
+It must then be sifted up the tree to the point where it belongs.
+
+
+
+Example of sifting a node up the tree:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+For this example, the heap is an expended version of the previous.
+
+X is the parent of T and O, which are the parents of G and S, and M and N.
+
+G and S are the parents of A and E, and R and A, while M is the parent of I.
+
+This leads to an array arranged as:
+	> X, T, O, G, S, M, N, A, E, R, A, I
+
+Now, let's say we want to add a new node, P, to this heap. 
+
+P is inserted at the end of the array, which means it comes after I.
+
+This means P takes the spot of the right child of node M.
+	> X, T, O, G, S, M, N, A, E, R, A, I, P
+
+To move P to the correct spot, we must first find the correct spot.
+
+We check if the current parent node of P, which is M, has a lesser value.
+
+It does, so we swap P and M. Now I and M are children of P.
+	> X, T, O, G, S, P, N, A, E, R, A, I, M
+
+We continue to check this until P's parent node has a greater value.
+
+In this case, we check the node O, which still has a lesser value, so we swap again.
+	> X, T, P, G, S, O, N, A, E, R, A, I, M
+
+Now P's parent node is X, which has a greater value. P is now in the correct spot.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

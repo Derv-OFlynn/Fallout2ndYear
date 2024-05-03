@@ -1,0 +1,55 @@
+Legal and Professional - Opening / General Law
+--------------------------------------------------
+
+Each week will have an in-class assessment.
+
+Week 5 - 20%
+Week 9 - 20%
+Week 12 - 20%
+
+All other weeks are worth 5%.
+
+
+
+Law
+~~~~~~~~~~~~~
+Rules and regulations set by the government to uphold order and prevent chaos.
+
+A lot of laws, especially in western countries, come from root sources like the bible.
+
+These include the ten commandments, etc.
+
+ITC professionals have to be aware of laws for a number of reasons.
+
+People in tech often have access to sensitive data, and must know what then can or cannot,
+and should or should not do with it.
+
+Also important is intellectual property. We need to know how to ensure our software products
+do not violete IP laws.
+
+It is also important to be able to protect one's own creations.
+
+Contract law is particularly important. We will be employed under contract, companies will
+want to secure contracts with clients, contracts are used to make agreements etc.
+
+Tort law comes from an old French word meaning twist or tear, and refers to some breach
+of an obligation.
+
+Criminal law also applies, with things like hacking and other cybercrimes.
+
+Modern Irish law finds its roots in English fedual law, on account of their colonialism.
+
+These laws come from the Normans, who introduced them to the English.
+
+Systems like this were not originally standardised, with individual towns or villages
+having their own punishments and rulings for crimes.
+
+Over time these became standardised, as common law or common rule.
+
+
+
+
+
+
+
+

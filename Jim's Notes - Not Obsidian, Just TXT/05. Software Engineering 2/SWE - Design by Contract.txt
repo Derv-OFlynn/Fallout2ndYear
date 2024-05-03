@@ -1,0 +1,169 @@
+Software Engineering 2 - Design by Contract Notes
+----------------------------------------------------------
+DbC programming is an approach to software design. It says that designers should define
+precise and verifiable interface specifications for software components.
+
+It also says they should use postconditions, preconditions, and invariants.
+	> I will refer to these as posts, pres, and invs for brevity's sake.
+
+These specifications are referred to as contracts.
+
+This approach was developed by Betrand Meyer, with the idea that UML bubbles don't crash.
+
+It uses assertions, a boolean statement that should never be false, or else a bug is present.
+
+There are three kinds of assertions:
+	> Posts
+	> Pres
+	> Invs
+
+Pres and Posts are associated with operations, while Invs can be related to other elements.
+
+A Pre expresses something about the state of a program that should be true before an operation
+is executed.
+
+It makes explicit that a calling routine is responsible for ensuring that something is true
+before an operation is invoked.
+
+The lack of one may lead to too much or too little checking.
+
+A Post is a statement of something that should be true after execution of an operation.
+
+It expresses what an operation has done rather than how it has done it.
+
+It seperates implementation from interface.
+
+It also leads to a stronger definition of an exception.
+
+Exceptions occur when an operation is invoked with its Pre satisfied and returned without
+its Post true.
+
+DbC implementations can be created in C# using Spec#, which specifies Pres and Posts.
+
+An Inv is an assertion about a class or method.
+
+An Inv is always true for class instances, although may be temporarily false during execution
+of a method.
+
+Invs are added to Pres and Posts of public methods.
+
+Assertions are useful with polymorphism, and can help keep subclass operations consistent
+with those of a superclass.
+
+Invs and Posts must be true for all subclasses, and subclasses can strengthen them.
+
+It cannot strengthen Pres - due to sustainability, it can only weaken them.
+
+If a subclass strengthened a Pre, then a superclass operation could fail when applied to
+an instance of the subclass.
+
+Pres are the best payoff for the least overhead.
+
+A programming language with native support for assertions is Eiffel.
+
+DbC constraints can be described in OCL, or object constraint language, which is what we
+have used with the UML Specification Environment.
+
+DbC constraints have two basic purposes.
+	> Highlight unacceptable corner cases.
+	> Express key semantics of a class or operation to which they apply.
+
+For insatnce, some of the examples on pages 5 and 6 of Richard's PDF (I'm not writing it out):
+	> RecievableAccount Inv dictates an invoice cannot be both processed and unprocessed.
+	> Post for EndOfMonthUpdate() says current balances are rolled over to 30 day balances.
+	> EndOfMonthUpdate() Pre says there should be no unprocessed invoices.
+
+Constraints nail down the properties of classes without predetermining platform specific
+techniques for implementing them.
+
+Contracts are useful to both clients and generators.
+
+OCL constraints help flesh out the model and connect the dots for generators and programmers
+and help discover design flaws.
+
+The more precisely a classes properties are specified, the easier it is to reuse the class.
+
+OO and component based development promise reuse as a major advantage.
+
+However, devs find class or component reuse difficult without source code access because
+the usage contract is not well specified.
+
+Interoperability between components from different companies is also an issue even when
+components support standardised interfaces, messages and protocols.
+
+Unless there is a good understanding of the contract that the interface must honour when
+implemented.
+
+Interoperability is based on shared understanding amoung interoperating objects.
+
+Syntactic interoperability allows shared understanding of operation signature.
+	> Allows values to pass through all transport layers transparently.
+
+Semantic interoperability is based on objects' abilities to coordinate their functioning
+based on a shared understanding of the semantics.
+
+Formal DbC contracts improve semantic interoperability. Hence, they have an important
+contribution to make.
+
+DbC constraint writing in OCL is a form of coding. It is more abstract than 3GL programming,
+or which is procedural languages or high level languages.
+
+An example of an electric motor can be used to illustrate precision vs. detail.
+
+You can have very precise specs for the motor while having no details for the internals.
+
+Abstraction is the supression of irrelevant details, not vagueness.
+
+Can infer operations from DbC constraints. Pres map directly to an exception to be thrown
+when an operation is invoked, and the precondition is not satisfied.
+
+A lot of tool supports exist now for checking constraints at runtime.
+
+DbC can provide a framework for Quality Assurance, or QA.
+
+Pres, Posts, and Invs represent much of what QA engineers validate.
+
+DbC constraints can be used by code generators to produce test harnesses or for program
+vertification.
+
+Even when not used automatically, DbC constraints act as precise guides to QA engineers
+regarding what they must test.
+
+There are other non-functional factors such as scalability and performance, that are not
+covered by DbC assertions, but other UML extensions can be used.
+
+The main barrier to effective use of DbC is software dev pressure.
+
+Rigourous DbC can be time consuming.
+
+UML class diagrams act as constraints on instances of those classes.
+
+Class models with DbC do not describe control flow and state changes inside code, or
+how objects interact.
+
+They are static structures rather than behavioural models such as use-cases, state machines,
+activity diagrams, and sequence diagrams.
+
+However, a DbC based class model does describe behaviour when it specifies Pres and Posts for
+class operations.
+
+Behavioural modelling is at least as important to MDA (model driven architecture) as static
+modelling.
+
+Some of the most advanced industrial MDA is based on behavioural modelling, like Shlaer-Mellor
+systems, which uses state machines to generate embedded code for devices.
+
+State machines fall into one of two categories:
+	> One deals with transitions of public class attributes, visible to clients.
+	> This is a protocol state machine.
+
+For a DbC class, all the info in such a state machinewould also be available in the class
+model.
+
+Protocol state machines are another representation of information available that a correct DbC
+based class model provides.
+
+A note, DbC constraints can convey more and be more complex than a state machine.
+
+
+

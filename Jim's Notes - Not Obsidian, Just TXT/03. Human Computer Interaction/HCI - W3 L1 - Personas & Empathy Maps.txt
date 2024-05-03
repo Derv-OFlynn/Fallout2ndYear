@@ -1,0 +1,178 @@
+Human Computer Interaction - Personas and Empathy Maps
+----------------------------------------------------------------
+
+There is no nest UI style or approach for all users.
+
+Consider:
+	> Experts vs. Novices
+	> High Freq. vs. Sporadic Use
+
+We use User Research to idenfity the characteristics of users of the program:
+	> Psychological Characteristics (motivation, attitude, etc.)
+	> Knowledge and Experience (tpying skill, task proficiency)
+	> Job and Task Characteristics (frequency of use, task structure)
+	> Physical Characteristics (large/small person, color blindness, etc.)
+
+Personas are meant to identify the user motivtions, expectations, and goals responsible for
+driving online behaviour, bring users to life by giving them names, personalities, and often
+a photo.
+
+Personas originated in the field of marketing, but in 1999 a man named Cooper pitched
+their use in systems design.
+
+The persona is used to capture user characteristics, goals, personal backgrounds, and more.
+
+Multiple personas can be used to capture multiple characters.
+
+There are three layers for designing personas:
+	> Establishing requirements
+	> Elaborating relationships
+	> Making 'em human
+
+The most basic persona will only include the first layer, while the most elaborate will
+extend to all three layers.
+
+Layer 1 will include establishing requirements:
+	> Key Distinguishing Features
+	> Descriptive Dimensions
+	> Objectives and Motivations
+	> Source
+
+Layer 2 will include elaborating relationships:
+	> Concerns
+	> Scenarios
+	> Quotes
+
+Layer 3 will include making 'em human:
+	> Personal Background
+	> Photo
+	> System Features
+	> Demographic Info
+	> Tech Comfort
+
+Some of the benefits of personas include the following:
+	> More usable designs.
+	> More user-centered discussions.
+	> More effective communication in design teams.
+
+Personas create a strong focus and users and their context.
+
+We use our mind's ability to extrapolate from partial knowledge of people to create coherent
+wholes and project them into new situations.
+
+This also helps in discussions: "Why are we building this feature? Would Kate use it?".
+
+Personas also provide a medium for communication - how many team members will realistically
+read market research and usability reports?
+
+"Kate had problems finding this feature" vs. "A selection of users had problems finding this
+feature".
+
+Personas are a useful tool in a human centered design approach to understand and communicate
+user needs and requirements.
+
+If designers want to test potential solutions, but don't have continuous access to end-users,
+they can create fictional characters that can be used to represent a collection of the kinds
+of people who could be using that potential solution, called personas.
+
+Some researchers have criticized personas:
+	> Real users are often perferable to personas -
+	> BUT, real users are often not accessible or available.
+
+An empathy map is a single, easy-to-digest visual that captures knowledge about a user's
+behaviours and attitudes.
+
+It is a useful tool to help system development teams better understand their users.
+
+Empathy mapping is a simple workshop activity that can be done with stakeholders, project
+managers, systems analysts, and programmers.
+
+An empathy map is a collaborative tool.
+
+It allows the team to gain a better understanding of their customers.
+
+Empathy maps can be used to elaborate on user personas.
+
+Empathy maps bridge the gap from persona to design.
+
+Creating an effective solution requires understanding the true problem and the person
+experiencing it.
+
+The exercise of creating an empathy map helps participants consider things from the user's
+perspective, along with their goals or challenges.
+
+Empathy maps are most useful at the beginning of a design process:
+	> AFTER user research but
+	> BEFORE requirements and preliminary designs.
+
+The mapping process can help synthesise research observations and reveal deeper insights
+about a user's needs.
+
+They ought to be based on research data, but can be built using knowledge gathered from
+internal participants - or using existing personas.
+
+When icnluded in early project stages, the empathy maps help development teams enter the
+user's world and approach things from their POV:
+	> Better understanding of the user.
+	> Distilled information in one visual reference.
+	> Callouts of key insights from research.
+	> Fast and inexpensive.
+	> Easily customizable, based on available info and goals.
+	> Common understanding among teams.
+
+The empathy map is made up of four quadrants: say, do, think, and feel.
+
+The exact format varies, but often:
+	> Thinking - What is the user thinking? What does this tell us?
+	> Saying - What are some quotes and defining words from your user?
+	> Doing - What actions and behaviours did you notice?
+	> Feeling - What emotions might your subject be feeling?
+
+Other common additions include:
+	> Pains - Challenges and obstacles faced by the user.
+	> Gains - Goals your user hopes to accomplish.
+
+Alternate quadrants to use are:
+	> Think & Feel - What really counts? Major preoccupations? Worries and aspirations?
+	> Hear - What coleagues, managers, sys dev people, and friends are saying.
+	> See - What does the person see? Environment, friends, workplace, etc.
+	> Say & Do - What are the users actually saying and doing in their work?
+
+Another addition to this alternate set is, again, pain and gain:
+	> Pain & Gain - What are the users attitudes and behaviours in work and to other?
+
+Pain can be fears, frustrations, and obstacles, and Gain can be wants and needs, measures of
+success, and obstacles.
+
+Empathy maps can be seen used at the beginning of the design process, but, crucially, after
+user research.
+
+Sometimes when time is a factor, empathy maps may be done without user research, and based
+solely on existing knowledge and stakeholder feedback.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

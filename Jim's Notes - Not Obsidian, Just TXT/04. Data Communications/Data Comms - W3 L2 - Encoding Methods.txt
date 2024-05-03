@@ -1,0 +1,126 @@
+Data Communications - Encoding Methods
+-------------------------------------------------------
+
+Modulation is the technique used to encode digital data onto an analogue signal.
+
+The most common application for modulation is the transmission of data across the Plain old
+Telephone System, or PoTS.
+
+There are three types of modulation technique: Amplitude, Phase, and Frequency shift keying.
+
+With each technique, the modulator has two inputs: one for the data stream, and one for the
+carrier signal, a sine wave of frequency F/C Hz.
+
+The modulator modifies one of the parameters of the carrier signal to represent the data,
+and the modulated signal is then passed to output.
+
+PSK, or phase shift keying, is a modulation process which modulates, or changes, the phase
+of a constant frequency to represent bits.
+
+To send a zero, we can send a constant signal, with the same phase, amp, and frequency.
+
+To send a one, we can interrupt this by shifting the phase.
+
+ASK, or amplitude shift keying, modifies the amplitude of the carrier signal to represent
+the data. It allows one of the following to pass to the output:
+	> A full amplitude signal.
+	> A zero amplitude signal.
+	> Recall the carrier is operating at F/C Hz.
+
+For encoding purposes:
+	> To encode binary zero, the zero amplitude is passed to output.
+	> To encode binary one, the full amplitude carrier is passed.	
+	> These are also called Space and Mark.
+
+FSK, or frequency shift keying, modulates the frequency to represent data.
+
+For this, the modulator can be considered as having access to two other signals.
+	> One operating at F¹ Hz.
+	> Another operating at F² Hz.
+	> Where F¹ < F/C < F², and F/C is the frequency around which the signal is centered.
+
+For zero, F¹ is passed to the output, and for one, F² is passed to the output.
+
+FSK can be used for Full Duplex communications, wherein two analogue signals can co-exist
+on a single transmission path, provided they are of different frequencies.
+
+This allows for communications in both directions simultaneously.
+
+Each direction of communication occurs in seperate spectrums, with each spectrum representing
+a seperate channel of communication, an uplink and a downlink channel (1170 Hz and 2125 Hz).
+
+Within each channel, two seperate frequencies are used to encode Marks and Spaces.
+
+With each of the shift keying techniques in mind, the following analysis can be considered:
+	> With each technique, two versions of the carrier are used to represent the data,
+	  i.e. two amps, freqs, or phases.
+	> This presents two different levels.
+	> Analogue encoding allows for larger M values to be used in Nyquist's formula.
+
+Quadrature PSK is similar to PSK except the modulator can transmit the signal in one of four
+forms:
+	> In-Phase, i.e. no modification
+	> Phase-Shifted by multiples of 90∘.
+
+Using this technique provides four different levels to encode data, meaning that each
+modification of the carrier signal is able to carry 2 bits instead of 1 bit.
+
+For encoding purposes, consider:
+	> 00 is unmodified.
+	> 01 is the signal shifted by 90∘.
+	> 10 is the signal shifted by 90∘ x 2, or 180∘.
+	> 11 is the signal shifted by 90∘ x 3, or 270∘.
+
+Modulation rate is measured in baud. The relationship between modulation and data rates is:
+	> D = R / B.
+	> Where D = Mod, R = Data Rate, and B = Bits/second.
+
+It can also be expressed as D = R/log₂L, where D and R are as above and L is the number
+of levels per signal element.
+
+The BW of the transmission systen limits the frequencies that can be transmitted, which limits
+the data rate.
+
+From analysis of phase shift keying techniques it was shown that:
+	> PSK allows for one-bit encoding per signal element.
+	> QPSK allows for two-bit encoding per signal element.
+
+If the carrier signal is transmitted at the maximum frequency allowed by the Tx Sys BW then
+it is clear that the Data Rate is higher when using QPSK.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

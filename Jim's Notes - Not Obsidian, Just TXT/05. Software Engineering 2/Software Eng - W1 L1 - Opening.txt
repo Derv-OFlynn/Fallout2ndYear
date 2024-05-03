@@ -1,0 +1,197 @@
+Software Engineering - Opening
+------------------------------------------
+An example of a system that might need to be created for a business is a bookings system
+for a restaurant.
+
+Some of the activities involved in the early development of this system will be informal
+specification, use case modelling and definition, creating domain model, and glossary.
+
+Specifically for the restaurant, some functionality required might be recording advance
+bookings (name, phone number, number of diners), recording walk-ins, allocating bookings
+to tables, and cancellations.
+
+The first system iteration should implement the minimal useful system.
+
+The basic required functionality is recording bookings, and updating booking info.
+
+This system at this stage could then replace manual sheet recording.
+
+Use Case view is intended to provide a strucrtured view of the system's functionality.
+
+Based around a description of how users interact with the system.
+
+This is supported by UML as use case diagrams.
+
+It also serves as the starting point for all subsequent development.
+
+Use cases describe the different tasks and interactions users can perform while
+interacting with the system.
+
+The perliminary list for the bookings system includes:
+	> Record info about new booking.
+	> Cancel a booking.
+	> Record arrival of a customer.
+	> Move a customer between tables.
+
+Actors are the roles users play when interacting with a system.
+
+For the restaurant system, these might include things like:
+	> Receptionist (makes bookings).
+	> Head Waiter (assigns tables).
+
+Individual users may play one or more roles at different times.
+
+Customers are not users in this particular system, and are not recorded as actors.
+
+Use case diagrams show these use cases and actors, and which actors perform which cases.
+
+A use case comprises all the possible interactions that a user can have when performing
+a given task.
+
+These are described as "courses of events", or scenarios.
+
+A full description of a use case includes:
+	> A basic course of events.
+	> A number of alternate and exceptional courses of events.
+
+The basic course of events describes what happens in the normal case.
+
+For example, in record booking, this would be:
+	1. Receptionist enters date.
+	2. System displays bookings.
+	3. Receptionist enters details.
+	4. System records and displays new booking.
+
+Often a dialogue between system and user.
+
+There will also be an alternative course of events, in this case if no table is available:
+	1. Receptionist enters date.
+	2. System displays bookings.
+	3. No table available, and so it ends here.
+
+There will also be exceptional courses of events, such as in situations where a mistake is made.
+
+An example might be where a booking has been allocated to a table too small for it:
+	1. Receptionist enters date.
+	2. System displays bookings.
+	3. Receptionist enters details.
+	4. System asks for confirmation for oversize booking.
+	5. If "no", use case terminates with no booking.
+	6. If "yes" booking recorded with warning flag.
+
+UML does not have a standard format for use case descriptions.
+
+Various templates have been defined to structure descriptions.
+
+Essentially a list of subheadings such as:
+	> name
+	> actors
+	> courses of events
+
+When writing use cases, it is often useful to have a rough idea of the planned user interface.
+
+Different use cases can overlap and share functionality.
+
+For example in the "Record Arrival" use case:
+	1. Head Waiter enters date.
+	2. System displays bookings.
+	3. Head waiter confirms arrival for booking.
+	4. System records this and updates display.
+
+The first two steps are shared with "Record Booking", even though it is a different case
+with a different actor.
+
+Move shared functionality to a seperate use case, such as "Display Bookings", and then
+include this in other use cases.
+
+The "include" dependency shows that a secondary external use case is to be included.
+
+The receptionist can display bookings without performing the use case "Record Bookings".
+
+Head waiters can also display bookings.
+
+Introduce a more general actor to show what the other two have in common, and make
+the initial two specializations of the general actor.
+
+Recording a walk-in can be described as an exceptional sequence of events - someone arrives
+but there's no booking recorded.
+
+It could be a seperate use case, and can then extend "Record Arrival".
+
+The idea of extension like this is also a dependency.
+
+Domain modelling is using UML to construct a model of a real-world system.
+
+The model is recorded as a class diagram.
+
+Seamless development allows the same notation to be used for analysis and design,
+and design can evolve from the initial domain model.
+
+Classes represent real-world entities.
+
+Associations represent relationships between these entities.
+
+Attributes are the data held about the entities.
+
+Generalizaton can be used to simplify the structure of the model.
+
+WHen defining a relationship, we give a name to it.
+
+A customer can make many reservations.
+
+How many people can make one reservation? One principal contact whose details are held,
+and the expected number of diners are modelled as an attribute of the reservation.
+
+Table number could be an attribute of reservation, but it is better modelled as a seperate
+class.
+
+Tables exist even if there are no reservations, and other attributes about the tables, such
+as size can be stored.
+
+Not all domain properties can be shown graphically. It should be impossible to double-book
+a table.
+
+Constraints add information to models. They are written in a note connected to the model
+element being constrained.
+
+A superclass can be used to show the properties shared by different types of booking.
+
+How do we know when a domain model is complete? We don't, there are lots of plausible
+models in most cases.
+
+Domain modelling is not an end in itself, but a guide to further development.
+
+Realizing use cases tests the domain mode, and usually leads to further refinenement.
+
+Domain models capture important system concepts.
+
+It is useful to record these terms and their definitions for use throughout a project.
+
+We do this in the form of a glossary.
+
+For the restaurant, this might include:
+	> Booking - an assignment of diners to a table.
+	> Covers - the number of diners for a bookking.
+	> Customer - a person who makes a reservation.
+	> Reservation - a booking made in advance.
+	> Walk-In - a booking not made in advance.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

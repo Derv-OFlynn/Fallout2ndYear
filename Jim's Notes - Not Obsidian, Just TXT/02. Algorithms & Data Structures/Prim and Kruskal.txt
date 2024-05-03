@@ -1,0 +1,125 @@
+Prim and Kruskal Tutorial Video - Notes
+----------------------------------------------------
+
+G represents Graph, and consists of (V, E).
+
+V represents the set of all Vertices (1, 2, 3) while E represents edges ([1, 2], [2, 3], [1, 3]).
+
+A spanning tree is a sub-graph of a graph.
+	> A spanning tree uses ALL of the vertices in the graph.
+	> It uses a limited set of the edges in the graph.
+
+The spanning tree can be defined as all vertices, and V-1 edges.
+
+Which edges are selected depend on the kind of spanning tree.
+
+For a given graph, the number of spanning trees that can be defined is E Choose (E - N), where N is the number
+of edges excluded from the spanning tree.
+
+The number of edges that can be exluded depends on the number of cycles in the graph.
+
+We end up with E Choose (E - 1 - No. Cycles).
+
+A weighted graph gives a weight to each edge in the graph, which can represent distance or some other value.
+
+When making a spanning tree on a weighted graph, the spanning tree has a weight equal to the combined weights of
+the edges included in the tree.
+
+If we want to determine what the minimum weight for the spanning tree is, we will need to use an algorithm, as
+it would be impractical to go through all of the different potential trees manually.
+
+Two methods for this include Prim's and Kruskal's algorithms.
+
+
+
+
+Prim's Algorithm Example
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This is a greedy approach.
+
+First, select a minimum cost edge. In the example, this is A - F, 10.
+
+Now we take the next lowest weighted edge which is connected to one of the previously visited vertices.
+
+In this example, we would look to the other edges connected to A and to F.
+
+Out of the two possible choices, F - E, 25, is the minimum, so we add this edge to the tree.
+
+The next minimum is E - D, 22. Then is D - C, 12, then C - B, 16.
+
+The last edge to be added is B - G, 14. This edge completes the tree by connecting all vertices.
+
+The final cost of this tree is 99.
+
+If the graph is disconnected, Prim's algorithm, and no other algorithm, can get an MST, as no spanning trees exist.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+Kruskal's Algorithm Example
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This is also a greedy approach.
+
+First we select a minimum cost edge. Again, this is A - F, 10.
+
+From there, we move directly to the next smallest, C - D, 12.
+
+Then is B - G, 14, followed by B - C, 16.
+
+By the rules thus far, the next selected edge should be G - D, 18.
+
+However, if we select this, we create a cycle from G - D - C - B.
+
+If selecting a minimum cost edge would create a cycle, we don't include it in our solution.
+
+Because of this, the next up is D - E, 22. Then would be E - G, but that would form a cycle, and is discarded.
+
+The next minimum is E - F, 26. This leaves us with a cost of 99.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+Kruskal's Algorithm, by default, has an time complexity of O(N^2).
+
+To improve it, we can use a minHeap.
+
+If minHeap is used, it will always give a minimum value. Whenever a value is deleted, a minimum will be returned,
+and you won't have to search.
+
+This changes the time taken to O(N Log N).
+
+We can use these algorithms to solve problems.
+
+For example, we have a graph with two missing weights, we can determine the minimum possible values that could
+occupy those edges.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,107 @@
+Legal and Professional Studies - GDPR and Data Protection
+---------------------------------------------------------------
+
+The Data Protection Directive in 1995 was a reset for European Data Protection laws.
+
+All member states were obliged to align with it and thereby improve protections for personal
+data.
+
+Simultaneously, it reduced the burdens impeding the free flow of data through the EU.
+
+It established rules for transporting data outside of the EU, e.g. US-EU Safe Harbour.
+
+This asserted that US data protection laws were sufficient for the protection of personal
+date originating in the EU, as long as the US recipient observed a set of data protection
+principles.
+
+It was found to be in breach of the DPD in 2015, but supported considerable business
+activity for 15 years.
+
+The 2003 Data Protection Act enacted the requirements of the DPD.
+
+It was founded on 8 principles:
+	> Obtain and process information fairly.
+	> Data must be kept for a specified, lawful purpose.
+	> Data should be used and disclosed only for the specified purpose.
+	> The data must be kept safe and secure.
+	> The data must be kept accurate, up-to-date, and complete.
+	> The data must be relevant, adequate, but not excessive.
+	> The data must be retained for no longer than necessary.
+	> A copy of the data must be made available to the data subject on request.
+
+These principles clearly laid out the general aims of the ct, which made it reasonably simple
+to determine whether an organisaton was meeting obligations.
+
+There was some complexity in the broader act, however, and repeated amendments and updates
+meant that it continued to grow and become more unwieldy as time went on.
+
+Across the EU, other, similar legislation was enacted, but through a combination of time and
+varying national interests, no two national laws were sufficiently similar for an organisation
+to be compliant both in its home country and all other EU member states.
+
+The free flow of information was effectively inhibited because the different regulatory
+environments clashed on matters of detail.
+
+Businesses and governments alike were required to arrange processed specific to an
+increasing array of scenarios.
+
+GDPR, or the General Data Protection Regulation, came in in 2018.
+
+It was a law that entered into force across the whole of the EU simultaneously.
+
+It was not dependent on intepretation by local government, courts, or authorities.
+
+Because of the legal weight of the regulation, they typically take longer to pass through
+the legislative process, but also ensure greater consistency across the EU.
+
+A data controller is a natural or legal person, public authority, agency, or other body,
+which, alone or jointly with others, determines the purposes and means of processing
+personal data.
+
+A data processor is a natural or legal person, public authority, agency, or other body,
+which process personal data on behalf of the controller.
+
+A data subject is "an identified or indentifiable natural person".
+
+There is no restriction on their nationality, or place of residence, so a data subject
+can be from anywhere in the world.
+
+Equally, however, a data subect has to be a person. A corporation or other entity cannot
+be a data subject, and information on those subjects has no protection under the regulation.
+
+Personal data means any information relating to an indentified or identifiable natural
+person, one who can be identified directly or indirectly by reference to an identifier.
+
+These identifiers can include a name, ID number, location data, online identifier, or to
+one or more factors specific to the physical, physiological, genetic, mental, economic,
+cultural, or social identity of that natural person.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

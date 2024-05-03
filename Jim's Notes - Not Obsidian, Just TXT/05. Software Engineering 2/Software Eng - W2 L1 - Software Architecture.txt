@@ -1,0 +1,208 @@
+Software Engineering - Software Architecture
+-----------------------------------------------------
+https://docs.google.com/presentation/d/1CojTV48Bh43kDQ2HxvxaIoHf2ZJBtZJc/edit#slide=id.p12
+
+When designing a system, the system requirements must be analyzed to demonstrate their
+implementability.
+
+We do this by drawing interaction diagrams realizing use cases.
+
+From requirements, we get:
+	> Use case descriptions, which document external interactions with software.
+	> The domain model, which defines the relationships between important business
+	  concepts.
+
+Analysis is about finding out how objects derived from the domain model an be made to
+cooperate in such a way as to implement the behavior described in use cases.
+
+The Unified Process, or UP, is a software development framework used for OOP modelling.
+
+Analysis in the UP occurs mostly in the elaboration phase.
+
+Use case realization leads to a more comprehensive class diagram, usually a refined version
+of the domain model.
+
+Besides use case realizations, another important product of the analysis workflow is the
+Software Architecture Description, or SAD.
+
+It is difficult to draw a clear boundary between analysis and design.
+
+Traditionally, analysis models the real-world system, and design models the software.
+
+Object-oriented methods use the same notation for both, encouraging seamless development
+and iteration.
+
+We need to define attributes and operations for each class in a model. 
+
+We start from the domain model, but:
+	> Structure of real-world applications are not always optimal for a software system.
+	> The domain model does not show operations.
+
+Each clas in a system should have well-defined resposibilities.
+	> To manage a subset of data in the system.
+	> To manage some of the processing.
+
+The responsibilities of a class should be Cohesive:
+	> They should belong together.
+	> They should form a sensible whole.
+
+The UP analysis workflow includes the production of the SAD.
+
+This defines:
+	> The top-level structure of subsystems.
+	> The role and interaction of these subsystems.
+
+Typical architectures are codified in patterns:
+	> For example, layered architectures.
+
+Subsystems are shown as UML packages, linked by dependencies.
+
+A dependency without a stereotype means "uses".
+
+Layers aim to insulate a system from the effects of change.
+
+For example, UI often changes:
+	> But the application layer does not use the presentation layer.
+	> Changes to the system should be restricted to presentation layer classes.
+
+SImilarly, details of persistent data storage are seperated from application logic.
+
+Within this architecture, objects can have various typical roles:
+	> Boundary objects interact with outside actors.
+	> Control objects manage use case behaviour.
+	> Entity objects maintain data.
+
+These are represented explicitly in UML using analysis class stereotypes.
+
+Class stereotypes can be text or a graphic icon.
+
+The icon can replace the normal box.
+
+See slide 12 of the google slideshow for the graphic icons to represent each:
+
+For use case realization, we begin functionality with the application layer.
+
+For this particular example, we are using the restaurant booking software from W1 L1.
+
+"Display Bookings" is a simple dialogue. The User provides the required date and the system
+responds by updating the display.
+
+The initial realization of this consists of:
+	> Instance of the "Staff" actor.
+	> An object representing the system.
+	> Messages passed between them.
+
+System messages are those coming from outisde the software, to the software.
+
+This could be clicking on an "OK" button or entering a number.
+
+Internal messages are from object to object within the software.
+
+The UP advocates the use of a boundary class between the ator and the application classes,
+for the purpose of recieveing system messages.
+
+However, analysis modelling is chiefly concerned with use case realization within the
+application layer.
+
+A boundary class refers to the presentation layer and so we can ignore it.
+
+In general there are several system messages in a use case, and it is important that they are
+handled in the correct order, and that the correct objects respond to them.
+
+This is the role of a control object.
+
+System messages are sent by an actor. The system is represented by a controller.
+
+In a sequence diagram, time is passing fromt top to bottom.
+
+Instances of classes and actors are at the top, each one with a lifeline.
+
+Messages between objects are shown as arrows between lifelines.
+
+They are labelled with an operation name and parameters.
+
+Return messages, which are dashed lines, show a return of control.
+
+Activations show when a reciever has control.
+
+How does the system retrieve the bookings to display, and what object should have the
+responsibility of keeping track of them?
+	> Can't be an additional responsibility of "Booking System", low cohesion.
+	> Better to be assigned to another object.
+	> Create a new object called "Restaurant" with the responsibility of managing the data.
+
+When retrieving bookings, we add a message to get relevant bookings.
+
+"updateDisplay" is an internal message, and will be sent to the presentation layer object.
+
+See slide 19 in the powerpoint for the diagram.
+
+When retrieving booking details, the dates of individual bookings will need to be checked
+by the restaurants object.
+
+This realization has involved:
+	> New "Restaurant" and "BookingSystem" classes, with an association between them.
+	> An association from "Restaurant" to "Booking".
+	> An association from "BookingSystem" to "Booking".
+
+
+Operations are derived from messages sent to the instances of a class.
+
+We give "Restaurant" the responsibility of creating new bookings.
+
+Bookings must be linked to table and customer objects.
+	> The responsibility of restaurant to retrieve this given identifying data in details.
+
+New objects shown at point of creation:
+	> Lifeline starts at that point.
+	> Objects created by a message arriving at the instance.
+
+This completes the previous diagram.
+
+Cancelling a booking is a three-stage process:
+	> Select on screen the booking to be cancelled.
+	> Confirm cancellation with user.
+	> Delete corresponding booking object.
+
+Object deletion represented by a message with a "Destroy" stereotype.
+
+Role names used to distinguish seleced objects from others displayed.
+
+See slide 27 for "CancelBooking" sequence diagram.
+
+"BookingSystem" has the responsibility of remembering which booking is selected.
+
+We add an assocation to record this.
+
+When recording an arrival, the selected booking must be a reservation.
+
+Should "setArrivalTime" be defined in the Booking, or Reservation class?
+	> On one hand, it doesn't apply to walk-ins.
+	> On the other, we want to preserve a common interface if possible.
+
+We define the operation in the Booking class:
+	> Default implementation does nothing.
+	> Override in Reservation class.
+
+See slide 31 for the refined class hierarchy.
+
+To summarize:
+	> Analysis has led to a set of use case realizations, and a refined class diagram.
+	> We can see how the class design is going to support the functionality of use cases.
+	> This gives confidence that the overall design will work.
+
+See slide 34 for some Analysis Exercises.
+
+
+
+
+
+
+
+
+
+
+
+
+
+

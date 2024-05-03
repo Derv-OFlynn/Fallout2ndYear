@@ -1,0 +1,329 @@
+Legal and Professional - Theme 4 - Intellectual Property Revision
+------------------------------------------------------------------------
+
+Overview
+~~~~~~~~~~~~~~
+IP rights have evolved since 15th century legislation.
+
+Different types of intellectual property protection can be either registered or unregistered.
+
+Registered:
+	> Patents
+	> Trade Marks
+	> Registered Designs
+	> Domain Names
+
+Unregistered:
+	> Copyright
+	> Unregistered Trade Marks
+	> Unregistered Design Rights
+	> Confidential Information
+
+IP law is implemented on a 2 tier system.
+
+A national patent office is responsible for accepting, processing, and granting patents, trademarks, and registered
+design rights.
+
+National courts are responsible for providing a forum in which IPR infringements can be enforced, and IPR validity
+to be contested.
+
+
+
+Confidential Information
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+No registration required.
+
+Must be protected by an agreement to keep the information confidential.
+
+Covers anything that has a necessary quality of confidence about it.
+
+Must not be in the public domain.
+
+For duty of confidence, the info must be communicated, and the confidant must reasonably know it to be in confidence.
+
+For a breach of confidence, there must be a risk of damage from the information being used or disclosed.
+
+This is generally used to protect technical and commercial info which would be unpatentable.
+
+Companies should ensure adequate steps to keep details secret, and that everyone in the organisation knows this.
+
+A non-disclosure agreement should be used when disclosing important know-how, and should be signed by the party
+prior to the disclosure.
+
+A breach of confidentiality is typically a breach of contract and is treated as such in courts.
+
+
+
+Patents
+~~~~~~~~~~~~~~
+A patent is a monopoly right in an invention.
+
+It covers how something works, what it does, how it is made, and what it is made from.
+
+In certain situations, it can even apply to software based inventions.
+
+They were first established in the 15th century, and granted to specific manufacturers and traders.
+
+The monopoly right granted by a patent can be used to restrict others from making or selling an invention.
+
+Patents only apply to the relevant country in which they are obtained.
+
+Legal proceedings for an infrigement only apply after a patent has been granted.
+
+It is possible to back date a claim for damages to the date of publication of the patent application.
+
+A patent requires novelty, an inventive step, and industrial applicability.
+	> Novelty - Absolute Requirement. Invention must not have been published or made available publicly
+		    anywhere in the world before the patent was filed.
+
+	> Inventive Step - Must not be obvious to a skilled person having regard to the state of the art. In other
+			   words, not obvious to someone skilled in that area in light of all relevant knowledge
+			   publicly know before the patent was filed. The skilled person is assumed to have read
+			   all relevant materials, but not to be imaginitive or inventive.
+			 - An invention is obvious only if it follows logically from what has come before it.
+
+	> Indistrial Applicability - Generally used to exclude impossible inventions, such as perpetual motion.
+
+Patent law excludes several things, such as: scientific or mathematical discoveries, aesthetic/artistic creations,
+methods or rules for playing a game or doing business, a program for a computer, plants, animals, or biological
+processes, methods of treatment for human and animnal bodies surgically or therapeutically, or inventions where
+the industrial explotation of the invention would be contrary to common good, such as a pipe bomb.
+
+Computer programs and inventions may be patentable, but often fall into the "methods or rules for playing a game or
+doing business" area of exclusion, and end up unpatentable.
+
+A patent application must include:
+	> A technical description, specification, which is clear and complete enough for the invention to be
+	  reproduced by a person skilled in the relevant technology.
+	> One or more claims, which define, in words, the matter for which protection is sought. These claims will
+	  be later used to determine protective scope, and what is an infringement.
+
+The patent office searches for existing patents which fall inside the scope of the claims mentioned above.
+
+18 months after filing, the results of this search and the contents of the patent application are made public.
+
+After this comes an examinations period, after which the patent may or may not be granted.
+
+If granted, an annual renewal fee must be paid to keep the patent in force, subject to a maximum 20 years.
+
+The Paris Convention is a document which was drawn up to make the absolute novelty requirements that countries
+apply compatible with the possibility of filing for patent protection in multiple territories.
+
+It provides priority rights to an applicant to allow them to file subsequent applications within 12 months of their
+first for that invention and benefit from the filing date of the first.
+
+Collective patent systems can be used for filing patent applications covering more than one country:	
+	> European Patent Convention - Doesn't ultimately result in a collective patent, but breaks down into a bundle
+				       of various national patents, as though filed seperately across countries.
+	> Patent Cooperation Treaty - Provides provisional protection in over 100 countries, subject to national law.
+
+Some jurisdictions offer a petty patent model, wherein there are lowers costs and shorter durations.
+
+There are several differences to the way patents work in the USA.
+
+Patents are called Utility Patents, and Registered Designs are called Design Patents.
+
+Entitlement to a patent is on a first-to-invent rather than first-to-file basis.
+
+A disclosure made within 12 months prior to filing is not counted against the patent.
+
+Much less subject matter is excluded from patentability.
+
+
+
+Copyright
+~~~~~~~~~~~~~~
+A copyright automatically protects original works.
+
+This extends over a wide range of fields like books, plays, paintings, broadcasts, photos, etc.
+
+It doesn't just protect an idea, it protects the expression of the idea.
+
+Dates back to ancient Greece and Rome, and was even recognised by Brehon law.
+
+Works protected include:
+	> Original literary, musical, dramatic, and artistic works.
+	> Published editions of works, sound recordings, films, and broadcasts.
+	> Computer programs, their preparatory materials.
+	> Operating manuals, instruction books, and publicity material.
+
+Registration is not required, but a carefully signed and dated evidence of the original work is wise to keep.
+
+Protection exists automatically once the work has been fixed in some manner.
+
+Must be original, and may be marked with the "C" copyright symbol, although not necessary in Ireland.
+
+Copyright can be sold, bought, or otherwise transferred or licensed.
+
+There is no copyright in names, slogans, phrases or jingles, etc.
+
+Protection prevents others from:
+	> Copying the work, or issuing copies to the public.
+	> Performing, showing, or playing the work publically.
+	> Broadcasting or adapting the work.
+	> Possessing, selling, exhibiting, or otherwise dealing with an infringing copy.
+
+There are extra rights for software, which can prevent others from making permanent or temporary copies of the program,
+including where this is required to run, store, load, or display the program.
+
+Lawful acquirers will have the right to use a computer program for its intended purpose.
+
+The copyright owner can prevent translation, adaptation, arrangement, or otherwise alteration of the program.
+
+They can also prevent circulation of a device to unauthorisedly remove or circumvent technical protection devices.
+
+Non-literal copying applies too.
+
+Moral rights include the right to be identified as the author or directior of a work, the right to object to
+derogatory treatment of the work, and the right not to have a work falsely attributed to them.
+
+The duration of protection depends on the work, but is generally equal to the authors lifetime, plus 70 years.
+
+
+
+Database Right
+~~~~~~~~~~~~~~~~~
+A database may be protected by copyright, or by a database right, AKA Sui Generis.
+
+A database is usually defined as a collection of data or other material that is arranged systematically such that
+items are individually accessible.
+
+Copyright protection covers any forms of database falling within this definition, not just computer-based ones.
+
+For copyright protection, a database must have originality in the selection or arrangement of contents.
+
+Sui Generis is a special additional right which protects databases.
+
+The database must be the result of substantial investment.
+
+No registration is required, and the duration is 15 years from the creation or publication.
+
+An infringement is considered on extraction or reutilization of a substantial part of the database.
+
+
+
+Trade Marks
+~~~~~~~~~~~~~~~~
+Trade Marks protect the way in which goods and services are identified.
+
+They are widely recognised as valuable company assets.
+
+Trade Marks used to be a marking placed upon goods by their crafter.
+
+Trade Marks can be registered or unregistered.
+
+A disadvantage of unregistered ones is that it becomes far more difficult to prevent competitors from appropriating
+the goodwill of the mark.
+
+Must resort to common law and a legal action called "passing-off".
+
+A third party cannot legally pass of its goods or services as being yours or being associated with you.
+
+Trade Marks can be registered with a patent office.
+
+The applicant will then have the exlusive right to use of the mark in that territory.
+
+Registered Trade Marks use the circle "R" symbol, unregistered ones use the TM.
+
+A Trade Mark is a word or logo or a combo of such used to distinguish one's goods and services from a competitor's.
+
+A major part of a TM's value is the association with goodwill for a brand.
+
+This helps customers identify a business and the quality of its products or services.
+
+Brands are central to marketing programs. Many celebrities seek profit by merchandizing and using the rep of their name.
+
+Registering their name as a TM is a way to achieve this.
+
+A Trade Mark is first registered for 10 years, and can be indefinitely renewed on 10 year intervals.
+
+Only so long as it is in constant, relevant use.
+
+Almost anything, from words, shapes, logos, colors, smells, jingles, and more, can be a Trade Mark.
+
+A TM cannot be misleading, nor should it be descriptive or the goods or services covered.
+
+Surnames and geographical names can be tough to register.
+
+Laudatory terms normally may not be registered, and a TM must act as a badge of origin for a product or service.
+
+In addition to national TM registration systems, there are various collective systems through which TMs can be
+registered.
+
+The EU, for example, works a TM system.
+
+
+
+Domain Names
+~~~~~~~~~~~~~~~~
+Domain names are not strictly an IP right.
+
+They are simply an internet address leased from a domain register operator (.com, .org, .net).
+
+Have acquired a further significane in business identification, and as such have come into conflict with systems
+of business identification that have existed since before the internet, and are protected by IPRs.
+
+Cybersquatting involves registering a domain name identical to, or only a letter or two off a popular site, and
+waiting for people to come there looking for the real thing, to scam them or to pass of your product as authentic.
+
+Many registries have specific dispute resolution policies.
+
+Disputes can be resolved either by legal action or by dispute resolution procedure.
+
+Uniform Domain Name Dispute Resolution Policy, or UDRP works for abusive registrations with a TM involved.
+
+Remedy is limited, and includes cancellation or transfer of the domain registration, but no damages.
+
+Domain names are typically leased on a yearly basis.
+
+
+
+Design Rights
+~~~~~~~~~~~~~~~~~
+A Design Right is a monopoly right for the appearance or whole or part of a product.
+
+Protection can also be obtained for the getup of a product - graphical symbols and typographical typefaces.
+
+Laws protecting designs originated in the 18th century.
+
+Registration gives monopoly protection over the appearance of a design.
+
+For infringements, one must only show the two articles look the same.
+
+This initially lasts 5 years, renewable every 5 years to a maximum of 25.
+
+European Union operates a European registered design system.
+
+Unregistered designs are a version of copyright that protects any original aspect of the shape or configuration
+of the whole or part of an article.
+
+Here, independent production of a similar design is not infringement.
+
+Protection lasts 15 years from making, or 10 years from marketing, whichever expires earlier.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

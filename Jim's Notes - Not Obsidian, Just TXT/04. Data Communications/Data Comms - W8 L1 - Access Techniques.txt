@@ -1,0 +1,90 @@
+Data Communications - Access Techniques
+--------------------------------------------
+
+Star LANs use a central component known as a hub.
+
+There are two types of hub: shared medium, and switched LAN.
+
+A shared medium hub:
+	> Transmission from any station is repeated to all stations.
+	> Only one station can transit at any one time.
+	> This is the same behaviour as bus LAN.
+		- As a result, this is also known as a star shape bus LAN.
+	> Advantages of this type include that you can use existing buiding wiring.
+
+A switched LAN hub:
+	> Acts as a switch, i.e. the incoming frame is only passed to the addressed station.
+	> Frames from other stations can be switched simultaneously.
+	> Greater performance with this than shared medium.
+
+Switched LANs provide greater performance due to not having to deal with contention.
+
+Therefore, multiple simultaneous communications between pairs of stations can be facilitated.
+
+The specification for wireless LANs is called IEEE 802.11.
+
+THis spec defines two types of architecture: the Basic Service Set and Extended Service Set.
+
+The BSS typically comprises a number of mobile stations and a central base station called
+an access point.
+
+THe ESS typically comprises two or more BSSs with access points. The APs are usually
+connected via a distribution network.
+
+Like BSSs, ESSs define two types of stations:
+	> Stationary stations, connect via the Wired LAN, communicate on single wired LAN.
+	> Mobile stations, some of which can only communicate with a single BSS.
+
+The access techique deployed on a wireless LAN is CSMA/CA.
+
+THis is similar to CSMA/CD, as follows:
+	> Before a station can transmit, it must detect activity in the shared medium.
+	> Timers and Back-off periods are used if the frame is in use.
+
+Collision detection within a Within a Wired LAN relies on a Tx station being able to detect
+a collision.
+
+Due to distances between stations, not all transmissions are visible to all stations.
+
+This is called the hidden station problem.
+
+The range of B and the range of C both have them in range of A, but not of each other.
+
+If they wish to communicate, they must do so through A, but if they both try to communicate
+with A at the same time, the messages can collide, and lead to A recieving nothing.
+
+The approach to dealing with collisions on a WLAN is to avoid them in the first place.
+
+This technique is called collision avoidance.
+
+This technique uses fixed timers and a message exchange technique. When used with CSMA
+this is called CSMA/CA.
+
+The message exchange uses two messages: Ready to Send and Clear to Send.
+
+The timers used are called Short Inter-Frame Space and Distributed Inter-Frame Space,
+as well as Network Allocation Vector.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
