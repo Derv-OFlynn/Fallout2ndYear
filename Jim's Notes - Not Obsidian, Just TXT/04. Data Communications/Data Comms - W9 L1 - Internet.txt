@@ -1,0 +1,106 @@
+Data Communications - The Internet
+-----------------------------------------------
+From pervious discussions on LANs there are a variety of networking technologies available
+to facilitate communications between host computers.
+
+For ny given LAN implementation, host computers can only communicate with hosts attached to
+the same networking technology.
+
+It is not unreasonable to assume that many organisations may employ a variety of techs.
+
+Historically this can lead to the creation of islands of networks within organisations,
+based on differences in frame formats, electrical characteristics, or addressing schemes.
+
+Today there is a need to facilitate communication between any two hosts regardless of LAN.
+
+This is similar to telephone systems which facilitate communication between any two phones.
+
+For example, between a mobile and landline.
+
+THis is known as a univeral service, and is a fundamental networking concept.
+
+With a uiversal service, any user on any host in any part of an organisation can send
+messages or data to any other user without any knowledge of the networking tech.
+
+Whilst highly desirable, universal service can be difficult to achieve due to incompatibilities
+in networking technologies.
+
+The provision of universal service for host computers requires addressing problems associated
+with heterogeneous network techs.
+
+Internetworking introduces a new hardware component, and new software.
+
+Additional hardware is needed to provide a physical interconnection between LANs for the
+purpose of routing traffic.
+
+This hardware needs a physical connection to each LAN using the correct NIC.
+
+Additional software is required to address the lack of uniqueness and summary routing
+when using MAC addresses, and to introduce a single framing structure for all hosts.
+
+The result of this is a system of connected physical networks, known as an internetwork,
+or internet.
+
+THere is no restriction on the size of an internet, but there are many issues to consider.
+
+An example of a small internet could be 4 interconnected LANs.
+
+The hardware component in all this is the router.
+
+It is a special purpose computer used for interconnecting networks.
+
+It is like any other host computer, containing a CPU, RAM, IO, and more.
+
+A single router can be used to connect many LANs.
+
+To provide universal service, the routers must physically pass information between LANs.
+
+As already discussed, passing data directly between different LAN techs is impossible due to
+differing frame formats and addressing schemes.
+
+The software component, IP, fixes this. IP stands for internet protocol.
+
+IP addresses the issues by introducing a single, globally unique identification scheme
+called IP addressing.
+
+It also introduces a single framing structure, called a "packet" or "datagram", which is
+understood by all host computers.
+
+The routers combined with the internet protocol software makes universal access possible.
+
+However, internets are an abstraction. No such network exists in reality, and consequently
+they are called virtual networks.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

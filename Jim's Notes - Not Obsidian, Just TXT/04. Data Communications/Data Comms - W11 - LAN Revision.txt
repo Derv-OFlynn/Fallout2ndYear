@@ -1,0 +1,688 @@
+Data Communications - LAN Revision
+-----------------------------------------------
+
+PACK 13
+~~~~~~~~~~~~~~~~~~~
+A local area network is a private commuications network.
+
+They are used to interconnect the computing resources within an organisation.
+
+All devices attach to a shared transmission medium, and can provide data rates up to 1Gbps.
+
+This allows:
+	> Proliferation of computing devices.
+	> Growth in multimedia applications.
+	> Increased client/server applications.
+
+LAN can be classified based on their topology or layout, their transmission medium, or
+the access control used for the transmission medium.
+
+There are three broad types:
+	> PC LAN, or Access Layer
+		- Connect low cost devices.
+		- Used in most organisations.
+		- Cheap to implement and maintain, low speed and performance.
+	> Backend LAN, or Core Layer
+		- Used to connect high-cost devices.
+		- Bulk data transfer.
+		- Costly to implement and maintain, high speed and performance.
+	> Backbone LAN, or Distribution Layer
+		- Connects PC and Backend LANs.
+
+The use of a single LAN is undesirable, due to reliability, cost, and capacity.
+
+The three main LAN topologies are Bus, Ring, and Star.
+
+Bus:
+> Linear
+> Stations attach to bus using tap.
+> No closed loops.
+> Transmissions go both directions.
+> Bus ended in terminator device which removes signal.
+> Example is Ethernet.
+
+Ring:
+> Set of interconnected repeaters in a ring.
+> Repeaters recieve data on one link and retransmit bit-by-bit onto another.
+> Uni-directional links.
+> Each station attaches at repeater.
+> Transmission signal must be physically removed from the network.
+> Example is IBM Token Ring.
+
+Star:
+> Central hub, shared medium or switched LAN.
+> Each station is attached by two links, TX and RX.
+> All transmissions go by hub.
+> Example is ATM.
+
+Data on LANs is transmitted via Frames.
+
+Each frame contains data plus control information.
+
+Stations must gain access to the shared TX medium, and access must be provided fairly
+by some controlling mechanism.
+
+PACK 14
+~~~~~~~~~~~~~~~~~~~
+LANs can gain access to the TX medium using MAC, or medium access control.
+
+Gaining access to the LAN is fundamental for TX between stations.
+
+Access can be controlled centrally or distributedly, stations either obtain permission,
+or access is controlled by all stations together.
+
+Central Control:
+	> Advantages:
+		- Access logic at stations is simple.
+		- No co-ordination between stations.
+	> Disadvantages:
+		- Single point of failure.
+		- Potential bottleneck.
+
+Distributed access is more common, and comes up later.
+
+There are three generalised access control techniques:
+	> Reservation (Not Covered)
+	> Round Robin
+		- Each station takes turns.
+		- Very suited to stream traffic, long and continuous TX.
+	> Contention
+		- Each station contends for access when needed.
+		- Technique is distributed by nature.
+		- Works on a FISO basis.
+		- Very suited to bursty, i.e. short and sporadic traffic.
+
+Ethernet, which is an example of a Bus or Star LAN, uses a Contention MAC technique.
+	> Carrier Sense Multiple Access with Collision Detection, or CSMA/CD
+		- Random, requires each station to contend for access to TX medium.
+		- Most common technique for bus and star LANs.
+		- Defined under 802.3 standard.
+
+Under CSMA, if a station wishes to transmit data frames, the following steps occur:
+	1. The station listens to the medium for activity. This is carrier sense.
+	2. If the medium is clear of traffic, it begins transmission immediately.
+	3. If the medium is in use, the station waits a random period of time before it
+	   attempts to transmit the data frame.
+
+In normal operation, transmitting stations can send multiple frames and would expect ACKs
+in the return direction - ARQ (automatic repeat request) techniques like go-back-n or SelRej.
+
+However, it is possible with this technique for two stations to transmit at the same time,
+leading to a collision and a garbled transmission.
+
+Collisions are an example of frames going missing. They can lead to scenarios of out-of-
+sequence frames or missing RR messages.
+
+In the ARQ techniques, a TX station:
+	> Sets a timer for each frame TX.
+	> Expects an ACK from the destination station.
+	> Takes action after a timeout period using a Poll bit.
+
+CSMA results in poor utilization of the link. The medium remains unusable in the time to
+clear the collision, and the TX station is reliant upon a non-returned ACK to detect it.
+
+CSMA/CD was made to include collision detection to counteract this.
+
+As before, the station listens to the medium before attempting to transmit.
+
+During transmission, the station continues to listen for a collision:
+	> If a collision is detected, the station ceases transmission entirely.
+	> The station then transmits a brief jamming signal to inform all others.
+	> The station waits a random (delta) time before attempting a retransmit.
+
+Additional collisions are dealt with using a binary exponential backoff.
+
+If a collision occurs between transmissions from two stations, and they both attempt to
+retransmit ASAP, they will just get another collision, leading eventually to deadlock.
+
+To prevent this, the BEB algorithm is used.
+
+After a collision, time is divided into discrete slots, called Tslots.
+
+Their length is equal to 2t, where t is the maximum propogation delay in the network.
+
+The stations involved randomly pick an integer from set K, i.e. {0, 1}, and wait that
+number of time slots before trying again.
+
+This set is called the contention window.
+
+If the sources collide again because they picked the same integer, the set is doubled and
+becomes {0, 1, 2, 3}.
+
+Now the sources in the second collision use the second set, and wait that number of time
+slots before trying again.
+
+Before they try to transmit, they listen to the channel and transmit only if the channel
+is idle.
+
+This causes the source which picked the smallest integer in the contention window to
+succeed in transmitting its frame.
+
+The widening in size of the contention window is per-frame, meaning:
+	> Stations A and B transmit frames A1 and B1.
+	> They collide, A1 picks 0, and B1 picks 1, and A1 wins and transmits first.
+	> Now A transmits A2 and B transmits B1.
+	> When they collide, A2 picks from {0, 1} and B1 picks from {0, 1, 2, 3}.
+
+This use of this exponential backoff to determine the random delay time for transmission
+helps to prevent multiple devices from retransmitting their packets simulteneously and
+causing another collision.
+
+The maximum delay time is usually set to 1024 Tslot, where one Tslot is the time
+taken for a signal to travel from one end of the network segment to the other.
+
+The backoff algorithm is implemented in hardware on the network interface card.
+
+When a collision is detected, the NIC generates a random number between 0 and 2^N-1, where
+N is the number of collisions that have occured.
+
+The NIC then multiplies the random number by the slot time to determine the delay time before
+retransmitting.
+
+The 2^N-1 is what gives us the contention window sets, i.e. 2 collisions is (2^2)-1, or
+{0, 1, 2, 3}.
+
+If the maximum number of retransmissions is reached without successful transmission, the
+device gives up and reports a transmission error.
+
+In CSMA/CD, the size of a frame must be large enough such that the collision can be detected
+by the sender while still sending the frame.
+
+As a result, the transmission delay must be at least twice the maximum propogation delay.
+
+Without CSMA/CD, collisions would not be detected.
+
+If the affected frame was a data frame, then the reciever would likely interpret the next
+frame as out-of-sequence, and return a REJ message.
+
+If the collided frame was returning an ACK, the transmitter would not recieve an RR.
+
+Overall time to send multiple frames would be extended, and commuicating stations would
+have to rely on timers and REJ messages to recover from collisions.
+
+With Collision Detection added, we can detect collisions.
+
+The TX station can stop transmitting and wait before attempting again.
+
+Collision detection in part addresses some of the issues normally addresed with error
+control, namely lost frames.
+
+Consequently, the overall time to send multiple frames is reduced, as the TX only has to wait
+for the collision to disappear from the segment in order to retransmit the frame.
+
+The use of CSMA/CD is beneficial, as it reduces the downtime of the LAN segment.
+
+The time to deliver multiple frames is improved.
+
+Frame length, however, is critical.
+
+Short frames prevent collision detection, and so frames need a minimum length.
+
+Consequently, the MAC frame format includes a specal field called the Pad, consisting of
+extra octets of random data added to the frame.
+
+This is where we get the 802.3 MAC frame format, with a structure as such:
+	> Preamble			7 Octets
+	> SOF				1 Octet
+	> Dest MAC Address		6 Octets
+	> Source MAC Address		6 Octets
+	> LLC PDU/Data			46 to 1500 Octets
+	> PAD				Included in 46 to 1500 above
+	> Cyclic Redundancy Check	4 Octets
+
+Ring LANs consist of a number of stations, each of which is connected to a repeater.
+
+These in turn are each connected to two other repeaters by unidirectional TX links in a ring.
+
+Data are transferred bit-by-bit around the ring from one repeater to the next.
+
+The repeaters regenerate and retransmit each bit.
+
+Repeaters primarily perform three functions:
+	> Frame Insertion - Frames are placed onto the TX medium.
+	> Frame Reception - As a frame passes, the address field is copied, and if it
+	  matches the station, the entire frame is copied.
+	> Frame Removal - A repeater can remove a frame by not repeting it on.
+
+The most commonly used MAC technique for ring LANs is IBM token ring.
+	> This is a Round Robin technique, and is defined under the 802.5 standard.
+
+Token Ring uses a small frame, called a token.
+
+This token circles the ring indefinitely.
+
+A station wishing to transmit must seize the token, and remove it from the LAN.
+
+The token is then transformed into a start-of-frame field for a data frame.
+
+The token is effectively removed from the ring, and replaced by a data frame.
+
+When the frame returns to the TX station, it removes the frame from the ring, and inserts
+a new token.
+
+This is where we get the 802.5 MAC frame format, with a structure as such:
+	> Start Delimiter		1 Octets
+	> Access Control		1 Octet
+	> Frame Control			1 Octets
+	> Destination Address		6 Octets
+	> Source Addresss		6 Octets
+	> Data				0 Octets
+	> FCS				4 Octets
+	> End Delimiter			1 Octet
+
+Advantages of token ring:
+	> Access is efficient and fair under heavy traffic loads.
+
+Disadvantages of token ring:
+	> Access can be inefficient under light traffic loads.
+	> There is a requirement for token maintenence, in case of loss or duplication.
+
+Star LANs use a central component known as a hub.
+
+There are two types, shared-medium and switched-LAN.
+
+Shared-Medium Hub / Hub-Star LAN
+	> TX from any station is repeated to all stations.
+	> Only one station can transmit at a time.
+	> This is the same behaviour as a Bus LAN.
+	> Known as a star-shaped bus.
+	> Can use pre-existing wiring as a result.
+
+Switched LAN Hub
+	> Acts as a switch, i.e. the incoming frame is only passed to the addressed station.
+	> Frames from other stations can be switched simultaneously.
+	> Greater performance can be achieved with this.
+
+Switched LANs provide greater performance because there is no contention.
+
+Multiple simultaneous communications between pairs of stations can be facilitated.
+
+The specification for wireless LANs, or WLANs, is called 802.11.
+
+This specification defines two types of architecture:
+	> Basic Service Set (BSS)
+	> The Extended Service Set (ESS)
+
+The BSS typically comprises a number of mobile stations and a central base station known as
+an access point.
+
+The ESS typically comprises two or more BSSs with APs.
+
+The APs are usually connected via a distribution network, typically a wired LAN.
+
+Like BSSs, ESSs define two types of stations.
+	> Stationary stations, which usually connect via the wired LAN.
+	> Mobile stations, some of which can only communicate within a single BSS.
+
+The access technique employed on a wireless LAN is CSMA/CA rather than CD.
+
+This stands for Collision Avoidance.
+
+Before a station can transmit a frame, it must detect activity on the shared medium.
+
+Timers and Back-Off periods are used in the event that the medium is in use.
+
+As with wired Bus LANs, collisions can occur.
+
+Collision Detection relies on a transmitting station being able to detect a collision,
+but this is not always the case with a WLAN.
+
+Due to distances between stations, not all transmissions are visible to all stations,
+causing the Hidden Station Problem.
+
+As a result, the approach to collisions is to avoid them to begin with.
+
+The CSMA/CA technique uses two messages: Ready To Send, and Clear To Send.
+
+The timers used are called Short Inter Frame Space, and Distributed Inter Frame Space,
+as well as Network Allocation Vector.
+
+Within CSMA/CA, the DCF or Distributed Coordination Function controls the time a station
+waits before initiating transmission in a free medium.
+
+it also assigns time slots to network participants for further actions, creating a
+binding time structure.
+
+In the first step, participants monitor the network for the duration of the DIFS to
+determine if it's currently free.
+
+Here this means that no other station within range is sending a signal at the same time.
+
+The DIFS results from the SIFS almost double the slot time, which is between 28-50 micro S.
+
+If participants determine that the channel is free, they wait a random amount of time
+before they start sending.
+
+This duration corresponds to the contention window. This window doubles with each collision
+as per the same binary exponential back-off used in CSMA/CD.
+
+After sending the data packet, the recipient node sends a notification, if the RTS/CTS
+procedure is also utilised.
+
+This station also waits a fixed time before sending. SIFS is the time taken to process a
+data package. The duration depends on the 802.11 standard, and is between 10 and 16 micro S.
+
+The frames RTS and CTS are part of the optional extension. The procedure is upstream data
+transmission.
+
+If a participant determines the TX medium is free, the device first sends an RTS frame to
+the RX.
+
+With this, the output makes it clear it wants to start a TX and will occupy the medium for
+a certain time.
+
+The RX, in return, sends a CTS frame, and all other in-range participants are informed that
+the TX is currently occupied.
+
+Only then does the original device transmit the data.
+
+Now it is not possible for the participants in a wireless network to detect collisions or
+other interference during a transmission.
+
+For this reason, the recieving station needs to send an ACK when the data packet has
+arrived correctly.
+
+If the ACK doesn't appear, the sender assumes a complication has arisen, and resends.
+
+This station has preference for use of the medium, and doesn't have to wait again.
+
+The RTS/CTS extension helps reduce collisions on the initial RTS frame.
+
+It is still likely though that two participants might send a request to the same station at
+the same time.
+
+In cases like this, the reciever does not send a CTS frame, because the RTS has not arrived
+correctly.
+
+It is in this way that RTS/CTS can solve the Hidden Station Problem, by putting only the RTS
+frames at risk instead of the data.
+
+This can slow down the network though, because when all other stations are halted from
+transmitting by the CTS, even stations whose transmissions would not have caused a collision
+are stopped.
+
+This is called the Exposed Station Problem.
+
+Before a device in the network starts a transmission, it first sends information in the
+duration field of the RTS frame to all other participants.
+
+The station reveals how long the network will be occupied by the transmission, and every
+other device enters this info in their personal Network Allocation Vector, or NAV.
+
+This is managed internally and specifies the time when a delivery attempt is possible again.
+
+The NAV counts down continuously and is only replenished by new information from other
+stations.
+
+A NAV can increase the timer by a maximum of 33 microseconds. This is the maximum duration
+for which a transmitter may block the medium.
+
+The devices in the network are inactive while the NAV has not yet expired. This saves
+energy.
+
+Only when the counter is set to zero does the participant become active again and check the
+network.
+
+The NAV is not only adjusted by an RTS, but by CTS and ACK as well.
+
+The latter is the signal for all participants to reset the NAV to 0.
+
+When participants in a network follow CSMA/CA, there are certain steps adhered to.
+
+First, stations monitor the transmission medium, the radion channel, for transmissions.
+
+If the medium is currently occupied, a random back-off is initiated, and the station waits
+it out.
+
+This ensures that participants do not start to check the network at the same time, and
+cannot start transmitting data at the same time. 
+
+If the network is free, the station initiates DCF. The channel is checked more thoroughly
+for the duration of DIFS.
+
+If it remains free for this time, a random backoff starts, and then the RTS/CTS exchange
+begins.
+
+If the request to send has successfully arrived at the reciever and no collision has occured,
+the sender recieves permission from the returning CTS to occupy the medium.
+
+As this happens, all other participants are informed that the network is in use.
+
+This causes them to raise their NAV again and wait to try again to see if the channel is
+free.
+
+Then the station begins transmitting, and, when finished,the reciever waits the duration of
+an SIFS before responding with an ACK to confirm success and to set the NAV to 0.
+
+This all comes together with the 802.11 MAC frame format:
+	> FC				2 Octets
+	> D				2 Octets
+	> Address 1			6 Octets
+	> Address 2			6 Octets
+	> Address 3			6 Octets
+	> SC				2 Octets
+	> Address 4			6 Octets
+	> Frame Body			0 to 2312 Octets
+	> FCS				4 Octets
+
+LAN technologies facilitate sharing of information between all locally connected stations.
+
+Direct communication between specific pairs is achieved using an addressing scheme.
+
+Each station is assigned a hardware address, or MAC address, which is unique.
+
+An example of an ethernet MAC address is 00:40:05:1c:0e:9f.
+
+Ethernet MAC addresses are 48-bits long, and represented in Hex format.
+
+The header within each transmitted frame contains the sender and reciever address,
+
+This allows the LAN interface, or Network Interface Card (NIC) to filter out frames without
+conferring with the CPU.
+
+The NIC only interrupts the CPU when it has data specific to the station.
+
+Different addressing schemes are employed on different LAN topologies.
+
+Each station's address must be unique on the LAN to which it connects.
+
+Address allocation can be:
+	> Static - H/W manufacturer sets address.
+	> Dynamic - Station sets their address at boot time.
+	> Configurable - The administrator sets the address.
+
+There are three possible types of communication on a LAN, each requiring their own address:
+	> Unicast - This is station-to-station communication.
+	> Broadcast - This is station-to-ALL communication.
+	> Multicast - This is station-to-SOME communication.
+
+Unicast communication requires the use of unique MAC addresses, wherein all NICs are
+configured with a unique MAC address.
+
+Broadcast requires one address to be recognised by all stations, and all NICs are
+configured to recognise a broadcast address of all ones, or FF:FF:FF:FF:FF:FF.
+
+Multicast requires one address to be recognised by some stations.
+
+Where there is need to extend or interconnect LANs, one of three devices can be used.
+	> Repeaters
+		- Used to connect identical LANs, i.e. those using the same MAC protocols.
+		- Repeaters do not process frames.
+	> Bridges
+		- Connects LANs using similar or different MAC protocols (802.3/5 etc).
+		- Bridges do process frames.
+	> Routers
+		- Similar to bridges, but can connect together different LAN technologies.
+		- Used in internetworking.
+
+Repeaters are used to overcome the distance limitation of LANs.
+	- TX signals attenuate over distance.
+	- The length of a LAN segment is restricted due to attenuation.
+	- When there is a need to connect stations beyond this, a repeater is used.
+	- A repeater connects two segments of LAN.
+	- Repeaters regenerate attenuated bits. For each one, a fresh one is reproduced.
+	- Repeaters forward every frame with no filtering.
+
+Bridges facilitate the interconnection of small LANs to create a larger LAN.
+
+This is often preferable to just using one larger LAN.
+
+Advantages of using small interconnected LANs include:
+	> Reliability - The effects of a fault are more easily restricted.
+	> Performance - Smaller LANs provide better performance to locally attached devices.
+	> The majority of traffic is often between locally connected stations.
+	> Security - With some topologies, all LANs can see all frames.
+	> The use of a bridge facilitates isolation of high-security traffic and users.
+	> Geography - Facilitates extending a LAN to isolated station clusters.
+
+Bridges can also connect more than two LANs together.
+
+Basic bridges only understand one frame format, e.g. 802.3, 802.5.
+
+These are sometimes called MAC relay bridges.
+
+Basic Bridges provide the following functionality:
+	> Store and Forward
+		- Operating in promiscuous mode a bridge reads all frames on one LAN.
+		- It retransmits them to an outgoing port with another LAN only if the
+		  destination station is on that LAN.
+		- The retransmission is without modification, bit-by-bit.
+		- This function is performed in both directions.
+	> Routing and Addressing
+		- Not all frames are copied, only those relevant to a LAN segment.
+		- This implies a routing capability.
+
+The use of a bridge does not affect how stations communicate with each other.
+
+Unique MAC addresses are used for routing frames between stations connected to the same
+bridged network.
+
+A routing strategy is used to decide which frames are forwarded onto another LAN.
+
+There are two routing strategies to consider: Fixed Routing and Address Learning.
+
+Fixed Routing involves:
+	> For each pair of source/dest stations a route is created in a table and stored.
+	> Based on the dest address in a recieved MAC frame, it looks at the table.
+	> Based on the table, it determines if the frame is to be forwarded.
+
+This is simple, and requires minimal processing overhead, but can become very complicated
+when multiple bridges are in use.
+
+Address Learning is an alternative approach to routing.
+
+Here, the bridge can learn the location of each station automatically, because:
+	> Each incoming MAC frame contains a source address field.
+	> Each LAN connects to one port only.
+
+Using both of these identifiers, the bridge constructs a routing table automatically.
+
+Address Learning starts at boot time. Initially the table is empty.
+
+As MAC frames arrive, the bridge constructs the routing table using the source MAC address
+and source port information.
+
+After a period of time known as the steady-state period, the table is complete.
+	> Frame filtering can commence in earnest.
+
+Bridges that use an address learning strategy are known as transparent bridges.
+
+Stations connected to the LAN are unaware of the existence of the bridge.
+
+A problem with transparent bridges is looping. This arises from the use of redundant bridges.
+
+Redundant bridges are used for reliability, in the event that one fails, another can
+take over.
+
+Because both bridges see all frames, what happens is something like this:
+	> Host A on LAN 1 sends a frame to Host D on LAN 2.
+	> Bridge 1 and Bridge 2 both see it, and forward it to LAN 2.
+	> They both in their routing table set A to be on Port 1.
+	> Each bridge sees the frame the other has forwarded.
+	> They both forward them back to LAN 1, and set A in the table to be on port 2.
+	> Repeat Ad Nauseam.
+
+To overcome such a loop, we use graph theory to create a loop-free bridge network.
+
+We create a Spanning Tree of the network by representing it as a graph:
+	> Nodes or Vertices represent the bridges and LANs to which they connect.
+	> Connecting Arcs or Edges represent connections between LANs and bridges.
+	> Each Edge is assigned a Cost Metric, or Weight (1 = Bridge to LAN, 0 = Opposite).
+
+First, we find the root bridge. This is the bridge with the lowest value ID.
+
+Then, we find the shortest path from the root bridge, to every other bridge and LAN.
+
+Then, we eliminate redundant routes. The routes with the shortest paths become the spanning
+tree.
+
+All bridge ports in the spanning tree are marked as forwarding ports, the others as blocking
+ports.
+
+Advantages of using bridges are as follows:
+	> Parallelism
+		- Not every frame arriving at the bridge is copied to another LAN.
+		- This allows two pairs of stations to communicate simultaneously.
+		- (Provided each pair is on a seperate LAN separated by a bridge.)
+
+	> Optimised Performance
+		- Stations that are likely to communicate with each other frequently can
+		  be moved to the same LAN to ensure maximum efficieny.
+		- (Principal of Locality of Reference).
+		- Collision Domains are smaller, reducing collision likelihood and contention.
+		- Without bridging, stations percieve the speed as (Data Rate/#. Stations).
+		- This is significantly improved by bridging.
+
+In summary, bridges are used to connect together LANs, creating a small interconnected
+web of LANs rather than a single large one.
+
+They can connect LANs with similar or different MAC protocols.
+
+They contain routing functionality to filter frames:
+	> Facilitates parallelism, improving performance of each connected LAN.
+	> Collisions are not copied between LANs, reducing collision domain and contention.
+
+They also contain a Store and Forward functionality:
+	> Facilitates connecting fast, busy LANs to slower ones.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

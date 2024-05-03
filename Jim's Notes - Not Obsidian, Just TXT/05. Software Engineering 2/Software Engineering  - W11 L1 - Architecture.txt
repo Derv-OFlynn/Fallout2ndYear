@@ -1,0 +1,24 @@
+Software Engineering - Architecture
+----------------------------------------------
+
+Still only have vauge definitions for architecture.
+
+There are broad categories of application and design architecture.
+
+Application architecture describes the coarse-grained pieces that compose an application.
+
+In the Java world, application architecture describes:
+	> The combo of frameworks used to build a particular application.
+	> The more traditional logical separation of concerns.
+
+Object oriented practitioners have discovered that individual classes don't work well as a
+reuse mechanism, hence we separate out framework architecture.
+
+The unit of reuse in modern OOP is the library or framework.
+
+When you start a new project in framework-rich languages like the Java language, one of the
+first concerns is the framework-level architecture.
+
+We can say that Java has become a framework oriented language.
+
+Framework level architecture represents a physical architecture, described by specific building blocks.

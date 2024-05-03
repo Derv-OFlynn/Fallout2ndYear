@@ -1,0 +1,273 @@
+Software Engineering 2 - Design Modelling Notes
+------------------------------------------------------
+
+Analysis shows how business functions can be implemented in the application layer.
+
+design extends this level of modelling to other layers.
+
+We assume the booking system (restaurant booking system example) will be implemented as a desktop app.
+	> This means a single user.
+	> Normal I/O devices.
+
+System messages have been shown arriving at the controller in the application layer.
+
+In fact, these will have been pre-processed in the presentation layer.
+
+A boundary object in the presentation layer models the system's interface.
+
+This has the resposibility of interacting with input devices.
+
+For the "DisplayBookings" operation, we can asume the date is entered in a dialoge box.
+
+We don't need to model a standard dialogue box's functionality in detail.
+
+We can simply have it sent a "submit()" message to model pressing the OK button.
+
+Mouse events are handled similarly. UI object translates mouse events into system messages.
+
+"Time" and "Table" can be derived from the mouse coordinates:
+	> Staff sends "mouseDown(pos)" to StaffUI, where "pos" is the mouse coordinates.
+	> StaffUI sends "selectBooking(time)" to BookingSystem.
+	> So on and so forth as previously discussed.
+
+Not every input event needs to produce a system message though.
+
+A table transfer operation could utilise the mouse as well:
+	> Staff sends "mouseDown(pos)" to StaffUI, where "pos" is the mouse coordinates.
+	> StaffUI sends "selectBooking(time)" to BookingSystem.
+	> Staff sends "mouseMove(pos)" to StaffUI.
+	> Staff then sends "mouseUp(pos)" to StaffUI.
+	> StaffUI sends "transfer(time, table)" to BookingSystem.
+
+Output is also assigned as a responsibility of the UI object.
+
+The display should be updated whenever the application layer changes.
+
+Problem: how to ensure that the display is always updated, and only updated, when needed.
+
+The presentation layer could periodically check the application layer for a change.
+	- But this would be wasteful of processing time.
+	- It would also be expensive to tell if something has changed.
+
+It would be better if the application layer triggered updates in the presentation layer.
+
+However, this is tricky, as in layered architecture, the presentation layer is supposed to be
+independent of the application layer.
+
+Design patterns are standard solutions to problems like this.
+
+In this case, the Observer design pattern is useful:
+	> It allows changes to one object to be communicated to others.
+	> Without assuming what the other objects are.
+
+This will allow the application layer to trigger events in the presentation layer.
+
+This structure will be laid out as follows:
+	> StaffUI exists in the presentation layer, and links to BookingSystem in the application layer.
+	> This is linked to the BookingObserver, an interface stereotype.
+
+Interfaces are represented as stereotyped classes. They have operations, but no attributes.
+
+Classes can realize interfaces, shown as a dashed arrow with an open head from class to interface.
+
+This means the class must implement all the operations defined in the interface.
+
+The user interface class implements the booking observer interface.
+
+The booking system maintains a list of registered observers.
+
+However, it does not know what class they belong to.
+	> This means there is no upwards dependency.
+
+Each observer is notified when a change takes place.
+	> Staff sends "submit(date)" to BookingObserver : StaffUI.
+	> This sends "display(date)" to BookingSystem.
+	> This sends "getBookings(date)" to Restaurant.
+	> Restaurant returns "bookings", and BookingSystem returns "update()".
+	> BookingObserver : StaffUI responds with "getDate()".
+	> Then it sends "getBookings()".
+	> BookingSystem respinds to this by returning "bookings".
+
+The interface implemented by the StaffUI object is shown as a role.
+
+When something changes, the "update" message is sent to the UI.
+
+It then gets updated information from the booking system.
+
+The simplest option is to redisplay everything, but this can be optimized.
+
+Most systems need some way of maintaining persistent data.
+
+Object-oriented applications often use relational databases to provide persistence.
+
+A designer needs to identify when data needs to be persistent, and design a suitable schema.
+
+In UML, classes are the unit of persistence.
+
+We must save all booking information, but not current date, or the selected booking.
+
+Persistence is shown using a tagged value.
+
+Classes map to tables in a database.
+
+Associations map to database relations, so explicit object IDs should be added to tables.
+
+We can use these as foreign keys to implement links.
+
+Generalization has no relational equivalent. Booking, for example, is an asbtract class. We only map
+concrete subclasses as tables.
+
+From these points, we can develop a simple schema:
+	> Customer:
+		- ID
+		- Name
+		- PhoneNumber
+
+	> Table:
+		- ID
+		- Number
+		- Places
+
+	> WalkIn:
+		- ID
+		- Covers
+		- Date
+		- Time
+		- Table_ID
+
+	> Reservation:
+		- ID
+		- Covers
+		- Date
+		- Time
+		- Table_ID
+		- Customer_ID
+
+Whose responsibility should it be to save and load objects?
+	> Using existing classes risks low cohesion.
+	> We make this the responsibility of a new class.
+	> We define a mapper class for each persistent class.
+
+We can include object IDs in the design model, and keep persistency out of domain model classes.
+
+We can add Object IDs, or OIDs, in a subclass.
+
+The mapper classes deal with the persistent subclasses.
+
+For example: TableMapper ----> PersistentTable ----> Table
+
+Persistent subclasses and mapper classes depend on the class they are supporting.
+
+For this reason, they must be in the application layer.
+
+However, the restaurant class is dependent on mapper classes.
+
+We can split the application layer into two subpackages.
+	> A change to persistency subpackage has minimal effect on Domain subpackage.
+
+Restuarant and Table are in the Domain subpackage, TableMapper and PersistentTable are in the
+persistency subpackage.
+
+For detailed class design, we create a detailed class specification that could be used as a basis
+for implementation.
+
+We start with a refined domain model, and collect messages from all realizations:
+	> Check redundancy, inconsistency.
+	> This defines the operation interface of the class.
+	> Specify detailed parameters and return types.
+
+At this point, the BookingSystem class looks like this:
+
+BookingSystem
+~~~~~~~~~~~~~~~~~~~~~
+- date : Date
+~~~~~~~~~~~~~~~~~~~~~
++ addObserver(o : BookingObserver)
++ cancel()
++ getBookings() : Set(Booking)
++ getDate() : Date
++ makeReservation(d : Date, in : Time, tno : Integer, name : String, phone : String)
++ makeWalkIn(d : Date, in : Time, tno : Integer)
++ notifyObservers()
++ recordArrival()
++ selectBooking(t : Time, tno : Integer)
++ setDate(d : Date)
++ transfer(t : Time, tno : Integer)
+~~~~~~~~~~~~~~~~~~~~~
+
+Class diagrams show structural design. Sequence diagrams show behaviour.
+
+However, this leaves some questions unanswered.
+	> What should the system do if a "cancel" message is recieved before a booking is selected?
+	> What happens if the users tries to move a cancelled booking from one table to another?
+
+These depend on the interactions between seperate messages.
+
+We summarize the behaviour of instances of a single class with a statechart.
+
+They answer two types of question:
+	> What sequences of messages are objects expected to recieve and respond to?
+	> How an object's response depends on the messages it has already recieved.
+
+Not every class will require a statechart.
+
+The behaviour of the booking system is different if a booking is selected.
+
+This suggests it has at least two states: selected and notSelected.
+
+At any given time, an ojbect is in exactly one of its possible states.
+
+When a message is recieved, a transition will fire if:
+	> There is a labelled transition leaving the current state.
+	> Labelled with an event corresponding to the message.
+
+The object may then end up in a different state.
+
+Further transitions can be added for all of the different events an object can detect:
+	> selectBooking() moves it from NotSelected to Selected.
+	> cancel() does the opposite.
+	> transfer() and recordArrival() both leave it in Selected.
+
+Sometimes an event can have more than one transition.
+
+For example, the user may try to select a booking with the mouse over an empty space.
+
+In this case, nothing will be selected, and the state won't change.
+
+Nondeterminism like the above can be removed using guard conditions, boolean expressions stating
+when a transition will fire.
+
+Statecharts can show what an object does in response to an event.
+
+These are shown as actions attached to the relevant transition.
+
+Composite states can simplify diagrams.
+
+They define properties shared by all the nested states.
+
+Transitions can freely cross boundaries.
+
+Transitions from a composite state need to apply to all nested states.
+
+History states "remember" the most recent nested state.
+	> A transition to a history state goes to that remembered state.
+
+Reservations have a different behaviour after their diners have arrived:
+	> They cannot cancel their reservation after they have shown up.
+
+This means we cna have two states: Booked and Seated.
+
+Initial states model object creation. A transition from an initial state to a default models a
+constructor.
+
+However, iniitial states inside composites will indicate what a state transition ending at the
+composite will end up at.
+
+Final states model object destruction. Once an object reaches this state it cannot detect events.
+
+An object may detect an event when there is no matching transition from the current state.
+
+UML specifies that the event be simply ignored.
+
+In some cases, this indicates an error. To show this, we can add an error state, and add transitions
+to specify how the system can recover from the error.

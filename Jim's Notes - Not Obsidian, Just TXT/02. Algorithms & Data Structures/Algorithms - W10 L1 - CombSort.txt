@@ -1,0 +1,59 @@
+Algorithms - Who knows?
+-------------------------------------------
+
+There are two types of sorting algorithm:
+	> Hard Split - Easy Join
+	> Easy Split - Hard Join
+
+The first type includes:
+	> quickSort
+	> selectionSort
+	> heapSort
+
+The second type includes:
+	> mergeSort
+	> insertionSort
+
+CombSort is a vartiation on BubbleSort, designed to be an improvement.
+
+It has a bit added on at the beginning to make it quicker.
+
+In our example, the array is:
+	> 9, 8, 5, 2, 7, 3, 4, 1, 0
+
+We need to set a "gap shrink factor", for which we'll use 1.5.
+
+We divide the our gap, which starts as the size of the array, by the shrink factor.
+
+This time, with length 9, our gap is divided to length 6.
+
+As long as gap is greater than one, the array isn't sorted.
+
+If gap is one, we're finished.
+
+While sorted is false, we iterate. We set the new gap value, and then test if finished yet.
+
+We initialise a new value to i, and then enter an inner loop.
+
+While i, plus gap, is less than the original input size, we iterate the inner loop.
+
+If the array at position [i] is greater than at position [i + gap], we do the following:
+	> Swap position[i] and position[i + gap]
+	> Set sorted to false
+
+Then after the if statement, we increment i.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

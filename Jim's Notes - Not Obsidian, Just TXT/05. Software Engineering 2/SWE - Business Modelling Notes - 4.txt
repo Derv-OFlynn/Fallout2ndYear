@@ -1,0 +1,182 @@
+Software Engineering 2 - Business Modelling Notes
+------------------------------------------------------
+
+Business modelling is an early phase of development.
+
+It includes creating a use-case model, defining use-cases, creating a domain model,
+and creating a glossary.
+
+In our example, the restaurant system, they are currently still using manually
+filled-out booking sheets.
+
+Advance bookings are recorded, with the name and phone no. of the customer.
+
+Walk-ins are recorded on different sheets.
+
+Bookings are allocated to a table matching the number of people on the booking.
+
+The first iteration of our design should implement the minimal useful system.
+
+The basic functionality includes:
+	> Recording bookings.
+	> Updating booking sheet information.
+
+System could then replace manual sheets quickly.
+
+The use-case view is intended to provide a structured view of the system's normal
+functionality.
+
+This is based around a description of how users interact with the system.
+
+It is supported by UML use-case diagrams, and serves as the starting point
+for all subsequent development.
+
+The different tasks we want users to be able to perform, for the preliminary system,
+include:
+	> Record info about new booking.
+	> Cancel a booking.
+	> Record an arrival.
+	> Move a customer from one table to another.
+
+Actors are roles users play when interacting with the system.
+
+For example, we could have the receptionist or head waiter.
+
+Individual users may play one or more role at different times.
+
+Customers are not users, and are not recorded as actors.
+
+Our use-case diagrams show some use-cases, actors, and who does what.
+
+A use-case comprises all possible interactions a user can have when performing
+a given task.
+
+These are described as courses of events, or scenarios.
+
+A full description of a use-case includes:
+	> A basic course of events.
+	> A number of alternate and exceptional courses.
+
+This describes what happens in the normal case for "Record Booking":
+	1. Receptionist enters date.
+	2. System displays bookings.
+	3. Receptionist enters details.
+	4. System records and displays new booking.
+
+Alternate courses describe other things that can happen, e.g. no table available:
+	1. Receptionist enters date.
+	2. System displays bookings.
+	3. No table available, exit.
+
+Situations exist where a mistake has been made. These are exceptional cases:
+	1. Receptionist enters date.
+	2. System displays bookings.
+	3. Receptionist enters details.
+	4. System asks confirmation for oversize booking.
+	5. "Yes" records with warning, "No" terminates with no booking.
+
+UML does not define a standard format for use-case descriptions.
+
+Various templates have been defined to structure descriptions.
+
+Essentially a list of subheadings, like name, actors, and courses of events.
+
+When writing use-cases, it is generally a good idea to have a rough idea of the
+planned user interface.
+
+Different use cases can overlap.
+
+For example, "Record Arrival":
+	1. Head waiter enters date.
+	2. System displays bookings.
+	3. Head waiter confirms arrival.
+	4. System records this and updates display.
+
+The first two steps here are shared with "Record Booking".
+
+For use-case inclusion, we move shared functionality to a seperate use-case.
+
+For example, "Display Bookings":
+	1. User enters a date.
+	2. System displays bookings for that date.
+
+Include this in other use cases:
+	1. Receptionist performs "Display Bookings".
+	2. Receptionist enters details.
+	4. System records and displays new booking.
+
+UML shows inclusion between use-cases as a dependency, labelled with the <<include>>
+stereotype.
+
+For an Actor Generalization, the diagram shows that the receptionist can display
+bookings without performing the included use-case "Record Booking".
+
+Head waiters can also display bookings. We introduce a more general actor to show
+what the other two have in common.
+
+Then we say that the other two are specializations of the general actor.
+
+In our case, the general actor will be Staff.
+
+Recording a walk-in can be described as an exceptional course of events.
+
+However, it could also be a separate use-case.
+
+Then it can extend "Record Arrival".
+
+The extension is marked with the <<extends>> dependency.
+
+At this point, our use case diagram has several use-cases, with <<includes>> and
+<<extends>> between them.
+
+Domain Modelling is the term for using UML to construct a model of the real-world
+system.
+
+The model is recorded as a class diagram.
+
+The same notation is used for analysis and design modelling, and the design can
+evolve from the initial domain model, in the name of seamless development.
+
+Domain Model notation is a subset of class diagram notation.
+	> Classes represent real-world entities.
+	> Associations represent relationships between entities.
+	> Attributes represent the data held about entities.
+	> Generalization can be used to simplify the structure.
+
+A basic fact about the business, and our system, is customers can make reservations.
+
+For this purpose, we define a relationship.
+
+We use a verb, so that the relationship can be defined as a sentence, for example,
+a customer MAKES a reservation.
+
+The same customer can make many reservations, but only but multiple customers cannot
+all make the same reservation/
+
+The expected number of diners can be modelled as an attribute of the reservation.
+
+We can model "table" as a separate class from "reservation", and give it an
+attribute for table numbers.
+
+Tables exist even if there are no reservations, and they may have other
+attributes such as size, so it is good practice to give them their own class.
+
+Not all domain properties can be shown graphically.
+
+For example, it should be impossible to double-book a table.
+
+Constraints add information to models.
+	> Written in a note connected to the model element being constrained.
+
+A superclass can be used to show the properties shared by different types of booking.
+
+This is a use of generalization.
+
+We don't know for sure when a domain model is complete, as there are lots of
+plausible models in most cases.
+
+Domain modelling is not an end in itself, but a guide to further development.
+
+Realizing use cases tests the domain model, which will usually lead to refinements.
+
+In summary, domain models capture important system concepts.

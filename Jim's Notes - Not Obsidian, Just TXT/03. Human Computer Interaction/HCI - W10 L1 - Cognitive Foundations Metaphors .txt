@@ -1,0 +1,138 @@
+Human COmputer Interaction - Foundations Metaphors, Perception and Cognition
+--------------------------------------------------------------------------------
+
+The user is the most important entity in the system.
+
+There are many different categories of users, making it impossible to consider them all.
+
+We can, however, group users together to make types more managable.
+
+Nondiscretionary Users are users for whom the computer is part of their employment.
+	> Time and effort in learning to use the computer are willingly invested.
+	> A high motivation is often used to overcome low usability characteristics.
+
+Discretionary Users are more self-directed, not told how to work.
+	> It is the result, not the means, that are more important.
+	> Utilisation is not necessary, and they won't invest extra effort the use the it.
+	> They don't show high motivation, and are easily disenchanted.
+
+For nondiscretionaries, productivity is the most important factor.
+
+The interface is still important, but the user is likely willing to invest time and money
+in training.
+
+It is a niche application area, usually with one type of user.
+
+For discretionaries, the interface is very important, often the first impression of the
+system.
+
+One must cater for many different user types, and sell the user on the product.
+
+If the system is perceieved as not acheiving results with minimal effort, it may be refused.
+
+There are also Novice and Expert users.
+
+Novice:
+	> System features should assist in recognition - menus, prompts, help screens.
+	> Needs to use restriced vocabulary, simple tasks, small number of options.
+	> Practice is viewed as an aid to move up to expert practice.
+
+Expert:
+	> Rely upon free recall.
+	> Need less information feedback.
+	> Seek efficiency by bypassing novice memory aids, reducing keystrokes and
+	  summarising information.
+
+There is also a factor in age.
+
+Young users tend to be more active learners, drawing on physical and social experiences.
+
+They learn by doing things, and require things to touch, see, and hear.
+
+Prior to age 8, children rely on visual and auditory perception for knowledge.
+
+Learning is through firsthand experience.
+
+Design Guidelines for Young User - Wyeth & Purchse, 2003
+	> Activities are open ended and discovery-oriented.
+	> Interaction encourages child-initiated play.
+	> Involve active manipulation and transformation of real materials.
+	> Entry-level knowledge and skill is kept to a minimum.
+	> Provision is made for children's varied skill and ability levels.
+	> Construction activies that involve design, creation, and evaluation processes.
+
+For older users, mobility, vision, memory, and hearing can all be impairments in system use.
+
+Design Guidelines for Older Users - Hawthorn, 2003
+	> Simplify screen design.	
+	> Provide users with simple linear search spaces with few options.
+	> Increase the size of fonts and controls.
+	> Reduce both windows management tasks and scrolling.
+	> Ensure contrast between text and background.
+	> Menus can introduce problems, toolbars may be an alternative.
+
+Culture and international diversity can also affect how people interact with a system.
+
+Characters and numerals, special characters and diacriticals can be different.
+
+Some cultures read right-to-left instead of left-to-right.
+
+Data and time formats, as well as measures, numeric, and currency formats, can all differ.
+
+Phone numbers and addresses, along with names and titles might also work differently.
+
+Different people and cultures might also expect different thigs of capitalisation,
+puctuation, sorting, icons and buttons, grammar, spelling, policies, tone, and etiquette.
+
+Designers must plan early on in order to accomodate users with disabilities, as their
+needs are more critical.
+
+There are both physically and congitively disabled users.
+
+Physically disabled users can have impairments like:
+	> Lack of mobility.
+	> Low vision.
+	> Poor hearing.
+
+Alternaive channels of interactions for them might be speech recognition, tune recognition,
+lip-reading, and body-electric sensors.
+
+The more sophisticated a system is, the more specialised its target group gets.
+
+Design Guidelines for Physically Disabled Users - Nielsen, 1995
+	> Provide keyboard access to app features.
+	> Follow key-mapping guidelines or the local environment.
+	> Avoid placing frequently used functions deep in a menu structure.
+	> Do not hard-code colours, graphics, or font sizes and styles.
+	> Provide visual information that is redunant with audible information.
+	> Allow users to configure frequency and volume of audio queues.
+
+Examples of congitive disabilities include learning disabilities, dyslexia, and poor memory.
+
+Changes can be made to accomodate thee users by improving layouts, controlling vocabulary,
+and limiting short-term memory demand.
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

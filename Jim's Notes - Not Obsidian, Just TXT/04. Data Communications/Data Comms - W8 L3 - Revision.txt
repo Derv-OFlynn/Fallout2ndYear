@@ -1,0 +1,43 @@
+Data Communications - Revision
+-----------------------------------------
+
+Data Link Control is a more effective way to manage the communication of data.
+
+We assume all transmissions are in the form of a frame.
+
+We store and process incoming frames to ensure they are not corrupted, and are the expected
+frame. For this we use a memory buffer.
+
+Frame Synchronisation - Frames must be recognisable to the reciever.
+
+Flow Control - The sender must not overload the reciever.
+
+Error Control - Errors should be detectable by the reciever.
+
+Addressing - For a multi-point configuration, each station should be uniquely idenfitiable.
+
+Control and Data, Same Link - Everything the reciever needs should be in the same frame.
+
+Link Management - Procedures for establishing and relenquishing link should be followed.
+
+In error control, there are three different techniques, all some form of Automatic Repeat
+Request.
+
+Stop and Wait ARQ is based on Stop and Wait flow control.
+
+Go Back N and Selective Reject are both based on Sliding Window flow control.
+
+Frame numbering starts at 0 and usually works on modulo 8 numbering.
+
+With Go Back N, when the reciever sends a REJ reject message to the transmitter, the
+transmitter has to send back all frames starting at the one specified in the message.
+
+With Selective Reject, the transmitter need only send back the specified frame in an SREJ.
+
+
+
+
+
+
+
+

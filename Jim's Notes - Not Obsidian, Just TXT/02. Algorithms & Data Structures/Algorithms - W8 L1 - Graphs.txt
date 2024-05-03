@@ -1,0 +1,203 @@
+Algorithms - Graphs
+---------------------------------
+
+A weighted undirected graph could respresent a number of different problems, such as length
+or cost of optical fiber between network stations, or road distances between villages.
+
+In computer science there are many useful algorithms that operate on a graph data structure:
+	> Depth First Traversal
+	> Breadth First Traversal
+	> Best First Traversal
+	> Shortest Path Tree
+	> Minimum Spanning Tree
+	> Hamiltonian Cycle
+	> Eurlerian Cycle
+
+Before we can implement any of these, we first must consider how a graph such as the one
+above might be stored or represented in computer memory.
+
+It makes sense to store it on secondary storage, such as a text file external to the program.
+
+Here is one potential representational format for a graph:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+7	11
+1	2	7
+1	4	5
+2	3	8
+2	4	9
+2	5	7
+3	5	5
+4	5	15
+4	6	6
+5	6	8
+5	7	9
+6	7	11
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In this structure, the first row tells us general info about the graph. The first number is
+the amount of vertices, and the second is the amount of edges.
+
+This graph has 7 vertices, and 11 edges.
+
+Each row beyond that tells us about an edge: the first vertex, the second, and the weight.
+
+For example, row 2 tells us there is an edge between 1 and 2, or A and B, with weight 7.
+
+When we want to store this in primary memory within the program, we can then use a 2D array
+called an adjacency matrix.
+
+We use the graph vertices as indices in the array, and call the matrix adj[,] or adj[][].
+
+The data stored at adj[u][v] represents the edge between vertices U and V.
+
+For example, using the same graph from before, adj[1][2] or adj[2][1] are both 7.
+
+If there is no edge, we say adj[u][v] = 0.
+
+For a sparesely populated/connected graph, most of the array would be populated by 0 cells.
+
+THis makes an adjacency matrix an inneficient method of storage for a spare graph.
+
+A linked list approach would be more appropriate technique for a sparse graph.
+
+In this approach, every vertex has a linked list associated with it which records any
+vertices connected to it with an edge.
+
+The edge weights are also recorded, so in a bidirectional graph, each edge is represented
+by two linked list nodes.
+
+For example, a graph constructor using adjacency lists on reading in the first edge from
+the previously shown text file would gave created an array of linked lists like:
+	• 1 -> 2 | 7
+	• 2 -> 1 | 7
+
+WHen traversing a graph, the order in which nodes are visited does not depend only on which
+algorithm is used, but also on how the graph is stored.
+
+AN extra array is used when traversing a graph, which stores the vertices that have been
+visited already, to prevent repeat visits.
+
+A graph is a complicated data structure, and can be viewed as a collection on which it may
+be desirable to do a traversal and process each vertex or edge in some way.
+
+The algorithms commonly used for this are:
+	> Depth First - May use a stack or recursion.
+	> Breadth First - Uses a queue.
+	> Best First - Uses a priority queue or a heap.
+
+For a connected graph with no isolated nodes, depth first search will visit each vertex,
+as the name suggests, depth first.
+
+If the graph is disconnected, it will only traverse one component of the graph.
+
+It is easily implemented using recursion, although a stack may also be used.
+
+
+Depth First Search Traversal
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Graph::DF(Vertex s)
+Begin
+	id = 0
+	for v = 1 to V:
+		visited[v] = 0
+	end for
+	dfVisit(0, s)
+End
+
+
+Graph::dfVisit(Vertex prev, Vertex v)
+Begin
+	visited[v] = ++id
+	print ("Visited vertex " + v + " along edge " + prev + " --- " + v)
+	
+	foreach vertex u ∈ adj(v):
+		if !visited[u]:
+			dfVisit(v, u)
+		end if
+	end for
+End
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Breadth First Search Traversal
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Begin
+	Queue q
+	id = 0
+	for v = 1 to V:
+		visited[v] = 0
+	end for
+
+	q.enQueue(s)
+	while(!q.isEmpty()):
+		v = q.deQueue
+		if(!visited[v]):
+			visited[v] = ++id
+			foreach vertex u ∈ adj(v):
+				if (!visited[u]):
+					q.enQueue(u)
+				end if
+			end for
+		end if
+	end while
+End
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Breadth First Traversal will give a shortest path on a spanning tree on an unweighted graph.
+
+In an unweighted graph, you can consider all adges to have an equal weight of 1. 
+
+BF visits all the vertices on the same level before proceeding to a deeper level, so all
+vertices newly visited on a level will be the same distance from the starting vertex.
+
+Furthermore, since BF procees level by level with distances of 0, 1, 2, etc. it will reach
+a vertex via the shortest path to that vertex.
+
+If there was another path which was shorter to a vertex, then the vertex would also belong
+to another previous level closer to the start, which is a contradiction becuase any level
+is exhausted before a deeper one is examined.
+
+Best First Traversal attaches a value or priority to each vertex and for each iteration of
+the while loop, it visits the vertex with the highest priority.
+
+The natural auxiliary data structure here is a heap.
+
+This method can be used in minimum spanning trees and shortest path algorithms.
+
+
+Best First Search Traversal
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

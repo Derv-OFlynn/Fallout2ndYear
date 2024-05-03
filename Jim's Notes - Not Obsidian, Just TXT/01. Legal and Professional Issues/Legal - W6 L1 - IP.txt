@@ -1,0 +1,123 @@
+Legal and Professional - Intellectual Property Law
+-------------------------------------------------------------
+
+IP rights, or IPR, are acquired for intellectual creations.
+
+They are national rights, and can be either registered or unregistered.
+
+There are many ways in which IP laws are implemented and in which IP is protected.
+
+These include:
+	- Registered:
+		> Patents
+		> Trade Marks
+		> Registered Designs
+		> Domain Names
+	- Unregistered:
+		> Copyright
+		> Unregistered Trade Marks
+		> Unregistered Design Rights
+		> Confidential Information
+
+The IP system is implemented with two tiers:
+	> A national patent office is responsible for patents, TMs, and registered designs.
+	> National courts are the forum in which IPR infringements are enforced.
+
+There is no registration required for confidential information.
+
+It must be protected by agreement to keep the informaton confidential.
+
+It covers anything that has the necessary quality of confidence about it.
+
+The information also must not be public domain.
+
+For a duty of confidence:
+	> Info must be communicated.
+	> Confidant must reasonably know that disclosure is made in confidence.
+
+For breach of confidence:
+	> There must be a risk of damage from the information being used.
+	> Or disclosed in an unauthorized way.
+
+Generally the idea of confidential info is used to protect un-patentable technical and
+commercial information.
+
+This includes minor details of a manufacturing process that are essential for a commercial
+product to be obtained.
+
+For example, tolerances involved in the manufacture of an article, and the detailed
+procedures of a machine.
+
+Companies should ensure adequate steps to keep details secret, and make sure everyone in the
+organization knows this.
+
+When negotiating a transfer of technology, it is important not to disclose know-how until it
+is covered b a written agreement.
+
+Once published, it is not reasonable to expect anyone to pay for it.
+
+The existence of know-how is a useful back-up in case a patent is granted, since it still
+enables royalties to be charged, even if at a reduced rate.
+
+If a binding know-how agreement is broken by unauthorized use of the information or by 
+unauthorized disclosure, it is possible to bring a legal action for breach of contract.
+
+Verbal disclosure can be difficult to prove, common for confidential information to be
+distributed on media marked as such.
+
+A non-disclosure agreement, or NDA, or confidentiality agreement, should be signed by the
+recieving party prior to disclosure.
+
+Breach of confidentiality is typically a breach of contract and dealt with as such by
+courts.
+
+A patent is a monopoly right on an invention.
+
+It covers how things work, what they do, how they do it, what they are made from, or how
+they are made.
+
+It can cover not only such things as an electrical circuit, a chemical product, or a control
+system, but also a small household item such as a can opener.
+
+It also covers processes such as new or improved process of making a new material, or a new
+method of navigation.
+
+In certain situations, it can also cover software-based inventions.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

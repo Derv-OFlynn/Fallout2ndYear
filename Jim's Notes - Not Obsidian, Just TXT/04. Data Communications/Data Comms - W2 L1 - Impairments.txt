@@ -1,0 +1,136 @@
+Data Communications - Transmission Impairments
+----------------------------------------------------
+
+A transmitted signal becomes distorted due to transmission impairments.
+
+For analogue signals, the quality can become degraded, and for digital signals, bit errors
+can be introduced.
+
+Attenuation is when signal becomes weaker over distance.
+
+Attenuatin is a function of frequency.
+
+Attenuation distortion affects the intelligibility of the recieved signal, especially
+signal pulses, which can become distorted.
+
+A technique for addressing this problem is to use equalizing amplifiers.
+
+Noise is the insertion of unwanted signals onto the transmission signal.
+
+It distorts the signal during transmission.
+
+It particularly affects digital signals, wherein the greater the noise, the greater the bit
+error rate.
+
+The three categories of noise are thermal noise, cross talk, and impulse noise.
+
+Thermal Noise is caused by the thermal agitation of electrons within a conductor.
+	> Present in all electronic devices and conductors.
+	> Function of temperature, i.e. increased temp increases thermal noise.
+	> Uniformly distributed across frequency spectrum, known as white noise.
+
+We must ensure that the amplitude of our frequency components are well clear of the
+amplitude of the thermal noise.
+
+As attenuation decreases these amplitudes, it is important to boost them back away from
+the thermal noise threshold, or they may be drowned out.
+
+The presence of Thermal Noise places an upper limit on the data carrying capacity of a
+transmission system.
+	> Must ensure strength of data signal is greater than noise signal.
+	> Term used to describe relationship is Signal to Noise Ratio, SNR.
+
+Unwanted Coupling can occur between signals on neighbouring transmission paths.
+
+The term coupling means connecting without actually touching.
+
+Coupling can occur between cables in close proximiy, or between radio signals close to the
+same frequency.
+
+This results in cross talk.
+
+Impulse Noise is irregular pulses or noise spikes of short duration and high amplitude.
+
+Causes include lightning and static, switching heavy electrical loads, and faults.
+
+Analogue signals are less affected by this kind of noise, but they still are.
+
+Digital signals are very susceptible.
+
+When a high amplitude noise signal is crossed over a digital signal, bits will often
+be transmitted wrong.
+
+Channel capacity allows us to study the relationships between signal bandwidth, system
+bandwidth, and signal impairments.
+
+It is he maximum rate at which data can be transmitted over a communications path or
+channel.
+
+The objective is to make the best use of a given bandwidth or channel.
+
+Two scientists with opinions on this, Nyquist and Shannon.
+
+Nyquist's Noise Free Channel: C = 2(B)(Log₂M)
+
+Where C is the maximum data rate in bits per second, B is the transmission system Hz, and
+M is the number of discrete states in the digital signal.
+
+For example, if M = 2, then C = 2B.
+
+This is where the idea that good representation can be achieved with a transmission system
+bandwidth of [X]/2Hz comes from.
+
+It appears Nyquist's theorem that any data rate is achievable by increasing the system
+bandwidth and encoding more bits per signal cycle.
+
+However, as dats rate increases, the bit error rate also increases, and it becomes more
+difficult to distinguish different signal states.
+
+Noise and other transmission impairments put a practical limit on M (the number of discrete
+states in the digital signal), and hence on the maximum data rate achievable.
+
+Noise is measured in decibels.
+
+Shannon's Noisy Channel: C = (B) * Log₂(1+(S/N)).
+
+N in this equation is noise. When we look at the (S/N), this value decreases as noise
+increases, approaching 0.
+
+If it reaches 0, then we end up with Log₂(1), which is 0, meaning that with massive noise,
+we could lose all data communication capacity.
+
+Observations on Shannon's formula include:
+	> Increasing bandwidth increases maximum data rate.
+	> Increasing noise reduces maximum data rate.
+	> Shannon's Law defines an upper limit on achievable data rate.
+	> Hence the data rate is limited by bandwidth and noise.z
+
+According to Shannon, maximum data rate achievable is determined by:
+	> Bandwidth of system.
+	> Noise on channel.
+	> Every system has a maximum capacity that cannot be exceeded.
+
+Worked Example:
+	B = 1Mhz
+	S/N = 251
+	1x10⁶(Log₂(252)) = C (Shannon's)
+	C = 8x10⁶
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

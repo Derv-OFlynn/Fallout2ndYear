@@ -1,0 +1,151 @@
+Data Communication - IP Addressing - Revision
+-----------------------------------------------------
+
+IP addresses use 32 bits, divided into octets, with maximum values of 255 each.
+
+This is called dotted decimal notation, and is used to be easier to read than a 32 bit value.
+
+Classful addressing was how blocks of addresses were assigned to different people.
+
+The prefix determined the class, meaning it determined the amount of addresses.
+	> A - 0
+	> B - 10
+	> C - 110
+	> D - 1110
+	> E - 1111
+
+The smallest quantity of addresses you could be given in one of these blocks was class C,
+with 256 addresses.
+
+This caused a large amount of wastage in terms of the number of possible IP addresses.
+
+WIth classful addressing, the split between network prefix and host suffix was always on
+an octet boundary.
+
+Classless addressing did things differently, to save on addresses.
+
+It uses a 32 bit value called an address mask or a subnet mask.
+
+These facilitate the extraction of the network prefix from an IP address.
+
+This is so that routing tables on routers can look only at the network portion of the address
+and route packets to the network, which can handle the host portion itself.
+
+THe mask is comprised of a contiguous sequence of 1 bits, followed by a contiguous block
+of 0 bits.
+
+They can be represented in dotted decimal like IP addresses.
+
+They can also be shown CIDR, or Classless InterDomain Routing notation, which is a forward
+slash followed by a number after the address.
+
+For example, 192.4.10.0/24, or 255.255.255.0, tells us how many bits belong to the network
+portion of the address.
+
+The /24, and the 255.255.255 tell us that 24 bits belong to the network portion, with 8 left
+for the hosts.
+
+There are 256 possible addresses on this network, with examples like 192.4.10.20 and
+192.4.10.30.
+
+All addresses on this network will begin with 192.4.10.
+
+However, we can't use the first or last ones, leaving us with a total of 254 to use.
+
+For an incoming packet with a destination IP, D, the router tests the following condition:
+	> A==(D&&M)
+
+THe mask M is applied using the AND operation to the address. The AND operation effectively
+zeroes out the last eight bits of the address, D.
+
+The result is then compared to the A address.
+
+Routers connect to multiple addresses, and when a packet is being passed to the destination
+network, it must pass through connected routers until it reaches one connected to the
+destination network.
+
+Classless addressing makes more efficient use of the IP address space.
+
+128.211.0.0 would traditionally be a class B address.
+
+Using classful addressing, as a class B address, this network would have 65536 addresses.
+
+This could only be given to one customer, meaning many of these addresses would go unused.
+
+With classless addressing, this would be considered a /16 address mask.
+
+Larger mask values can be used to split the address block into smaller blocks known as
+subnets.
+
+This means a customer can be given a space with only as many addresses as they need.
+
+Given the address block 192.168.1.0/24, we can divide this into two subnets as follows:
+	> /24 means 8 host bits, i.e. 256 addresses.
+	> Of these, 254 are available for use.
+	> We take one bit from the original host portion.
+	> This extends the original mask by one bit, and we get 255.255.255.128.
+	> The CIDR notation for this is now /25.
+	> This is because there is now only 7 host bits, and 2^7 is 128.
+
+As a result of this process, we now have two new subnets:
+	> Address range 192.168.1.0-127
+	> Address range 192.168.1.128-255
+	> Both with address mask 255.255.255.128
+
+With the magic number approach, an address tale for routing is easy to complete.
+
+We want to divide 192.168.1.0/24 into 4 subnets.
+
+To determine the number of bits to move, we figure out the power of two that gives 4.
+
+This means we need to move 2 bits, which will be the 128 bit, and the 64 bit.
+
+This means the new mask is 255.255.255.128 + 64, or 255.255.255.192.
+
+Because we have moved 2 bits, this goes from a /24 to a /26 address, with 6 bits left
+for host addresses.
+
+The magic number here is 64, because 255 - 192 = 64.
+
+With a magic number of 64, the first customer will get 192.168.1.0.
+
+The second will get 192.168.1.64, the third will get 192.168.1.128, with 192.168.1.192
+for the last one.
+
+These are the starting addresses of each range given to each customer, their network address.
+
+The first host address will be 1 on from the starting/network address.
+
+Their broadcast address will be 1 less than the starting address of the next customer,
+and their last host address will be one less than that again.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

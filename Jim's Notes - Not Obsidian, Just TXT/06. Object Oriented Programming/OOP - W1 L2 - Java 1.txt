@@ -1,0 +1,14 @@
+OOP - Java 1
+---------------------------
+Inline if statements can be used to quickly compare values.
+
+For example:
+
+	return (value1 || !value2) ? true:false;
+
+If trying to return for boolean values, we can do it like this:
+
+	return (value1 || !value2);
+
+Brian says "the best line of code you ever wrote was the one you didn't have to write".
+

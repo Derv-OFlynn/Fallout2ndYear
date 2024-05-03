@@ -1,0 +1,102 @@
+Data Communications - LAN Revision
+--------------------------------------------
+
+In a local area network, the communications system needs to be managed.
+
+A transmitter cannot just drop a frame when it has one ready to go.
+
+We use MAC (medium access control) to manage a transmitter's access to transmission media.
+
+With bus and star LANS, the access technique is CSMA, or Carrier Sense Multiple Access.
+
+There is a good chance of collisions occuring when two transmitters push a frame out at the
+same time.
+
+CSMA is a contention access technique, meaning it can lead to collisions.
+
+However, it also works such that transmitters don't need to request permission centrally
+every time they need to transmit.
+
+Collision detection is an addition to CSMA to allow it to detect collisions on a bus LAN.
+
+When we use collision detection, frame size is critically important.
+
+The transmitter needs to be transmitting for a long enough time that if a collision occurs
+at the other end of the medium, it can still be detected.
+
+This means 2TP, or two times the propogation delay of a transmitted bit.
+
+If the frame we want to transmit doesn't match up to this length, we pad it.
+
+Star LANS use a central component called a hub, coming in two types, shared medium,
+and switched LAN.
+
+Shared Medium Hub star LANs follow the same rules for contention and collisions as a bus.
+
+The switched LAN type can use routing, and allow multiple frames to exist on the LAN at the
+same time.
+
+This eliminates contention and improves performance.
+
+Wireless LANs use an access technique called CSMA/CA (collision avoidance instead of detection).
+
+This is because not all stations can see all transmissions, meaning collisions aren't
+always detected.
+
+Station 1 sends data to Station 2.
+
+It starts with a request to send, and is met with a clear to send.
+
+When other stations see the clear to send, they must start a timer and not use CSMA during
+that period.
+
+A bridge is a piece of technology used to extend an LAN.
+
+They can use frame filtering to make things more efficient, and decide whether to allow a
+frame to pass across.
+
+They can eventually allow a frame to exist on both sides of the bridge at the same time.
+
+Bridges connect LANs with similar or different MAC protocols, e.g. IEEE 802.3/802.5 etc.
+
+Bridges facilitate the interconnection of small LANs to create one large LAN.
+
+They contain routing functionality to filter frames and facilitate parallelism.
+
+Collisions are not copied between LANs, which reduces collision domain and improves contention
+ratio.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

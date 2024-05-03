@@ -1,0 +1,96 @@
+Data Communications - Protocols and Framing
+----------------------------------------------------
+
+Virtual communication is vertical, and physical or is horizontal.
+
+If your destination exists outside of your LAN, we need a new framing structure, as frames
+won't work.
+
+If the whole world was just a LAN we wouldn't need packets/datagrams.
+
+Using a repeater, packets don't get moved up layers when they come in, like with a router.
+
+Repeaters simply repeat the same bits out as they got in.
+
+This means they do not need a network or data link layer, only physical
+
+Bridges are more complex: they have a MAC routing table, meaning that unlike repeaters,
+they do actually have a data link layer.
+
+Routers are the most complex, having physical and data link, and also a network layer.
+
+Levels of functionality:
+	> Repeater - Physical
+	> Bridge - Physical, Data Link
+	> Network - Physical, Data Link, Network
+
+Routers only go up to Network because all they need to do is route packets, meaning they
+don't need any higher levels of complexity.
+
+Routers store information about where to send packets in a routing table.
+
+Having made a routing decision and determined a next hop, the packet must be sent out.
+
+The physical network does not understand the datagram format.
+
+Instead, the datagram is placed inside a hardware frame.
+
+This is called encapsulation.
+
+THis process is applied on each leg of the transmission path.
+
+The datagram is stored in memory without the additional frame header information.
+
+The size of the frame header may vary as it traverses different network technologies.
+
+Each time a datagram leaves a router, the next hop IP address goes with it, but never goes
+inside the frame.
+
+Instead, it is added as part of the header.
+
+There are three ways of resolving an IP address to a MAC address.
+
+The first is table lookup.
+
+In our example, Host A wants to send to Host B, or R1, on the same network.
+
+It has a table with the listed MAC and IP addresses of anywhere it can send to, and so
+it looks up the IP and gets the correct MAC address.
+
+The next way is closed-form computation.
+
+For configurable MAC addressing, it is possible to choose addresses that make this possible.
+
+A resolver computes a MAC address based on the IP address, or consisting of the IP address.
+
+THe last way is message exchange.
+
+To resolve an address, a station sends a message across a network and recieves a reply.
+
+This is a distributed approach.
+
+There is another protocol, Address Resolution Protocol or ARP, for this.
+
+ARP can have a Request Message and a Reply message.
+
+The request contains an IP address, and goes out into the network.
+
+The station with that IP picks it up, and sends back a reply with saying, "this is my IP,
+here is my MAC".
+
+The ARP message structure contains a sender hardware address, sender protocol address,
+target hardware address, and target protocol address.
+
+It also contains hardware type and length, and protocol type and length, as well as the
+operation, request or reply.
+
+The message is sent to every device on the LAN, meaning it has to be made into a frame
+to be put onto the LAN.
+
+
+
+
+
+
+
+

@@ -1,0 +1,192 @@
+Legal and Professional - More on Privacy
+-------------------------------------------------
+
+Data processors must provide "sufficient guarantees to implement appropriate technical
+and organisational measures" to comply with GDPR.
+
+Requirement moves down the supply chain, DP cannot engage a second DP without DS' explicit
+authorisation.
+
+Also, 2nd DP has to supply the same guarantees.
+
+Contractual arrangements must be reviewed and updated. Ensure that responsibilities and
+liabilities between DC and DP are defined.
+
+Must document responsibilities to ensure no confusion, and may have to accept that the
+increased risk levels and requirements for data protection measures may impact service costs.
+
+Certifications to international standards, like ISO 27001 are recognised as effective to
+demonstrate appropriate technical and organisational measures have been implemented.
+
+A data protection officer is required if:
+	> Data is processed by a public authority or body.
+	> Core activities consist of processing operations requiring regular and systematic
+	  monitoring of data subjects on a large scale.
+	> Activities consist of processing large quantities of special categories of data.
+
+SOme companies will appoint a DPO even if not required, as it's possible that an
+organisation's business may suddenly shift in such a way that they now require one.
+
+Requirements imposed by the GDPR makes the appointment of an appropriately qualified person
+to take this role as a sensible risk-containment step.
+
+A group of controllers or processors may share a single DPO as long as they are "easily
+accessible from each establishment".
+
+A DPO can be employed under a service contract, and must be qualified for the role on the
+basis of expert knowledge of data protection law and practices.
+
+DPO duties include ensuring that the organisation complies with GDPR:
+	> Offering advice, monitoring DPIAs.
+	> Being immediate contact for the DPA.
+	> Name and contact details must be published by the organisation.
+
+DPOs need to be more than legal experts - they need qualifications to hande the operational
+requirement to demonstrate appropriate organisational and administrative measures.
+
+Under the DP Directive, data breaches often happened without the DPAs being informed,
+nor affected DSs.
+
+GDPR mandates informing both parties, with limited exceptions.
+
+Best practie is to ensure that there are processes in place to make these notifications
+in the event of a data breach.
+
+Reports must be made within 72 hours of the DC becoming aware of the breach.
+
+
+Notification requires a specific format - describing the measures being taken to
+address the breach, etc.
+
+Where high risks to the rights and freedoms of data subjects are present, DSs must be
+contacted "without undue delay".
+
+It is not necessary if appropriate protective measures are in place to eliminate danger to
+DSs, like encryption.
+
+Incident response and breach reporting processes should be expanded enough to cover all
+potential cyber breaches.
+
+Continual testing and maintenance of these processes will be important to ensure that
+the 72 hour deadline is met.
+
+ALong with appropriate actions to protect data subjects' rights.
+
+ISO27001 management systems cover this.
+
+A data breach should be on the Board's risk register, given potential fines and the rights
+of DSs to bring cases and claim compensation.
+
+The prevalence and effectiveness of cyber crime.
+
+DC will be accountable for failures of DCs, hence the board must ensure that any DP is
+operating in accordance with the regulations, regardless of their jurisdiction.
+
+Besides the DPO, other roles will need a level of familiarity with the requirements of the
+GDPR.
+
+THhis includes most HR staff, as well as middle and senior management in virtually any
+function dealing with personal data being processed, stored, or transmitted by the org.
+
+Staff awareness training should support the more focused training applied to managers.
+
+DC/DP should already be encrypting mobile devices.
+
+Consideration should be given to extending encryption to cover all of the data collection,
+processing, and storage processes.
+
+For encryption standards, follow best practice, e.g. FIPS 140-compliant solutions.
+
+Ensuring that your solutions meet this standard will not only protect personal data in line
+with the regulation's requirements, it may also allow you to access new markets/clients.
+
+Encryption beyond storage of personal data may also be valuable or necessary.
+
+Reasons include establishing secure connections where personal data will be transmitted.
+
+Secure Sockets Layer, or SSL encryption is no longer considered secure.
+
+Transport Layer Security 1.2 or higher is really the new minimum.
+
+GDPR requires that protections are not undermined by the transfer of data abroad.
+
+US-EU Safe Harbour Framework: US organisations could attest that they adhered to 7 principles
+and 15 FAQs to meet the requirements of the DPD.
+
+THis would then qualify them for certification under the framework and trouble-free
+access to the European market as a data processor.
+
+This was dismantled in 2015.
+
+The US-EU Privacy Shield replaced Safe Harbour. Personal data exchanged under the auspices
+of this agreement will be governed by the GDPR.
+
+EU Commission may also recognise some countries or international organisations as providing
+adequate protection for personal data.
+
+A list of these will be published and maintained, including noting where recognition has
+been removed.
+
+DCs/DPs can transfer data to those listed without any further authorisation or safeguards
+beyond those normally required under GDPR.
+
+DCs/DPs can transfer data if they put in place legally binding and enforceable arrangements
+to protect the rights of EU DSs.
+
+Model binding corporate rules approved by the DPA is one such means.
+
+They can also develop their own binding corporate rules to secure data when transferiing
+to 3rd countries.
+
+GDPR is very clear on what these rules must cover.
+
+Also, they must be approved by the DPA.
+
+Codes of conduct and certifications to international standards are also means by which
+DCs/DPs may be able to identify organisatons that will provide appropriate safeguards.
+
+GDPR encourages DPAs to draw up codes of conduct and encourage use of data protection
+certifications.
+
+As DCs/DPs are accountable for data they are processing, any agreement to transger that
+data to a third party, outside the arrangements identified in GDPR, will be illegal.
+
+IMportant to consider when choosing cloud providers.
+
+Highest penalties exist for bad practice in international transfers.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,122 @@
+Data Communications - More Subnetting
+------------------------------------------------
+
+CIDR notation represents an IP address with a suffix that indicates the network bits.
+
+For example, 192.168.1.0 with a 22-bit network identifier is 192.168.1.0/22.
+
+We need to subnet the address block 220.20.20.0/24 with minimal wastage.
+
+The networks are, along with the bits we need for each:
+	> A - 32 addresses - 6 bits.
+	> B - 60 addresses - 6 bits.
+	> C - 2 addresses - 2 bits.
+	> D - 12 addresses - 4 bits.
+	> E - 20 addresses - 5 bits.
+
+This leaves us with:
+	> A - /26, 2 bits moved.
+	> B - /26, 2 bits moved.
+	> C - /30, 6 bits moved.
+	> D - /28, 4 bits moved.
+	> E - /27, 3 bits moved.
+
+The magic numbers for each network are:
+	> 64
+	> 64
+	> 4
+	> 16
+	> 32
+
+The subnet mask can be created by assuming all network bits to be 1.
+
+All our CIDR numbers are greater than 24, so we only need look at the last octet, or 8 bits.
+
+Counting from the left, we add together the bit values. For example:
+	> /26 - 11000000 - 128, 64, 0, 0, 0, 0, 0, 0.
+	> This gives a mask of 255.255.255.192.
+
+Only network numbers are seen in a routing table.
+
+In the example routing table, there are only 4 entries, for 4 networks:
+	> A - 30.0.0.0 - R1
+	> B - 40.0.0.0 - R1, R2
+	> C - 128.1.0.0 - R2, R3
+	> D - 192.4.10.0 - R3
+
+Because of the way that they connect to these networks, the routers themselves also need
+addresses. They have one for each network they are connected to.
+	> R1 - 30.0.0.7, 40.0.0.7
+	> R2 - 40.0.0.8, 128.1.0.8
+	> R3 - 128.1.0.9, 192.4.10.9
+
+Each router must send packets through other routers to get to the desired network.
+
+For example, if R1 wants to send to network A, it can deliver directly, as it is connected.
+
+If R1 wishes to send to network D, it must send through 4.0.0.7, then 4.0.0.8 to R2,
+which will then route it onwards.
+
+If we AND the destination address with a network's subnet mask, and get the network
+identifier portion, we know its a match.
+
+
+Routing Table Example
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In this example, we have the following:
+
+	> Ethernet - 131.108.0.0/16
+
+	> Router 1
+		- Connected to Ethernet at 131.108.99.5
+		- Connected to Token Ring at 223.240.129.2
+
+	> Token Ring - 223.240.129.0/24
+	
+	> Router 2
+		- Connected to Token Ring at 223.240.129.17
+		- Connected to WAN at 78.0.0.17
+
+	> WAN - 78.0.0.0/8
+
+
+Here is the routing table for Router 1:
+----------------------------------
+Network			Next Hop
+----------------------------------
+131.108.0.0		Direct Connect
+223.240.129.0		Direct Connect
+78.0.0.0		223.240.129.17
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

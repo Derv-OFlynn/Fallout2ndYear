@@ -1,0 +1,140 @@
+Data Communications - Opening
+------------------------------------------
+This course is concerned with the communications problem: 
+
+	"How can two remote entities communicate with
+		   each other effectively and efficiently?"
+
+The module is weighted:
+	30% Class Assessment - 15% on either quiz.
+	70% Exam.
+
+Recommended Reading:
+	Data and Computer Communications by William Stallings
+	Data Communications and Networking by Behrouz A. Forouzan*
+	Computer Networks by Andrew Tanenbaum
+
+Effective communication is when what is sent is the same as what is recieved.
+
+Efficient communication is when the least amount of resources possible is used.
+
+Sometimes efficiency and effectiveness can work counterintuitively to each other.
+
+Communications is all about moving information from one place to another.
+
+That may be from one person's brain, through their mouth, and into another's ear, or from
+another person's brain through the pen in their hand and onto paper.
+
+It can also be about moving data from one computer system to another.
+
+Communication has faced many difficulties in efficiency and effectiveness over time.
+
+First, cave paintings in ancient times, from 40,000 to 10,000 BC.
+
+Then cuneiform scripts, which were inefficient in their 600 character alphabets.
+
+Then onto heiroglyphics, which improved in their shorter alphabet and ability to be written
+onto parchment.
+
+Then we had more modern alphabets, and the invention of the printing press.
+
+The printing press allowed for the mass production of the written word.
+
+The issue this ran into was its slowness in travel, as these printed works still needed to be
+carried about on horseback.
+
+Following this was the invention of the telegraph, which allowed a message to be tapped out
+in a series of dots and dashes, "." and "_", and transmitted along an electrical wire.
+
+This new near-instantaneous communications method was further improved by the introduction
+of a standard, a new universal method of encoding the information called "morse code".
+
+
+Communications Model Components - 5 Component Communications Model
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Source: Device that generates data.
+Transmitter: Transforms and encodes data.
+Transmission System: Physical system connecting source and destination devices.
+Reciever: Performs reverse function of transmitter (decodes data).
+Destination: Recieves the incoming data.
+
+
+FOr example, in a telephone communications system, this model might look like:
+	Source: Mouth
+	Transmitter: Phone
+	Transmission System: Signal Tower, Base Station, Phone Network
+	Reciever: Other Person's Phone
+	Destination: Other Person's Ear
+
+This transformation of sound to radio signals to digital data and back again, and its 
+transmission across vast amounts of physical space, must happen in real time.
+
+Data transmission occurs between the transmitter and reciever in this model.
+
+The transmission signal that moves between them is some form of electromagnetic wave or
+electrical signal.
+
+In its simplest form, a transmission system is some type of transmission medium which
+may be either guided (electric cable, fibre optic), or unguided (EM waves in space).
+
+Successful data transmission depends on two factors: quality of signal and characteristics
+of transmission system and medium.
+
+Signal Characteristics Include:
+	> Continuous - No breaks or discontinuities
+	> Discrete - Contains a finite number of discrete values
+	> Periodic - Repeats itself after some fixed time
+	> Aperiodic - No repetition of signal pattern
+
+We can use waves to carry data. We can create a sine wave on an electrical cable by altering
+the voltage up and down. 
+
+The electricity coming into your house is on a sine wave, an alternating current at 50hz.
+
+A sine wwave has three main characteristics: amplitude, frequency, and phase.
+
+Amplitude measures the height and depth of the peaks and troughs of the wave.
+
+Frequency is the repetitions per second of the wave, measured in hertz.
+
+Phase is the relative position within a cycle of a signal. Measured in degrees or radians.
+
+We can transmit a sine wave over an electrical cable using varying voltages, and then read
+the characteristics of that wave back at a destination based on the voltage recieved at
+different points in time.
+
+We can change the signal in different ways to represent data, such as high and low voltages
+to represent 1s and 0s.
+
+Composite waveforms are made up of multiple waves, which can be reverse engineered into
+their component parts.
+
+However, it is less useful to look at signals like this in time domain. It is more useful
+to look at them in frequency domain.
+
+Each line in the frequency domain represents a different wave component.
+
+By Fourier Analysis, any signal can be expressed as the sum of a series of sinusoidal
+components of different frequencies.
+
+We refer to the component waves that make up a waveform as harmonics.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

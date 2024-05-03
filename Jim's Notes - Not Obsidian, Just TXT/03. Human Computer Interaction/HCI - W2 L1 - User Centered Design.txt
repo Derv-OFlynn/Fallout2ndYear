@@ -1,0 +1,285 @@
+Human Computer Interaction - User Centered Design
+------------------------------------------------------------
+
+Quantitative and qualitative studies are useful for researching data about users.
+
+Quantitative data is expressed as numbers, and qualitative data is not.
+
+Techniques for quantitative analysis include numerical methods to ascertain size,
+magnitude, amount.
+
+Techniques for qualitative analysis express the nature of elements, and are represented
+as themes, patterns, and stories.
+
+Data gathering is a central part of identifying needs and establishing requirements,
+and of evaluation.
+
+Many techiques are available, and each has its advantages and disadvantages.
+
+There are many ways of recording the data gathered, including notes, audio, video, and more.
+
+Consent is usually required for research - written, informed consent.
+
+When performing this research, we usually have to set out goals, what questions we're trying
+to answer:
+	> "What features do users value the most?"
+	> "Do our users enjoy using the product?"
+
+The effort in identifying participants for study should represent target users.
+
+Participants may be users of the current system, or a similar one.
+
+Participants might also be atypical users.
+
+When looking into a system, we ask:
+	> Who are the users of the system being investigated?
+	> Are they currently users of a similar system?
+	> Could there be a number of stakeholders involved?
+	> Could there be different kinds of users?
+	
+You can't interview everyone, so you try to find people representative of all groups.
+
+Incentives for participation might include money, something other than money, or nothing.
+
+There are three main methods of gathering data:
+	> Interviews
+	> Questionnaires
+	> Observations
+
+There are three types of interview:
+	> Unstructured: not directed by a script, rich but not replicable.
+	> Structured: tightly scripted, often like a questionnaire.
+	> Semi-Structured: guided by a script, not bound by it. Good balance.
+
+Interviews are like a forum for talking to people.
+
+They can use props, examples, sample scenarios, and prototypes.
+
+They can be good for exporing issues, but are time consuming.
+
+When doing an interview, it is important to consider the phrasing of the questions:
+	> Leading question?
+	> Some info better gained through observation.
+	> Open ended questions can lead to insightful answers.
+	> Don't ask questions that should be for the designer.
+	> Ask about the user's preferences and experiences.
+
+Be careful of absolute scales, and ask them to compare the product to something else.
+
+Try to avoid Yes/No questions, and don't jump in and interrupt answers.
+
+Long questions and compound questions should be avoided - split the compound ones in two.
+
+Avoid jargon and other hard-to-parse language.
+
+Don't ask leading questions, and keep in mind unconscious biases.
+
+Interviews usually consist of an introduction, warmup, main body, cool off, and closure.
+
+These stages bring the interview from introducing youtself, through explaining the goals
+of the interview, the main questions, and a few easy questions before the end to defuse
+tension.
+
+Follow-up questions in interviews gather more detailed information.
+
+Questionnaires are often presented as a series of questions designed to elicit specific
+information.
+
+QUestionnaires are often used in conjunction with other techniques, and can give
+quantitative or qualitative data.
+
+Questions can be closed or open: closed ones are easier to analyze, but open ones often
+give more insight.
+
+Questionnaires can be administered to large populations.
+
+Paper, web, email, and social media can be used to disseminate.
+
+Sampling can be a problem when the size of a population is unknown, as is common online.
+
+The impact of a question can be influenced by a question order.
+
+Do you need different versions of the questionnaire for different populations?
+
+Provide clear instructions on how to complete the questionnaire.
+
+Strike a balance between using whitespace and keeping the questionnaire compact.
+
+Decide on whether all phrases will be positive, all negative, or mixed.
+
+Consider starting with demographic info, like age, gender, computer proficiency, etc.
+
+This provides useful context.
+
+There are many possible formats for answers:
+	> Checkboxes
+		> Rating Scales
+		> Likert Scales
+		> Semantic Scales
+		> Several Points
+
+A good response can be encouraged by making sure the purpose of the study is clear, and 
+promising anonymity.
+
+You should ensure the questionnaire is well designed, and offer a shortened version to 
+those unable to complete a longer one.
+
+Provide an incentive, and follow the questionnaire up with emails, phone calls, and letters.
+
+40% response rate is high, 20% is acceptable, and you should plan accordingly.
+
+Responses are usually recieved quite quickly, and data can be collected in a database for
+analysis.
+
+This reduces time for analysis, and allows easy error correction.
+
+The disadvantages of questionnaires are:
+	> Sampling is problematic with unknown population size.
+	> Preventing individuals from responding more than once.
+	> Greater potential for abuse.
+
+Observation is about observing people to find a problem or to empathise with users.
+
+You need strategies to observe users, and to keep ethography in mind.
+
+Also tacit knowledge - everyday behaviours, intuiions, and the wider context.
+
+Pay attention to the users' strategies and workarounds.
+
+Identify user frustrations.
+
+Also, errors, that users make are very important to improving the interface.
+
+One method is in a focus group:
+	> Good at highlighting the areas of conflict.
+	> Good at gaining a consensus view.
+
+User panels can be an excellent forum for group creativity.
+
+Diary studies capture longer term info.
+
+These studies record a specific piece of info - could be paper, video, audio.
+
+Entry must be as easy as possible.
+
+A researcher can follow up and remind users during the study to provide diary entries.
+
+While researching using Experience Sampling, you can alert participants to give feedback
+or info at a particular time or location.
+
+Experience sampling might be useful for aggregating info across many people.
+
+It may be easier to fill sample data entries automatically.
+
+Other methods include:
+	> Lead users as collaborative researchers or designers:
+		The researcher or designer can translate an expert user's idea into
+		something more useful.
+
+	> Extreme users:
+		We can learn from the "extremes of use".
+
+Other approaches to user requirements involve determining who the stakeholders are, and using
+different methods to figure out requirements from them.
+
+The stakeholders are those responsible for the UI's design and development, those with a
+financial interest, those responsible for introducing and maintaining the UI, and those
+with a particular interest in its use.
+
+Some approaches to figure this out include:
+	> Cooperative Requirements Capure Approach
+	> Structured System Analysis and Design Method.
+
+Other approaches include:
+	> An investigation of the current evironment to develop a picture of future needs.
+	> Alternate course of action derived from the Project Manager,
+
+Task analysis is the study of what a user is required to do, in terms of actions and/or
+cognitive processes, to achieve a system goal.
+
+It is "an umbrella term that covers techniques for investigating cognitive processes and
+physical actions, at a high level of abstraction and in minute detail”.
+
+Task Analysis models how the user would use a system:
+	> What should be added?
+	> Where do new features fit?
+	> What can be left out?
+	> What's most critical?
+	> What's most frequently done.
+
+A goal can be defined as somethign a user wishes to achieve.
+
+The goal could be "write a letter" or "deposit money".
+
+A task is the series of activities or actions required to achieve a goal.
+
+A task is a structured set of activities, and can involve problem solving, or sub-tasks.
+
+An action is a simpe task, which requires no problem solving.
+
+Hierarchical task analysis focuses on physical and observable actions, and includes looking
+at actions not related to software or an interaction device.
+
+HTA starts with a user goal, which is examind and the main tasks of achieving it are
+identified.
+
+These tasks are then divided into sub-tasks.
+
+Real tasks are often very complex, and can become to big and complex to analyse and describe.
+
+There is a limit to the sort of task that can be modelled.
+
+Tasks that overlap each other or are done in parallel are hard to describe, as well as
+interruptions in the task or unusual flows in the task.
+
+It can be argued that the most important thing in design is the goal, not the task,
+as the goal is a final state, and the task is only an in-between process.
+
+A proper analysis of the user's goals will lead to the essential tasks, which will give
+a better and more usable system. This method is called goal-directed design.
+
+A persona is a model of a user that focuses on the individual's goals when using an artefact.
+
+The model has a specific purpose as a tool for software and product design.
+
+The persona model resembles classical user profiles, with some important distinctions.
+
+The persona represents patterns of user behaviour, goals, and motives, compiled in a fictional
+description of a single individual.
+
+It also contains made-up personal details in order to make the persona feel "more tangible
+and alive".
+
+You form a description of an example user, not necessarily a real person.
+	> Use this as a surrogate user: "What would my persona Betty think?".
+	> Details matter. They make Betty real.
+
+Personas are very different to user profiles, which are trying to capture the average or
+generic user.
+
+Instead, personas are like characters that can interact together and depict user goals.
+
+There is a risk that designers might make up characters without basing them on real users.
+
+Also, they may sometimes represent "extreme users".
+
+You also need to think of average users though.
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+

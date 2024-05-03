@@ -1,0 +1,195 @@
+Data Communications - Access Control
+------------------------------------------
+This is where the idea of a MAC address comes from - Medium Access Control Address.
+
+Gaining access to an LAN is a fundamental requirement for data transmission between stations.
+
+Cess can be controlled either centrally, obtaining permission before accessing the medium,
+or distrbuted, where is controlled by stations acting together.
+
+Characteristics of centrally controlled access techniques:
+	> Advantages:
+		- Access logic required is simple.
+		- No co-ordination required between stations.
+
+	> Disadvantages:
+		- Single point of failure - controlling device can affect all others.
+		- Potential bottleneck - All requests must be sanctioned by control device.
+
+Distributed access techniques are more commonly used.
+
+There are three generalised access control techniques.
+	> Reservation:
+		- Medium divided into time slots.
+		- Station wishing to send reserves future slots.
+		- Very suited to stream traffic (long, continuous, irregular basis).
+
+	> Round Robin
+		- Each station takes turns to transmit.
+		- Efficient with a lot of data on a regular basis.
+
+	> Contention
+		- Each station contends for access when needed.
+		- Distributed technique by nature.
+		- Works on a first come/first served basis.
+		- Suited to bursty traffic (short, sporadic transmissions).
+
+Ethernet uses a contention technique.
+
+Ethernet is an example of a Bus or Star LAN. The technique it uses is a Contention MAC.
+
+This is also known as Carrier Sense Multiple Access with Collision Detection (CSMA/CD).
+
+This is random, and requires each station to contend for access to the shared transmission
+medium.
+
+It is the most commonly used MAC technique for bus and star LANs.
+
+It is defined under IEEE802.3 standard.
+
+If a station wishes to transmit data frames, the following steps should be followed:
+	> The station listens to the medium for activity.
+	> If the medium is clear of traffic, transmission begins immediately.
+	> If the medium is in use, the station waits a random time before attempting.
+
+In normal operation, tansmitting stations can send multiple frames and would expect ACKs in
+the return direction:
+	> ARQ techniques: Go-Back-N and Selective Reject.
+
+The problem with this technique is that is is possible for two or more stations to attempt
+to transmit at around the same time.
+
+This will lead to a collision, i.e. a garbled transmission, resulting from the signals
+colliding with each other.
+
+Collisions are an example of frames "going missing".
+
+COllisions can lead to out-of-sequence frame and missing RR messages.
+
+In the ARQ techniques, a transmitting station:
+	> Sets a timer for each frame transmission.
+	> Expects an ACK from the destination station.
+	> Takes action after a timeout period using command/responses.
+
+SCMA results in poor utilization of the link:
+	> The medium remains unusable for the time taken to clear the collision.
+	> The transmitting station is reliant upon the non-return of an ACK to detect problems.
+
+To counteract this inefficiency, CSMA was extended to include collision detection (CSMA/CD).
+
+As before, the station listens to the medium before attempting to transmit.
+
+During transmission, the station continues to listen to the medium for a collision.
+
+This is known as collision detection:
+	> If present, the station ceases transmission immediately.
+	> The station then transmits a brief jamming signal to inform all other stations.
+	> The station waits a random amount of time (delta) before attempting to retransmit.
+
+Additional collisions are dealth with using a binary exponential backoff.
+
+Without the use of CSMA/CD, collisions would not be detected.
+
+If the affected frame was a data frame, the reciever would likely interpret it as out-of-
+sequence, and return an REJ message.
+
+If the frame was an ACK, the transmitter would not recieve an RR message for an outstanding
+frame.
+
+Consequently, the overall time to send multiple frames would be extended, as the communicating
+station would have to rely on timers and REJ messages to recover from collisons.
+
+With collision detection, the colliding frames are detected.
+
+The tansmitter would stop transmitting the frame and wait a period before attempting to
+retransmit, with the reciever eventally getting the frame.
+
+In part, collision detection addresses some of the issues normally addressed with error
+control, namely 'lost' frames.
+
+Consequently, the overall time to send multiple frames would be reduced, as the transmitter
+would only have to wait for the collision to disappear from the segment in order to
+retransmit the frame.
+
+The use of CSMA/CD is usually quite beneficial, as it improves link utilization by
+reducing downtime in the LAN segment.
+
+However, frame size is critical:
+	> Short frames prevent working collision detection.
+	> Frames have to be a minimum length.
+	> Consequently the MAC frame format inludes a special field called the Pad.
+
+802.3 format:
+7:Preamble  ->  1:SOF  ->  6:Destination MAC Address  ->  46-1500:LLC PDU  ->  4:CRC
+
+Ring LANs consit of a number of stations, in turn connected to a number of repeaters.
+
+These are in turn connected to two other repeaters by unidirectional transmission links to
+form a ring.
+
+Data are transferred bit-by-bit around the ring, from one repeater to the next.
+
+Each repeater regenerates and retransmits each bit.
+
+Repeaters perform three functions:
+	> Frame Insertion: frames with addresses are place on the Tx medium by the network.
+	> Frame Reception: as a frame passes through a repeater, the address field is copied
+	  to the station. If it recognises it, the whole field is copied.
+	> Frame Removal: A repeater can remove a frame by not repeating it to the next link.
+
+An access technique used in Ring LANs, and the most commonly used MAC technique, is IBM
+token ring.
+
+Token Ring uses a small frame, called a token. The token circulates around the ring,
+indefinitely.
+
+A station wishing to transmit data, must sieze the token and remove it from the LAN.
+
+The token is then transformed into a start-of-frame field for a data frame. More fields are
+added to construct a data frame.
+	> The token is effectively removed from the ring and replaced by a data frame.
+	> When the frame returns to the transmitting station it removes the frame from
+	  the ring and inserts a new token.
+
+Token Ring advantages:
+	> Access is efficient and fair under heavy traffic loads.
+
+Token Ring disadvntages:	
+	> Access can be inefficient under light traffic loads.
+	> There is a requirement for token maintenance.
+		- Tokens can be lost or duplicated, one station assigned responsibility.
+
+A Star LAN uses a central component known as a hub.
+
+There are two types of hub: Shared-Medium, and Switched LAN.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

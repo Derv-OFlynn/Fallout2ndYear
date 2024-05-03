@@ -1,0 +1,119 @@
+Legal and Professional Issues - Privacy & GDPR
+-----------------------------------------------------
+
+"The Right to Privacy" was an article published by Harvard Law Review in 1890.
+
+The central thrust of the article is that common law should protect the idea of privacy.
+
+It referred to Mr. Justice Cooley, who had used the phrase "right to be left alone" 2 years
+earlier.
+
+Ireland has limited recognition of privacy in the Constitution:
+	> "State guarantees in its laws to respect, and, as far as practicable, by its laws
+	   to defend nd vindicate the personal rights of the citizen".
+	> "State pledges itself to guard with special care the Institution of Marriage, on
+	   which the Family is founded, and to protect against its attack".
+	> "The dwelling of every citizen is inviolable and shall not be forcibly entered
+	   save in accordance with the law".
+
+Privacy and freedom of expression are two fundamental rights, and in media cases, are often
+also in direct conflict.
+
+The theoretical problem of the "balancing of rights" is a pressing practical issue for
+editors as well as media lawyers.
+
+The concept of data protection, as it is used today, is very modern.
+
+Digitally stored databases and records keep track of more information about us than anything
+before.
+
+Digital records are intangible, with no physical weight or volume, and can be lost or stolen
+without indication.
+
+Such a loss could represent an enormous amount of value.
+
+Earliest information protection practices were driven by professions rather than the law.
+
+The lawyer-client privelege became a contract between a lawyer and client over the centuries.
+
+This allowed the lawyer to represent their clients' interests without the client fearing
+legal repercussions.
+
+Medical records and a doctor's confidentiality were similarly established.
+
+Even though a court could force those records to be handed over, the medical profession
+keeps them relatively safe otherwise.
+
+These practices ensred specific silos of personal information were protected according to the
+interests of the business.
+
+Where a business value existed, then information was protected.
+
+Moving from paper to electronics meant more varied and powerful methods for manipulating
+personal information.
+
+This means greater risks in terms of data security.
+
+Political campaigns have used increasing volues of data to better target key demographics,
+define policy, and manage candicates' images.
+
+Campaigns in America terget states based on historical notions of which states were "Swing",
+i.e. could go either way and budget realities.
+
+Campaigns also use data to construct predictive models to make targeting campaign comms more
+efficient and to support borader campaign strategies.
+
+These predictive models result in three categories for predictive scores for each citizen
+in the voter database: behaviour scores, support scores, and responsiveness scores.
+
+Identity theft has become a significant problem that has only become a greater threat with
+the greater volume of information that is available.
+
+The European Convention on Human Rights in 1953 introduced several new privacy laws to Europe.
+	> "Everyone has the right to respect for his private and family life, his home and
+	   his correspondence."
+	> "There shall be no interference by a public authority with the exercise of this
+	   right except such as is in accordance with the law and is necessary in a
+	   democratic society in the interests of national security."
+
+The Council of Europe, 1981, introduced Treaty 108, the Convention for the Protection of
+Individuals with regard to Automatic Processing of Personal Data.
+
+Established standards to ensure the free flow of information throughout EU member countries
+without infringing personal privacy.
+
+The 1988 Data Protection Act rflected the minimunstandards specified in that convention.
+
+It wasn't rigorous in 1988. Requirements for the protection of personal data were considerably
+less urgent than today.
+
+The power and availability of computers exploded in the 80s and 90s, and EU Member States'
+data protection laws diverged, thus impeding data flows through the EU, and business too.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

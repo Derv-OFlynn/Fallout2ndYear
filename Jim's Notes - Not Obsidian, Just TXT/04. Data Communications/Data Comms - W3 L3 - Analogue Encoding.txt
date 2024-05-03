@@ -1,0 +1,12 @@
+Data Communications - Analogue Encoding
+-------------------------------------------------
+
+When we encode an analogue signal into digital data, we use a technique called sampling.
+
+We take as many sampes of the signal as the highest frequency harmonic, and we give each
+of these samples an 8 bit value.
+
+This is called quantisation.
+
+
+

@@ -1,0 +1,122 @@
+Human Computer Interaction - Users and Interfaces
+-----------------------------------------------------
+
+Human computer interaction is "concerned with the design, evaluation, and implementation of
+interactive computing systems for human use and with the study of major phenomena surrounding
+them".
+
+Human Computer Interface is the study of the interaction between people and coomputers, and
+involves the development and application of principles, guidelines, and methods to
+support the design and evaluation of interactive systems.
+
+There are many disciplines concerned with HCI, featured on slides 6 to 9.
+
+To the user, information is input and output as:
+	> Visual.
+	> Auditory.
+	> Haptic.
+	> Movement.
+
+To the user, information is stored in memory:
+	> Sensory Memory - visual, tactile, auditory, etc.
+	> Short-Term Memory.
+	> Long-Term Memory.
+
+To the user, information is processed and applied with:
+	> Reasoning.
+	> Problem-Solving.
+	> Skill.
+	> Error.
+
+Emotion influences human capabilities.
+
+As HCI designers, engineers, and programmers, we must remeber each person is different.
+
+Other considerations for the user include:
+	> Motivation.
+	> Enjoyment.
+	> Satisfaction.
+	> Experience Level.
+
+Computers are used in social organisation and work, where humans interact as social beings.
+
+It is important to consider models of human activity.
+
+It is also important to consider the domains of work being done, for example individual
+versus group work.
+
+These may have popular styles in:
+	> Document Production.
+	> Communications.
+	> Design.
+	> Tutorials.
+	> Control Systems.
+
+To improve the fit between a designed object and its use, we must adapt:
+	> How systems are selected and adopted.
+	> How users improvise routine systems.
+	> How systems adapt to the user.
+	> How users adapt to the system.
+	> User guidance.
+
+The interaction in "human computer interaction" is a process.
+
+To understand it, we need to understand computers, and the processes associated with them.
+
+Years ago, computers performed batch processing.
+
+Punched card stacks or large data files were prepared.
+
+This way of use led to long waits, and to mistakes being critical, and you needed to start
+again and wait from the start.
+
+These days, computing is rapid.
+
+Feedback comes quickly, and the user is in control most of the time.
+
+An interactive system may aim to update or replace an established system or develop
+a totally innovative product.
+
+Regardless of the initial situation, the following must be discussed, refined, clarified,
+and probably rescoped:
+	> The aim of the project.
+	> The user's needs.
+	> Requirements.
+	> The user's aspirations and expections.
+
+Design for interactivity requires an understanding of:
+	> The users.
+	> Their current tasks.
+	> Their goals.
+	> The conditions under which the product will be used.
+
+To specify and design a usable system interfact, a software designer must develop an
+understanding of the user, what they want, and what they will do as a result of the system.
+
+This is a complex problem with many questions.
+
+In order to achieve good UI design, participation in the process of understanding users and
+evolving requirements is essential.
+
+In order to design an effective UI, basic questions should be answered:
+	> Who is the user?
+	> Where is the interaction to take place?
+	> What is the task?
+	> What is the environment in which the system will operate?
+
+There are many approaches to understanding users using a range of user research methods.
+	> Observation.
+	> Interview.
+	> Questionnaire.
+	> Focus Groups.
+
+
+
+
+
+
+
+
+
+
+

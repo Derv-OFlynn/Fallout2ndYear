@@ -1,0 +1,115 @@
+Data Communications - Signals
+----------------------------------------
+
+When home internet was first introduced, it was coming in on phone lines, which had an
+in built limit of around 4khz. As a result, internet bandwidth was incredibly slow.
+
+In general, for a digital signal carrying data at a rate of [X]bps, good representation
+can be achieved with a transmission system bandwidth of [X]/2Hz.
+
+If the data rate is 2Mbps, the system bandwidth to facilitate it would be around 1Mhz.
+
+If we can't increase the system bandwidth, which is often, as this is usually a hard system
+limit, we can instead slow the data rate for a clearer signal.
+
+If we try to push 19200 bps through a given low-bandwidth system, we get only 1 harmonic
+through.
+
+If we slow down and only use 300 bps in the same system, we get 80 harmonics through.
+
+When we improve the system bandwidth, we improve maximum effective data rates.
+
+Data are entities that convey meaning.
+
+Signal is electromagnetic waves encoded with data.
+
+Transmission systems are the entities over which signal is transmitted.
+
+Each of these three can be considered in terms of digital or analogue.
+
+Analogue Data takes on continuous values on some interval - voice, pressure, temperature, etc.
+
+Digital Data takes on discrete values, e.g. integers, text, etc.
+
+An analogue signal is a continuously varying electromagnetic wave, representing data, that
+may be propogated over a transmission medium.
+
+A digital signal is a sequence of discrete, discontinuous voltage pulses, representing data,
+that may be propogated over a transmission medium.
+
+Data transmission is the communication of data by the propogation and processing of signals.
+
+Analogue data can be conveyed by an analogue signal, e.g. telephone.
+
+Digital data can also be conveyed by an anaologue signal when a MODEM is used.
+
+The modem combines a modulator and demodulator.
+
+There exists both amplitude modulators, which uses amplitude to carry data, and frequency
+modulators, which use frequency to carry data.
+
+These two are where the "FM" and "AM" in radio signals comes from.
+
+Analogue data can be conveyed by a digital signal when a CODEC is used.
+
+This, like modem with modulator and demodulator, is a combination of coder and decoder.
+
+Digital data can be conveyed by a digital signal, e.g. digital transmitter.
+
+Analogue transmission is the propogation of analogue signals only.
+
+They consist of some physical quantity, e.g. voltage, which changes continuously as a
+function of time.
+
+There is no regard for the content, i.e. the encoded data, of the signal.
+
+As the transmitted analogue signal becomes attenuated with distance, an amplifier can
+extend the range. 
+
+Attenuation is the loss in power of the signal, due to things like resistance in the medium.
+
+An amplifier boosts the power of the signal back up to what it previously was.
+
+However, using an amplifier to extend the range boosts noise, and therefore distortion, and
+so cannot be repeated.
+
+Digital transmission is the propogation of analogue signals, with encoded digital data, or
+digital signals.
+
+Digital transmission systems have regard to the encoded data.
+
+As the transmitted digital signal becomes attenuated with distance, a repeater can extend
+the range.
+
+A repeater recieves the transmitted signal, recovers the digital data, and re-transmits a
+new signal with no noise added.
+
+Digital is the superior method of transmission.
+
+This is due to many factors:
+	> Low cost of digital electronics.
+	> Data integrity - signal maintained free of noise.
+	> Capacity Utilisation - different signals multiplexed to share channels.
+	> Security - Encryption can be more easily applied.
+	> Integration - Digitised analogue data can be mixed with digital and share facilities.
+
+Not everything can be digital though, and we may need to simply accept signal impairments
+as a result, such as noise, etc.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

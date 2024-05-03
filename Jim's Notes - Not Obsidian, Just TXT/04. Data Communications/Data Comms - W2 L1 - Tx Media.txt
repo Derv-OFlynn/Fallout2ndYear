@@ -1,0 +1,64 @@
+Data Communications - Transmission Media
+-------------------------------------------------
+
+The transmission medium is the path along which a signal travels.
+
+The type of medium depends on the kind of signal being transmitted and can affect the
+reliability of commuications.
+
+Conventional networks use copper wire - low resistance, but prone to interference.
+
+This interference is minimised by using twisted pair wiring and co-axial cable.
+
+Different cables will have different amounts of twists per centimeter, but more twists
+means a more expensive cable.
+
+Twister pair cables are comprised of 2 insulated copper wires twisted together. These
+twists help to reduce crosstalk.
+
+Typically many pairs are bundled into a protective sheath.
+
+Many types: Cat3 = 16Mhz, Cat5 = 100Mhz, Cat6 = 250Mhz.
+
+Applications include use in office buildings for phone and computer connectivity, and
+in residential telephone networks.
+
+Coaxial cable is comprised of a central copper conductor and a hollow outer cylindrical
+conductor, as well as a surrounding sheath to hold the conductors in place.
+
+It has a bandwidth of 1Ghz.
+
+Applications include use in cable TV, long distance telephone, and computer connectivity (LAN).
+
+Optical Fibre has a thin, flexible, transparent glass fibre core, surrounded by glass or
+plastic cladding with a lower refractive index.
+
+The outer sheath provides it with rigidity and protection.
+
+Signals are sent in the form of light through the inner glass core.
+
+Several fibres may be bound in a single jacket, and two types of light source can be used:
+	> LED - Low cost.
+	> Injection Laser Diode - Higher data rates and distances.
+
+Applications include use in long distance telephone, metropolitan trunks, and LANs.
+
+Optical Fibre cables offer the following advantages over coaxial:
+	> Electromagnetic isolation.
+	> Lower attenuation, greater repeater spacing.
+	> Greater data capacity.
+	> Requires only a single core for a complete circuit.
+
+
+
+
+
+
+
+
+
+
+
+
+
+

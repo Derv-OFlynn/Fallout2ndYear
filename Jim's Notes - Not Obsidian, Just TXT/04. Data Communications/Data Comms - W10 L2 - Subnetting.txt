@@ -1,0 +1,43 @@
+Data Communications - Subnetting
+----------------------------------------
+
+When assigning subnets, the number of addresses given to the customer depend on how many
+bits are assigned to the host portion.
+
+This means the number of addresses increases in binary, i.e. 1, 2, 4, 8, 16, 32, 64, 128 etc.
+
+Some IP addresses are considered special addresses, and cannot be sold.
+
+These include the following:
+
+> Directed Broadcast Address - This is defined for each physical network. A suffix of all 1
+bits is added to the network prefix. It is a way to communicate with all machines on a
+network.
+
+> Limited Broadcast Address - Here an address consisting of all 1 bits will allow a
+broadcast on a single wire.
+
+> This Computer Address - An IP address consisting of all zeroes refers to this computer.
+THis is used by hosts at boot-up to obtain its IP address.
+
+> Loopback Address - This has a network prefix 127/8; The host suffix is irrelevant. It
+facilitates the routing of packets back to the source, i.e. it is the local host address.
+
+
+
+Subnetting Example:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+We have address block 17.12.30.0/26, and musr divide it into three seperate network,
+with 32, 16, and 16 addresses.
+
+First, we must get the subnet masks for each subnet.
+	- 32 addresses requires a mask of 27.
+	- 16 addresses requires a mask of 28.
+
+For an uneven split like this, we start with the highest size network, and give them
+the first addresses.
+
+This is called VLSM, or variable length subnet masks.
+
+
+

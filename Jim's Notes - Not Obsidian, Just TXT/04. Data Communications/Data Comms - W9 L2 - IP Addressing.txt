@@ -1,0 +1,139 @@
+Data Communications - IP Addressing
+----------------------------------------------
+
+An internet must operate like any other network.
+
+It must allow hosts to send and recieve data, which requires some addressing scheme.
+
+Addressing is a critical component of internet abstraction.
+
+The Internet Protocol, or IP, defines such an addressing scheme.
+
+IP addressing is independent of the underlying physical addressing schemes.
+
+Each host/router interface is assigned a unique 32-bit IP address.
+
+This address is used in packets that are sent across the internet.
+
+Each IP address consists of a prefix and a suffix.
+
+Each physical network is assigned a unique network number, which forms the network prefix
+part of a host's address.
+
+The host suffix uniquely identifies the host on that network.
+
+Nework numbers/prefixes are assigned globally, host suffixes are assigned locally.
+
+Representing IP addresses in 32-bit binary form is only suitable for computers.
+
+A human friendly way of representing IP addresses is known as dotted-decimal notation.
+
+Here, each octet of the IP address is represented as a decimal value, seperated by a dot.
+
+This is where we get addresses like "129.52.6.0".
+
+Each decimal value represents 8 bits.
+
+Consequently, the range of each decimal value is 0-255.
+
+The IP addressing scheme must accomodate small and large internets.
+
+CLassful Addressing was the first attempt to organise the IP address space.
+
+Here, the IP address space was divided into 5 classes.
+
+Each class had different size prefix and suffix portions, to accomodate small and large
+networks.
+
+The first four bits identify the class to which the address belongs.
+	> A - 0
+	> B - 10
+	> C - 110
+	> D - 1110
+	> E - 1111
+
+Classes A, B, and C are the primary classes, used for host addressing.
+
+Class D addresses are for multicasting, and E was reserved for future use.
+
+For class A addresses, the first octet is the network prefix and the last three are the host.
+
+Class B has a 50/50 split, and class C has the opposite ratio to A.
+
+The seperation of prefix and suffix is important for routing.
+
+Routers are responsible for directing packets to their destination.
+
+The router needs to look at the address to make a decision about where to send a packet.
+
+For example, with letters, we have national and local post offices.
+
+National Sorting Offices tend to be far from the destination, and only examine the County
+or Town, before sending the letter to the local post office there.
+
+The Local Office then looks at the street name and house number to make the final delivery.
+
+This is how the prefix and suffix work to send packets.
+
+Routers far away from the destinaton need only examine network prefixes, and the closest
+router to the destination then examines the entire address, including suffix.
+
+Classful IP addresses are self-identifying as the network prefix portion can be computed
+from the address itself.
+
+THe first four bits will determine the class, and hence the network prefix.
+
+This makes it easy for far away routers to route the packet towards the destinaton.
+
+While dotted-decimal notation represents IP addressing in a human readable form, it also
+hides the first four bits.
+
+To determine address class from the dotted-decimal representation, we rely on range values
+for the first octet:
+	> A ~ 0-127
+	> B ~ 128-191
+	> C ~ 193-223
+
+A router wants to move a packet along as quickly as possible.
+
+CLassful addressing speeds this up, as the router must only check the first 1, 2, 3, or 4
+bits against its routing table before moving the packet along.
+
+Unfortunately, classful addressing is not very efficient.
+
+Within only a few years, we began to run out of IPv4 classed addresses to give hosts.
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

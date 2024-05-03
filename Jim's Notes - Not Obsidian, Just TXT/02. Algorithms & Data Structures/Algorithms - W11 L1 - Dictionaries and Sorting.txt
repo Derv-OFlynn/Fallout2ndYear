@@ -1,0 +1,119 @@
+Algorithms - Fuck if I know.
+--------------------------------------
+
+Dictionaries are an abstract data type used when we need to look something up.
+
+Operations include searching, inserting, and deleting items.
+
+Methods for a dictionary include:
+	> findElement(k)
+	> insertItem(k)
+	> removeElement(k)
+	> size(), isEmpty()
+	> keys(), Elements()
+
+A log file is a dictionary implemented by means of an unsorted sequence.
+
+Binary search performs the operation findElement(k), but the dictionary must be sorted.
+
+A lookup table is a dictionary implemented by means of an unsorted sequence.
+
+A binary search tree is a binary tree storing keys, or key-element pairs, at its internal
+nodes and satisfying the following property:
+	> Let u, v, and w, be three nodes such that u is in the left subtree of v, and
+	  w is in the right subtree of v, such that key(u) _< key(v) _< key(w).
+
+External nodes do not store items.
+
+To search for a key K, we trace a downard path starting at the root.
+
+The next node visited depends on the outcome of the comparison of K with the key of the
+current node.
+
+If we reach a leaf, i.e. a terminator, the key is not found and we return that message.
+
+To perform an insertion, we search for key K.
+
+Assume K is not already in the tree, and let w be the leaf reached by the search.
+
+We insert K at node w and expand w into an internal node.
+
+To perform a deletion, we search for K.
+
+Assume K is in the tree, and let v be the node storing K.
+
+If node v has a leaf child w, we remove v and w from the tree with another operation,
+removeAboveExternal.
+
+We consider the case where the key K to be removed is stored at a node v whose children
+are both internal.
+	> We find the internal node w that follows v in an inorder traversal.
+	> We copy key(w) into node v.
+	> We remove node w and its left child z, which must be a leaf.
+
+Consider a dictionary with N items implemented by means of a binary search tree of heigh H.
+
+The space used is O(N).
+
+Methods findElement, insertItem, and removeElement take O(H) time.
+
+The height H is O(N) in the worst case and O(log N) in the best case.
+
+Keys are assumed to come from a total order.
+
+New operations include:
+	> closestKeyBefore(k)
+	> closestElemBefore(k)
+	> closestKeyAfter(k)
+	> closestElemAfter(k)
+
+AVL trees are balanced. An AVL tree is a binary search tree such that for every integral
+node v of T, the heights of children of v can differ by no more than 1.
+
+The height of an AVL tree storing N keys is O(log N).
+
+Insertion is done as in a binary search tree, and is done by expanding an external node.
+
+Trinode restructuring is a process performed on AVL trees:
+	> Let (a, b, c) be an inorder listing of x, y, z.
+	> Perform rotations needed to make b the topmost node of the three.
+
+For example, A has left child T1 and right child B.
+
+B has left child T2 and right child C.
+
+C has left child T3 and right child T4.
+
+Because B is bigger than A, we shift the tree such that A is now the right child of B.
+
+T2 becomes the left child of A, and the tree structure is now:
+	> B has children A: Left, and C: Right.
+	> A has children T1: Left, and T2: Right.
+	> C has children T3: Left, and T4: Right.
+
+This process is performed to rebalance the tree.
+
+All algorithms have a complexity.
+
+Suppose N is the size of the problem, like the number of array elements to be sorted etc.
+
+We say that the problem solution runs in polynomial time if there is a polynomial in N,
+say p(N), which places an upper bound on the runtime of the solution.
+
+Bubble Sort runs in time CN^2 where N is array size and C is some constant.
+
+Given a set of values, find all possible subsets of S. There are 2^N of these, so any
+solution will involve at least 2^N steps. This is an exponential function and grows faster
+than any polynomial.
+
+A problem, if it can be solved in polynomial time, is tractable. If not, it is intractable.
+
+Intractable problems are solvable in principle, it's just that they are not in practice
+when the size of the problem increases. 
+
+Bubble Sort is tractable, finding all subsets of a finite set is not.
+
+
+
+
+
