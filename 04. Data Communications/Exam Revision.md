@@ -15,8 +15,7 @@ This course is concerned with the <mark style="background: #69E772;">communicati
 - <mark style="background: #69E772;">Transmission System:</mark> The physical system connecting the source and destination devices
 - <mark style="background: #69E772;">Receiver:</mark> Performs reverse functions of transmitter
 - <mark style="background: #69E772;">Destination:</mark> Receives the incoming data
-	
-    
+
 <mark style="background: #69E772;">Course Topics:</mark>
     
 - <mark style="background: #69E772;">Introduction:</mark> Communications Model/Tasks
@@ -82,17 +81,17 @@ The successful transmission of data depends upon <mark style="background:#69E772
 <mark style="background:#69E772;">Continuous:</mark>
 - No breaks or discontinuities within signal
 - Example is a speech signal
-	
+
 <mark style="background:#69E772;">Discrete:</mark>
 - Contains a finite number of discrete values
 - Example is computer or binary data
-	
+
 <mark style="background:#69E772;">Periodic:</mark>
 - Repeats itself after some fixed time
-	
+
 <mark style="background:#69E772;">Aperiodic:</mark>
 - No repetition of signal pattern
-	
+
 
 ### <mark style="background:#69E772;">Continuous and discrete signals:</mark>
 
@@ -141,10 +140,10 @@ By <mark style="background:#69E772;">Fourier Analysis</mark>, <mark style="backg
 <mark style="background:#69E772;">Spectrum:</mark>
 - The range of frequencies contained in a signal
 - For the above sample signal the spectrum ranges from f1 to 3f1
-	
+
 <mark style="background:#69E772;">Absolute Bandwidth = width of spectrum</mark>
 - For the above sample signal, the bandwidth is 2f
-	
+
 <mark style="background:#69E772;">Effective bandwidth:</mark>
 - Signals with sharp rising and falling edges in the time domain have very wide absolute bandwidth
 - Most energy is contained in a relatively narrow band called the effective bandwidth
@@ -159,7 +158,7 @@ By <mark style="background:#69E772;">Fourier Analysis</mark>, <mark style="backg
 
 ### <mark style="background:#69E772;">Transmission System Characteristics:</mark>
 
-All Transmission Systems (Tx Systems) are limited in the range of signal frequencies that they can carry
+All Transmission Systems (Tx Systems) are limited in the range of signal frequencies that they can carry.
 
 This restriction is known as the <mark style="background:#69E772;">system bandwidth</mark> and results from:
 - The physical properties of the components that comprise the system
@@ -178,7 +177,6 @@ The effects of System Bandwidth is to limit the speed of transmission of data (<
 - The Source transmits a digital signal with the bit pattern shown (010000100)
 - The first Tx System imposes a significant BW restriction on the signal such that only one component passes through
 - The last Tx System allows more components to pass through, which results in a more 'readable' signal
-	
 
 ### <mark style="background:#69E772;">Relationship between Data Rate & Bandwidth:</mark>
 

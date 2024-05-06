@@ -37,3 +37,8 @@
 ### <mark style="background: #69E7E4;">Key Processes of Agile:</mark>
 
 ![](https://i.imgur.com/5x7i91F.png)
+
+
+### <mark style="background: #69E7E4;">Anticipatory Design vs, Refactoring in the context of today and pre-internet:</mark>
+
+![](https://i.imgur.com/VgXwsS3.png)
