@@ -698,6 +698,92 @@ Sliding Windows is potentially <mark style="background:#69E772;">more</mark> eff
 Sliding Windows uses a special message, RNR, to impose Flow Control:
 - This RNR message is a positive ACK which allows the Tx to clear frames from its outgoing buffer
 - Recall that Stop-and-Wait simply with-held the ACK. The Tx must hold onto the frame until the ACK arrives
+# <mark style="background:#69E772;">11. Error Control:</mark>
+
+The most common <mark style="background:#69E772;">error control</mark> techniques use some or all of these elements use some or all of these elements
+
+Collectively, these <mark style="background:#69E772;">error control</mark> techniques are called <mark style="background:#69E772;">Automatic Repeat Requests</mark> (<mark style="background:#69E772;">ARQ</mark>):
+- Stop-and-Wait ARQ
+- Go-back-N ARQ
+- Selective-reject ARQ
+
+### <mark style="background:#69E772;">Stop-and-Wait ARQ:</mark>
+
+This technique is an enhancement to the Stop-and-Wait Flow Control Technique:
+
+Recall that the Tx transmits a frame and awaits and ACK before continuing
+
+If the frame contains an error, the Receiver simply discards it and does not return an ACK
+
+If the frame is not acknowledged after a time-out period the Transmitter simply retransmits the frame
+
+<mark style="background:#69E772;">Problem:</mark>
+- If ACK is sent but damaged in transit, the transmitter will resend the frame after time-out
+- The Receiver will now get <mark style="background:#69E772;">two</mark> copies of the frame
+
+![](https://i.imgur.com/RYyQ9Rs.png)
+
+
+<mark style="background:#69E772;">Solution:</mark>
+- Frames are alternatively numbered 1 or 0 and ACKs are correspondingly numbered 0 or 1
+
+### <mark style="background:#69E772;">Go-back-N ARQ:</mark>
+
+This technique is an enhancement to the Sliding Window Flow Control technique
+
+Recall that the Tx can send a number of frames (up to some window size) <mark style="background:#69E772;">without</mark> having to receive some form of ACK from the Rx
+
+In relation to the types of error (or non-error) conditions that can occur:
+- Successful Transmission,
+- Lost Data or Lost ACK frame
+- Damaged Data Frame
+
+If <mark style="background:#69E772;">NO</mark> errors occur i.e. frames arrive in sequence <mark style="background:#69E772;">and</mark> undamaged:
+- The Receiver returns a positive ACK e.g. RR4 or RNR4, with the number of the next frame expected
+- This ACK can be sent as an <mark style="background:#69E772;">explicit</mark> message in its own frame, or, it can be piggybacked onto an outgoing Data Frame (implicitly)
+- The Transmitter continues to send Data Frames up to the agreed <mark style="background:#69E772;">window</mark> size
+
+If <mark style="background:#69E772;">Errors</mark> there are two responses depending on the type of error:
+- Lost Frames/Damaged Frames (Lost Frames are detected as <mark style="background:#69E772;">out-of-sequence</mark> frames)
+- Lost ACKs
+
+<mark style="background:#69E772;">For Lost Frames and Damaged Frames:</mark>
+- They are treated the same
+- The Receiver sends a <mark style="background:#69E772;">Reject</mark> (<mark style="background:#69E772;">REJ</mark>) message with the number of the next frame expected e.g. REJ 4.
+- The Sending Station, upon receipt of this REJ message, retransmits <mark style="background:#69E772;">all</mark> frames starting at the number included in the message. This is regardless of whether subsequent frames have arrived intact -they are simply discarded
+
+<mark style="background:#69E772;">For Lost ACKs:</mark>
+- Here the transmitter station has not received any messages (positive or negative ACKs) from the receiver station
+- Recall the use of a Timer for each frame that is transmitted. The timer has a part to play here
+
+Depending on whether the timer for a frame expires, the transmitter can respond as follows:
+- If a timer has <mark style="background:#69E772;">not</mark> expired it can continue to send more frames up to the <mark style="background:#69E772;">window</mark> size. This is not considered an error condition
+
+If a <mark style="background:#69E772;">timer</mark> does expire, the transmitter immediately stops transmitting Data frames:
+- It then sends a 'special' RR message with the <mark style="background:#69E772;">poll</mark> bit set
+- This is considered a <mark style="background:#69E772;">command</mark> frame
+- The Receiver <mark style="background:#69E772;">must</mark> respond with an RR of its own identifying the number of the next frame expected
+
+### <mark style="background:#69E772;">Selective Reject ARQ:</mark>
+
+This is very similar to the Go-back-N technique with the exception that the only frames retransmitted are:
+- Transmitted frames for which a timer has expired i.e. a <mark style="background:#69E772;">Lost ACK</mark> or,
+- Transmitted frames that were <mark style="background:#69E772;">lost</mark> or <mark style="background:#69E772;">damaged</mark>. The receiver uses a slightly different Negative ACK - it's called a <mark style="background:#69E772;">Selective Reject</mark> (SREJ) message
+- The number of the frame to be re-transmitted is also included e.g. SREJ 5
+
+This is considered more efficient than Go-Back-N as it minimises the amount of re-transmitted frames
+
+However, this technique is also more complex than Go-Back-N as the Receiver station has to:
+- Store frames received <mark style="background:#69E772;">after</mark> a Damaged frame has been rejected
+- It has to re-sequence retransmitted frames as they arrive <mark style="background:#69E772;">out-of-sequence</mark>
+- This requires more complex logic on both the Transmitter and Receiver stations
+
+Hence, <mark style="background:#69E772;">Go-back-N</mark> ARQ is often preferred over <mark style="background:#69E772;">Selective Reject</mark> ARQ
+
+### <mark style="background:#69E772;">Go-back-N and Selective-Reject ARQ:</mark>
+
+![](https://i.imgur.com/Lqg02AH.png)
+
 
 # <mark style="background: #69E772;">12. High Level Data Link Control:</mark>
 
