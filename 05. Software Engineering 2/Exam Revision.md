@@ -42,3 +42,17 @@
 ### <mark style="background: #69E7E4;">Anticipatory Design vs, Refactoring in the context of today and pre-internet:</mark>
 
 ![](https://i.imgur.com/VgXwsS3.png)
+
+### <mark style="background: #69E7E4;">Separation of Concerns and Layered architecture for the restaurant:</mark>
+
+![](https://i.imgur.com/MM6is8C.png)
+
+### <mark style="background: #69E7E4;">Appropriate Design Pattern for Restaurant:</mark>
+
+![](https://i.imgur.com/VwYmhjr.png)
+
+
+### <mark style="background: #69E7E4;">Java Hashtable:</mark>
+
+![](https://i.imgur.com/vP70B1z.png)
+![](https://i.imgur.com/8nufNxE.png)
