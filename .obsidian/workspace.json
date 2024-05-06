@@ -1,0 +1,202 @@
+{
+  "main": {
+    "id": "f475e3f09b233d12",
+    "type": "split",
+    "children": [
+      {
+        "id": "0e22b7793674ff0b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b35e0dc46b60e068",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "04. Data Communications/Exam Revision.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "fca9052dfcca6cc8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "04. Data Communications/11. Error Detection.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "511c9e35a11c71b6",
+    "type": "split",
+    "children": [
+      {
+        "id": "2d589b0795d2bfcf",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5603d840c23c7879",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "49ddb91caa7b01ef",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "7ffdd029549dd056",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "right": {
+    "id": "8c1748f151dbf754",
+    "type": "split",
+    "children": [
+      {
+        "id": "a9ec63992a0cfe89",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0b4e0c4b60019691",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "04. Data Communications/Exam Revision.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "733a0d59d7c9b43d",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "04. Data Communications/Exam Revision.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "8b769edaa149f876",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "72c474f3ac331166",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "04. Data Communications/Exam Revision.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "5603d840c23c7879",
+  "lastOpenFiles": [
+    "04. Data Communications/Data Comms Test 2.md",
+    "04. Data Communications/11. Error Detection.md",
+    "04. Data Communications/Exam Revision.md",
+    "Jim's Notes - Not Obsidian, Just TXT/06. Object Oriented Programming/OOP - W2 L2 - Java.txt",
+    "Jim's Notes - Not Obsidian, Just TXT/06. Object Oriented Programming/OOP - W2 L2 - Java 2.txt",
+    "Jim's Notes - Not Obsidian, Just TXT/06. Object Oriented Programming/OOP - W1 L2 - Java 1.txt",
+    "Jim's Notes - Not Obsidian, Just TXT/05. Software Engineering 2/SWE - Design Modelling Notes - 6.txt",
+    "Jim's Notes - Not Obsidian, Just TXT/05. Software Engineering 2/SWE - Design by Contract.txt",
+    "Jim's Notes - Not Obsidian, Just TXT/05. Software Engineering 2/SWE - Business Modelling Notes - 4.txt",
+    "Jim's Notes - Not Obsidian, Just TXT/05. Software Engineering 2/SWE - Analysis Modelling Notes - 5.txt",
+    "Jim's Notes - Not Obsidian, Just TXT/05. Software Engineering 2/Software Engineering - W11 L1 - Testing.txt",
+    "Jim's Notes - Not Obsidian, Just TXT/05. Software Engineering 2/Software Engineering  - W11 L1 - Architecture.txt",
+    "Jim's Notes - Not Obsidian, Just TXT/05. Software Engineering 2/Software Eng - W2 L1 - Software Architecture.txt",
+    "06. Object Oriented Programming/Remnote Import.md",
+    "06. Object Oriented Programming/18. Private vs. Public Overloading.md",
+    "06. Object Oriented Programming/17. Aggregation and Composition.md",
+    "06. Object Oriented Programming/16. Inheritance.md",
+    "06. Object Oriented Programming/15. Writing a class.md",
+    "06. Object Oriented Programming/14. Classes.md",
+    "06. Object Oriented Programming/13. More on Functions.md",
+    "06. Object Oriented Programming/12. Sets.md",
+    "06. Object Oriented Programming/11. Dictionaries.md",
+    "06. Object Oriented Programming/10. Mutables, Exceptions.md",
+    "06. Object Oriented Programming/09. Files and Exception.md",
+    "06. Object Oriented Programming/08. Lists.md",
+    "06. Object Oriented Programming/07. Functions.md",
+    "06. Object Oriented Programming/06. Strings.md",
+    "06. Object Oriented Programming/05. Loops.md",
+    "06. Object Oriented Programming/04. Control.md",
+    "06. Object Oriented Programming/03. Python Basics.md",
+    "06. Object Oriented Programming/02. OOP - Python.md",
+    "06. Object Oriented Programming/01. General.md",
+    "05. Software Engineering 2/Exam Revision.md",
+    "05. Software Engineering 2/12. Observer Design Pattern.md",
+    "05. Software Engineering 2/11. Intro to Software Testing.md",
+    "05. Software Engineering 2/10. CustomerMapper.java.md",
+    "Untitled.canvas"
+  ]
+}
