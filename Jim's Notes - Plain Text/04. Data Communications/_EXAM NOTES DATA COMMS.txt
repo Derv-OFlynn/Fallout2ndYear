@@ -1,0 +1,1698 @@
+Comprehensive Data Communications Notes For The Exam
+----------------------------------------------------------------
+
+This document contains pretty much everything we might need to know for the exam,
+barring some of the stuff about IP addressing and protocols.
+
+Shorthand:
+- Transmitter -> Txr
+- Reciever -> Rxr
+- Transmission -> Tx
+
+
+Topic - 00 - Intro
+----------------------------------
+The communications problem:
+	> "How can two remote entities communicate effectively and efficiently?"
+
+A communications system typically follows the following model:
+	> Source - Device which generates data.
+	> Transmitter - Transforms and encodes data.
+	> Transmission System - Physical system connecting source and destination.
+	> Reciever - Performs reverse of transmitter.
+	> Destination - Recieves incoming data.
+
+
+
+
+Topic - 02 - Data Transmission
+----------------------------------
+An example of a system following the model above is the way our phones communicate:
+	> Source - Phone A
+	> Transmitter - Base Station A
+	> Transmission System - Internet
+	> Reciever - Base Station B
+	> Destination - Phone B
+
+Data transmission occurs between Transmitter and Reciever.
+
+Data encoded onto Tx signal, and transmitted across Tx system.
+
+Encoding involves changing characteristic of signal used to represent data.
+
+Tx signal either ElectroMag wave or electrical signal.
+	> EM waves used include radio, light, and microwave.
+	> Electrical includes A/C, and voltage pulses.
+	> Simplest signal is a SINE wave.
+
+Tx system is some type of Tx medium, maybe either
+	> Guided - Electrical Cable, Fibre Optic.
+	> Unguided - EM waves in space.
+
+Successful data Tx depends on quality of signal and characteristics of Tx system/medium.
+
+Signal Characteristics
+	> Continuous
+		- No breaks or discontinuities.
+		- Example is a speech signal.
+	> Discrete
+		- Contains a finite number of discrete values.
+		- Example is computer or binary data.
+	> Periodic
+		- Repeats itself after some fixed time.
+	> Aperiodic
+		- No repetition of signal pattern.
+
+For a sine wave, the general equation applies:
+	> s(t) = A x sin(2π x f x t + ϕ)
+Where:
+	> Amplitude (A) is the peak value of the wave.
+	> Frequency (F) is the number of repetitions per second, measured in Hertz (Hz).
+	> Phase (ϕ) is the measure of the relative position within a cycle of a signal.
+
+Sine waves can be altered and shifted by the addition of extra components.
+
+One sine wave might have the equation "s(t) = sin(2π x f₁t)".
+
+It can be altered by the addition of another sine wave component:
+	> s(t) = sin(2π x f₁t) + ¹/₃sin(2π x (3f₁)t)
+
+The resultant waveform is a combined product of the two seperate ones.
+
+We can more easily see how components make up a signal wave by viewing it in another domain.
+
+The standard way to view a wave like this would be Time Domain, or, more simply,
+on a graph where the X axis is Time, and the Y axis is Amplitude.
+
+The new, other domain we can use, is Frequency Domain. In Frequency Domain, Amplitude remains
+on the Y axis, and the X axis is now Frequency.
+
+When we look at the Frequency Domain representation, we can see the frequencies that make
+up the signal seperated out.
+
+By Fourier Analysis, any signal can be expressed as the sum of a series of sinusoidal
+components of different frequencies.
+
+This is of fundamental importance.
+
+Signalling concepts include:
+	> Spectrum
+		- The range of frequencies contained in a signal.
+		- For the sample above, it wouldb be from f₁ to 3f₁.
+	> Absolute Bandwidth
+		- This is defined as the width of the spectrum.
+		- In the example, this would be 3f₁ - f₁, so 2f₁.
+	> Effective Bandwidth
+		- Signals with a sharp rising and falling edge have wide Absolute Bandwidth.
+		- Most energy contained in a narrower band called Effective Bandwidth.
+	> DC Component
+		- Signals with a component at 0 frequency.
+
+A square wave also has an equation representation like the sine wave, but it's long
+and unpleasant to look at and we don't need to know it.
+
+We do need to know though, that because of the shape of the square wave, to 100% accurately
+encode it to a signal, we would need infinite harmonics.
+
+Because this is impossible, we must approximate the shape as best we can - the more harmonics
+the better.
+
+All Tx systems are limited in the range of signal frequencies they can carry.
+
+This restriction is known as the System Bandwidth, and results from:
+	> The physical properties of the components comprising the system.
+	> The physical properties of matter and energy.
+
+The bandwidth of a Tx system can be described as:
+"The fastest continuously oscillating signal that can be sent across the system, in Hertz".
+
+The effects of System Bandwitdth is to limit the transmission speed of data, or the Data Rate.
+
+A higher bandwidth allows more frequency components, allowing a higher definition signal,
+and more bits per seconds.
+
+For example, the source transmits a digital signal with pattern 010000100.
+
+A system with a significant bandwidth restriction may only let one component, or harmonic,
+get through.
+
+A system with a better bandwidth allows for more harmonics, resulting in a more readable signal.
+
+This limitation has a direct effect on the maximum date rate achievable across a system.
+
+Consider a system with a bandwidth of 15MHz.
+
+To preserve the shape of the recieved signal, the speed of the transmission, or the frequency,
+must be reduced.
+
+The same effects can be shown for more complicated signals, such as a pulse train.
+
+------------------------------------------------------------------------------------------
+BPS		Time(msec)		First Harmonic(Hz)		Harmonics Sent
+------------------------------------------------------------------------------------------
+300		26.67			37.5				80
+4800		1.67			600				5
+38400		0.21			4800				0
+------------------------------------------------------------------------------------------
+
+As we can see from the above table, the slower we send our data, the more readable we are able
+to make it when it is recieved.
+
+For a Tx system, the greater the bandwidth, the greater the data rate that can be achieved.
+
+For a Tx signal, the greater the frequency or speed, the greater the:
+	> Bandwidth of the signal.
+	> The amount of data that can be transmitted.
+
+In digital Tx, the square wave is used to encode data. Because this has infinite harmonics,
+we approximate it using a number of harmonics that match our limited system bandwidth.
+
+In general, for carrying data at a rate of W bits per second, a good representation can be
+achieved with a system with a bandwidth of W/2Hz.
+
+If transmitting at data rate 2Mbps (2,000,000bps), the recommended system bandwidth would be
+approximately 1MHz (1,000,000Hz).
+
+Consider the following entities:
+	> Data
+		- Entities that convey meaning.
+	> Signal
+		- EM wave with encoded data.
+	> Tx System
+		- The entity over which signal is transmitted.
+
+Each entity can be considered in terms of analogue or digital as follows.
+
+Analogue Data
+	> Can take on continuous values on some interval, e.g. voice, temp, pressure, etc.
+
+Digital Data
+	> Can take on discrete values, e.g. integers, text.
+
+Analogue Signal
+	> Continously varying EM wave, representing data, may be propogated over Tx medium.
+
+Digital Signal
+	> Series of discrete, discontinuous pulses, representing data, propogated over Tx medium.
+
+Data Tx is the communication of data by the propofation and processing of signals.
+
+Analogue data can be conveyed by an analogue signal, e.g. a telephone.
+
+Digital data can be conveyed by an analogue signal when a MODEM is used.
+
+Analogue data can be conveyed by a digital signal when a CODEC is used.
+
+Digital data can be conveyed by a digital signal, e.g. a digital transmitter.
+
+Analogue Tx is the propogation of analogue signals only. Some physical quantity, like voltage,
+changes continuously as a function of time.
+
+There is no regard to the content of the signal.
+
+As the transmitted analogue signal becomes attenuated, an amplifier can boost the range.
+
+However, this also boosts noise, and may lead to the signal becoming distorted.
+
+Digital Tx is the propogation of analogue signals with encoded digital data, or digital signals.
+
+Digital Tx systems have regard to the encoded data.
+
+As the transmitted digital signal becomes attenuated, a repeater can extend the range.
+
+This recieves, recovers, and re-transmits a new signal from the original, with no new noise.
+
+Digital is generally superior to analogue.
+	> Low cost of digital electronics.
+	> Data Integrity, less vulnerable to noise.
+	> Capacity Utilisation - Multiplexing allows for sharing of channels.
+	> Security, encryption.
+	> Integration - Digitised analogue data can be mixed with other digital data.
+
+
+
+
+Topic - 03 - Data Impairments
+----------------------------------
+A transmitted signal becomes distorted due to transmission impairments.
+
+For analogue signals the quality can become degraded.
+
+For digital signals, bit errors can be introduced.
+
+Types of impairment include:
+	> Attenuation and Attenuation Distortion
+	> Noise
+
+Attenuation is the weakening of a signal over distance.
+
+Attenuation is a function of frequency, and affects the intelligibility of the recieved signal,
+especially signal pulses, which can become distorted.
+
+A technique for addressing this is the use of equalizing amplifiers, which even out signal pulses.
+
+Noise is the insertion of unwanted signals onto the transmission signal.
+
+It particularly affects digital signals.
+
+The greater the noise the greater the bit error rate.
+
+There are three categories of noise:
+	> Thermal Noise
+	> Cross Talk
+	> Impulse Noise
+
+Thermal noise is caused by the thermal agitation of the electrons within a conductor.
+
+It is present in all electronic devices and conductors.
+
+It is a function of temperature, i.e. increased temp leads to more thermal noise.
+
+It is uniformly distributed across the frequency spectrum, so is known as white noise.
+
+The presence of thermal noise places an upper limit on the data carrying capacity of a system.
+
+We must ensure that the strength of the data signal is greater than the noise signal.
+
+The term used to describe this relation is SNR - Signal to Noise Ratio.
+
+Cross talk is unwanted coupling between signals on neighbouring Tx paths.
+
+Coupling in this case means connecting without actually touching.
+
+Coupling can occur between cables in close proximity, or between radio signals close to the same
+frequency.
+
+Impulse noise consists of irregular pulses or spikes of short duration and high amplitude.
+
+Causes include:
+	> Lighting and static discharges.
+	> Switching of heavy electrical loads.
+	> Faults within the transmission system.
+
+Analogue signals are less affected by this type of noise, but digital signals are susceptible.
+
+This can lead to corruption of data.
+
+A noise spike of high amplitude, where, in the signal, there is supposed to be low amplitude
+representing a zero bit, could corrupt the data.
+
+Channel capacity allows us to study the inter-relationships of Signal BW, System BW, and
+Signal Impairments.
+
+Channel Capacity is the maximum rate at which data can be transmitted over a communications path
+or channel.
+
+The objective is to make the best use of a given bandwidth or channel.
+
+However, from previous discussions, channel capacity is limited in practics by transmission
+impairments, of which the main constraint is the presence of noise.
+
+Two distinguished scientists, Nyquil and Shannon, had formulas.
+
+Nyquist's Theorem:
+	> C = 2B x Log₂M
+Where:
+	> C is the maximum data rate in bits per second.
+	> B is the bandwidth of the Tx system in Hz.
+	> M is the number of discrete states in the signal.
+
+It appears from this theorem that an unlimited data rate is achievabl by continuously increasing
+the bandwidth of the system, and encoding more bits per cycle.
+
+However, as data rate increases, bit error rate also increases.
+
+This is because noise and other impairments put a practical limit on M, and hence the maximum
+data rate achievable.
+
+Noise distorts a signal during transmission. The greater the noisem the greater the bit error rate.
+
+A key facotr is the signal to noise ratio, SNR. This is measured in decibels.
+	> SNR(dB) = 10Log₁₀(S/N)
+
+In this, S stands for the average signal power, and N for the noise.
+
+The other theorem is Shannon's:
+	> C = B x Log₂(1 + (S/N))
+Where:
+	> C is the maximum data rate in bits per second.
+	> B is the bandwidth of the Tx system in Hz.
+	> S is the average signal power.
+	> N is the average noise power.
+
+With this formula, increasing bandwidth increases maximum data rate.
+
+Increasing noise reduces the maximum data rate.
+
+Shannon's Law defines an upper limit on the achievable rate.
+
+Hence, data rate is limited by bandwidth and noise.
+
+According to Shannon, the maximum data rate is determined by
+	> Bandwidth of the system or channel.
+	> Noise on the channel.
+	> Every system/channel has a carrying capacity which cannot be exceeded.
+
+This is a more practical and realistic reflection than Nyquist's, as it takes into account the
+effects of noise.
+
+
+
+
+Topic - 07 - Analogue Data/Digital Signal Encoding
+----------------------------------
+As stated before, a CODEC is used to generate a digital signal.
+
+There are two methods to consider for encoding data onto the signal
+	> Pulse Code Modulation
+	> Delta Modulation
+
+To encode analogue data onto a digital signal requires two steps.
+	> Convert analogue data to digital data.
+	> Encode the digital data onto a digital signal.
+
+The first step requires sampling.
+
+This is necessary as an analogue signal has an infinite amount of data.
+
+Consequently, it is not feasible to send all of the analogue data.
+
+Nyquist did work on sampling for this:
+"If a signal f(t) is sampled at regular intervals of time, and at a rate higher than twice the
+highest frequency, then the samples will contain all the information necessary for the
+reconstruction of the original signal."
+
+The original analogue signal is sampled at regular intervals to produce PAMS.
+
+The PAMS are quantized, i.e. assigned a binary value.
+
+There are considerations to be given to the number of bits used to represent each sample.
+
+The number of bits per sample tells us how many distinct values you can have in each one, be it
+8, 10, 12, etc.
+
+On a CD, they use 16 bit samples, meaning you can have 65536 different values.
+
+Regardless of the number of bits chosen, there will always be some level of rounding.
+	> This is known as Quantization, which gives rise to Quantization Error or Noise.
+	> Hence the original analogue data signal can never be truly reproduced.
+
+Using PCM, or pulse code modulation to encode voice data results in:
+	> A stream of 8-bit samples.
+	> Each sample is assigned an 8-bit value.
+	> This results in a data rate of 64Kbps in Europe.
+
+This is because, as per Nyquist's Theory, the sampling rate would be:
+	> 2 x (Voice Bandwidth, 4KHz) = 8000 samples per second.
+	> Each sample is encoded onto an 8-bit value, so 8000 x 8 = 64,000, = 64Kbps.
+
+Delta modulation involves the use of a staircase function.
+	> Here the analogue signal is approximated by a simple mathematical function.
+	> At each sampling interval, a positive or negative quantization step is added to output.
+
+The result is a single binary digit for each sample indicating a positive or negative
+slope in the original analogue signal.
+
+There are two significant parameters:
+	> Quantization Step Delta
+		- Large delta reduces Slope Overload Noise
+		- Small delta reduces Quantization Noise
+	> Sampling Rate
+		- Large rate reduces noise but increases output data rate.
+
+Delta modulation is easier to implement than pulse code modulation, but pulse code modulation
+produces better signal-to-noise ratio characteristics.
+
+When it comes to voice data, we can use analogue or digital signals:
+	> Digital (PCM)
+		- Good reproduction with 256 quantization levels, i.e. 8-bit coding.
+		- Required smapling rate of 8K/s for 4Khz, i.e. 64Kpbs voice channels.
+		- 64Kbps voice channel reqires approx. 32KHz of bandwidth.
+	> Analogue (PoTS)
+		- Voice channel requires approx. 4Khz of Bandwidth.
+
+However, digital encoding is still preferable for the following reasons.
+	> Popularity Increasing
+		- Repeaters can be used to no additive noise.
+		- Time-division can be used to eliminate intermodulation noise occuring w/ FDM.
+		- Digital signalling allows use of digital switching techniques.
+
+Analogue data can be used to modulate an analogue signal.
+
+This is often used to:
+	> Obtain a more appropriate frequency for a transmission.
+	> Allow a number of analogue signals to share a transmission medium.
+		- Frequency Division Multiplexing.
+
+There are three basic techniques available.
+
+Ampltidue Modulation
+	> Carrier amplitude varies in propertion to amplitude of analogue data.
+
+Frequency Modulation
+	> Frequency deviation is proportional to analogue data.
+
+Phase Modulation
+	> Phase proportional to analogue data.
+
+
+
+
+Topic - 08 - Multiplexing
+----------------------------------
+It is unlikely that two communicating devices will utilise fully the capacity of a Tx link.
+
+For example, Fibre Optic cables have a high bandwidth and can carry a lot of data, more than
+would be required for most host-to-host interactions.
+
+The spare capacity here can be used by other communicating devices.
+
+The sharing of data comms facility in this way is called multiplexing.
+
+The basic components required are as follows:
+	> N inputs.
+	> Multiplexer, MUX.
+	> 1 link, N channels.
+	> Demultiplexer, DEMUX.
+	> N outputs.
+
+Motivations for using this include
+	> Expenses of communications equipment, lower the cost per Kbps.
+	> Mant communicating devices use modest rates and can be mixed on a high-speed system.
+
+Cable Networks
+	> Many communication services are provided on cable networks.
+		- TV.
+		- Radio.
+		- Telephone.
+		- Broadband.
+	> These services are multiplexed onto the subscriber connection.
+
+Telecomms Networks
+	> Fibre optic, coaxial cable, and microwave links used between exchanges, towns, cities.
+	> Each comms link simultaneously carries many transmissions between multiple devices.
+
+There are two commonly employed techniques for multiplexing:
+	> Frequency Division Multiplexing
+		- Analogue Technique.
+		- Produces an analogue signal from multiplexed analogue/digital signals.
+		- Without regard to data.
+	> Time Division Multiplexing
+		- Digital Technique.
+		- Produces digital signal from multiplexed analogue/digital signals.
+		- With regard to the data.
+
+FDM, or frequency division multiplexing, is used when the useful bandwidth of a Tx link
+exceeds the bandwidth of individual signals.
+
+Each signal is modulated onto a different carrier frequency, also known as a subcarrier.
+
+The carrier frequencies are combined to produce a composite analogue signal, or baseband signal.
+
+The baseband signal is analogue and transmitted across a single transmission link.
+
+The input data may be analogue or digital.
+
+The bandwidth of the composite signal must be greater than the sum of bandwidths of the
+individual input signals.
+
+A guard band must be inserted between carrier frequencies to prevent overlap.
+
+M₁(t) goes to subcarrier modulator F1, becomes S₁(t).
+
+M₂(t) goes to subcarrier modulator F2, becomes S₂(t).
+
+Mn(t) goes to subcarrier modulator Fn, becomes Sn(t).
+
+These all go through ∑ and become the composite, Mb(t).
+
+This then goes through the transmitter and becomes s(t).
+
+M₁(t) is modulated on f₁, with range B₁ as a guard barrier around it.
+
+M₂(t) is modulated on f₁, with range B₂ as a guard barrier around it.
+
+Mn(t) is modulated on f₁, with range Bn as a guard barrier around it.
+
+The reciever, on the other end, takes s(t), and turns it back into Mb(t).
+
+Bandpass filters F1, F2, to Fn reproduce S₁(t), S₂(t), and Sn(t).
+
+These then go through demodulators F1, F2, to Fn, and are back to M₁(t), M₂(t), to Mn(t).
+
+Synchronous time division multiplexing is the digital equivalent of FDM.
+
+In TDM, portions of each input signal are interleaved in time as opposed to frequency.
+
+Incoming data carrying signals can be either analogue with encoded digital data, or digital.
+
+The interleaving can be at the bit level, or in blocks of bytes, which determines the size of
+the input buffers.
+
+M₁(t) goes to a buffer, stays M₁(t).
+
+M₂(t) goes to a buffer, stays M₂(t).
+
+Mn(t) goes to a buffer, stays Mn(t).
+
+These are then fed through a Scan Operation and become Mc(t).
+
+Then through a modem, becoming s(t) on the modulated TDM stream.
+
+The recieving operation is basically indentical but in reverse - Modem, Scan Operation, Buffers.
+
+Data in this method are organised into frames.
+
+Frames contain a cycle of time slots.
+
+One or more time slots within a frame is dedicated to one pair of data source devices.
+
+The combination of time slots across successive frames is called a channel.
+	> Each pair of data source devices is allocated a channel for their comms requirements.
+
+The system is synchronous because:
+	> Time slots are pre-assigned to source devices.
+	> They are transmitted regardless of whether the source devices are sending data.
+	
+Frame synchronization is required:
+	> Achieved using a seperate channel.
+	> Known as Added-digit Framing.
+
+TDM is part of the public long-haul teleocomms system.
+
+
+
+
+Topic - 09 - Synchronous/Asynchronous Transmission
+----------------------------------
+There are two types of data transmission.
+	> Serial - One bit at a time.
+	> Parallel - More than one bit at a time, in several channels (typically 8, 16, 32).
+
+This course is primarily concerned with Serial data transmission.
+
+Data are typically transmitted one bit at a time over a channel.
+
+A high degree of co-operation is required between communicating devices.
+
+The timing (rate, duration, spacing) must be identical for both Txr and Rxr.
+
+For example, it a Txr is clocking out bits at 1Mbps, then the Rxr must clock in at the same rate.
+
+To successfully recieve the data bits, the Rxr must sample an incoming bit stream once every
+bit interval.
+
+Consequently, it must know the duration of each bit.
+
+For a 1Mbps transmission, the bit interval is 1 millionth of a second.
+
+Timing is achieved on both sides, i.e. Rxr and Txr, using an internal electronic clock.
+
+To achiebe successful communications, these clocks must somehow be synchronised.
+
+There are three possibilities for this:
+	> Use Seperate Clock Link
+		- Not viable for computer-to-computer communication, too expensive.
+	> Ingore Potential Desync Problems Using Short Burts Of Data
+		- Called asynchronous transmission.
+	> Embed Clocking Pulses Within Signal
+		- Called synchronous transmission - framing approach, more commonly used.
+
+With asynchronous transmission, start and stop bits determine where a character starts and ends.
+
+This function is called framing.
+
+The advantage of this is that it is simple and cheap, and can be used between keyboard and PC.
+
+The disadvantage is that the extra start/stop bits cause a typical overhead of 20%, due to
+2 framing bits plus 8 data bits.
+
+Synchronous transmission is when data bits are transmitted in a large block of bits with a
+particular structure.
+
+This structure is knonw as a frame.
+
+The Rxr must be able to identify the start and end of a frame.
+
+It does this using a special bit pattern for the preamble, start, and postabmble, end.
+
+Additional control info is also send within the frame for extra functionality.
+
+In general, frames have a well defined structure with distinct fields:
+	> A preamble flag, or opening flag, at the start.
+	> A postamble flag, or closing flag, at the end.
+	> Data and Control information fields in between.
+	> The exact format of the frame depends on the data link protocol being used.
+
+
+
+
+Topic - 10 - Data Link Control / Flow Control
+----------------------------------
+So far we have explored the Tx of signals with encoded data over a basic Tx link.
+
+For effective communications, much more is needed to control and manage the exchange of data.
+
+A layer of control logic is required above the physical layer in each Source/Destination device.
+
+This logic is referred to as Data Link Control. When used, it transforms a basic Tx link
+into a fully functional Data Communications Channel.
+
+The logic implemented in Data Link Control is implemented as a set of defined rules.
+
+This definition is known as a protocol.
+
+Protocols are synonymous with Data Communications.
+
+The first protocol to explore is Data Link Control Protocol.
+
+There are six basic requirements for effective data link control:
+	> Frame Synchronisation - Frames must be recognizable for the Rxr.
+	> Flow Control - The sender must not overload the Rxr.
+	> Error Control - Errors should be detectable by the Rxr.
+	> Addressing - For a multi-point config, each station must be uniquely identifiable.
+	> Control & Data on same Link - Rxr can't have to wait for control info before processing.
+	> Link Management - Procedures for establishing and relenquishing link adhered to.
+
+For flow control, the Rxr and Txr stations each allocate a data buffer of a fixed size.
+	> Data remains in the buffer until processed by the receiving station.
+	> Consequently, buffers can fill to capacity.
+
+Flow control enables the recieving station to indicate to the sending station that its buffers
+are full.
+
+There are two flow control techniques to consider: Stop-And-Wait, or Sliding Windows.
+
+With Stop-And-Wait flow control, the sending station transmits a frame.
+	> The sending station must get an acknowledgement, ACK, from the Rxr before sending again.
+	> The Rxr can control the flow of data by withholding ACKs.
+
+This technique only allows for the transmission of a single frame in either direction,
+also known as half duplex communications.
+
+With Sliding Window flow control, both stations use an extended buffer size to hold multiple
+frames.
+
+The sending and receiving stations maintain a list of frames already send/recieved.
+
+This technique allows for more efficient link utilization.
+
+The transmission link is effectively treated as a pipeline that can be filled with many
+frames in transit simultaneously.
+
+This technique allows multiple frames to be in transit at the same time in either direction,
+also known as full duplex communications.
+
+Stations A and B each allocate buffer space for W frames.
+	> B can accept W frames and A can send W frames, without any ACK send or recieved.
+	> Each frame contains a sequence number
+	> B sends ACKs that include the sequence number of the next frame expected.
+	> B is prepared to recieve the frame starting at the number indicated.
+
+Multiple frames can be ACK'd using a single control message. This is called implicit
+acknowledgement.
+
+Reciept of an ACK for frame 2 (RR3) followed later by an ACK for frame 5 (RR6) implies
+acknowledgement of frames 3 and 4.
+
+A maintains a list of frame numbers it can send, and B maintains a list it is prepped to recieve.
+
+These lists can be considered windows, hence the name.
+
+To impose flow control, the reciever can choose to send another message: RNR, or reciever not
+ready.
+
+This acknowledges the previous frames but halts the flow: RNR5 ACKs all frames up to frame 4.
+
+To resume flow, the reciever sends a reciever ready, or RR, message. RR5 - recommence at 5.
+
+When frames are sent, copies are held in memory on both the Rxr and Txr stations, in the
+incoming and outgoing buffers respectively.
+
+When the Rxr sends an ACK it removes the frames from memory, and the sliding window expands.
+
+When the Txr recieves the ACK it also removes those frames, and the sliding window expands.
+
+Both RR and RNR are positive ACKs, and acknowledge a successful transmission.
+
+Only one ACK is required for multiple frames. RR3 acknowledges 0, 1, and 2.
+
+This is one of the efficiencies of this technique over Stop-And-Wait.
+
+This approach to sending one ACK for multiple frames allows for full duplex communications.
+
+ACKs can be returned anytime, i.e. after reciept of one frame or many frames.
+
+With the introduction of a full duplex mode, each station can be both a Txr and Rxr.
+
+Full duplex allows for frames to travel between stations simultaneously and in opposite
+directions.
+
+With the capability to transmit data frames in opposite directions, it is possible to introduce
+another efficiency: ACKs don't have to be sent as separate frames.
+
+Instead, they can be included in outgoing data frames.
+
+Data frames going one way can include in their control fields ACKs for frames going the other
+way.
+
+This technique is called piggybacking.
+
+Consequently, in full duplex mode, each station must maintain two sliding windows: incoming
+and outgoing.
+
+Sliding Windows is potentially more efficient than Stop-And-Wait.
+
+
+
+
+Topic - 11 - Error Control (Damian said we could omit Error Detection)
+----------------------------------
+The detection and recovery from errors is known as error control.
+
+To discuss error control, the following assumptions are made:
+	> Data is sent as a sequence of frames.
+	> Each time a frame is transmitted a timer is set to some value.
+	> Frames must arrive in the order in which they were sent, or an error is assumed.
+	> Each frame suffers an arbitrary variable delay called propogation delay.
+
+Two types of error can occur: Lost frame/ACK, or damaged frame.
+
+Error control provides a number of techniques for addressing these types of errors.
+
+These techniques can be considered a toolbox:
+	> Each technique can be considered a tool to be applied when something goes wrong.
+
+Error control provides the following elements:
+	> Error Detection - CRC, Parity Checking, etc. (Not on Exam)
+	> Positive ACK - Here the reciever sends positive ACKs to error-free frames recieved.
+	> Retransmission - The Txr may retransmit a frame not ACK'd after a timeout period.
+	> Negative ACK - Rxr can send negative ACK for damaged or out of sequence frames.
+
+The most commonly used methods of error control use some or all of these elements.
+
+Collectively these error control techniques are called Automatic Repeat Request, or ARQ.
+
+The three most common ones in use are:
+	> Stop-And-Wait ARQ
+	> Go Back N ARQ
+	> Selective Reject ARQ
+
+Stop-And-Wait ARQ is an enhancement of the flow control technique of the same name.
+
+The Txr transmits a frame and waits on an ACK before continuing.
+
+If the frame contains an error, the reciever simply discards it and does not return an ACK.
+
+If the frame is not acknowledged after a timeout period, the Txr simply retransmits.
+
+If an ACK is sent but damaged in transit, the transmitter will resend, and the Rxr will now have
+two copies of the same frame.
+
+To solve this, frames are numbered alternately 1 or 0 and ACKS correspondingly 0 or 1.
+	> e.g. Frame 0, ACK 1 or ACK 0, Frame 1
+
+Go Back N ARQ can be considered an enhancement of Sliding Window flow control.
+
+The Txr can send a number of frames without having to receive some form of ACK.
+
+In this case, there can be a successful transmission, or damaged frame, or lost ACK or data.
+
+If no errors occur, the receiver returns a positive ACK, e.g. RR4 or RNR6 with the number of
+the next frame expected.
+
+This ACK can be sent as an explicit message in its own frame, or, it can be piggybacked onto
+an outgoing data frame.
+
+The transmitter continues to send data frames up to the agreed window size.
+
+If errors are detected. there are two types of response depending on the type of error:
+	> Lost or damaged frames.
+	> Lost ACKs.
+
+For lost or damaged frames, the reciever sends a reject, REJ message, with the number of the
+next frame expected.
+
+The Txr, upon reciept of the REJ, retransmits all frames starting at the number included in
+the message, regardless of whether subsequent frames have arrived intact.
+
+For lost ACKs, it depends on whether the timer for a frame has expired.
+	> If it hasn't, it can continue to send frames up to the window size.
+	> If it has, the transmitter immediately stops transmitting data frames.
+	> It then sends a special RR message with the "Poll Bit" set.
+	> This is considered a command frame.
+	> The Rxr must respond with an RR message to identify the next frame expected.
+
+Selective Reject ARQ is similar to Go Back N, with the exception that the only frames that
+are retransmitted are:
+	> Transmitted frames for which a timer has expired.
+	> Transmitted frames that were lost or damaged.
+
+This method user a different negative ACK - a selective reject, or SREJ message.
+
+The number of the frame to be retransmitted is included with this, for example SREJ 5.
+
+This is more efficient than Go Back N as it minimises the amount of retransmitted frames.
+
+However, this technique is also more complex, as the Rxr has to:
+	> Store frames recieved after a damaged frame has been rejected.
+	> Re-sequence retransmitted frames arriving out-of-sequence.
+
+This requires more complex logic on the Rxr and Txr stations.
+
+For this reason, Go Back N ARQ is often preferred over Selective Reject.
+
+
+
+
+Topic - 12 - High Level Data Link Control
+----------------------------------
+The first three of the six data link control requirements have already been met through
+various techniques:
+	> Frame Sync (Asynchronous/Synchronous Communications)
+	> Flow Control (Stop-And-Wait, Sliding Windows)
+	> Error Control (The ARQs)
+
+The remaining requirements can be considered using a real protocol that fulfils all of the
+requirements together: High Level Data Link Control, or HDLC.
+
+This protocol defines the following:
+	> Role of each station on the link.
+	> Mode of data transfer.
+	> Structure of frame.
+	> Exchange of data during each phase of communications.
+
+The protocol defines three types of station:
+	> Primary Station - Controls the operation of the link through use of commands.
+	> Secondary Station - Operates under control of primary station, responds to commands.
+	> Combined Station - Can send responses and commands.
+
+Synchronous Tx is used, i.e. transmission is in the form of frames.
+
+A frame is a block of data delineated by a special flag sequence (01111110).
+
+Data and Control frames have the same basic format, with minor differences in control fields.
+
+The frame format for HDLC is:
+	- Flag			8 Bits
+	- Address		8 Bits
+	- Control		8 or 16 Bits
+	- Information		Variable
+	- FCS			16 or 32 Bits
+	- Flag			8 Bits
+
+All active stations scan incoming bit streams, initially to determine the start of a frame, and
+then to determine the end of one.
+
+The same flag pattern may be used to signify end AND start of two consecutive frames.
+
+The flag pattern must NOT be allowed to occur inside the frame.
+
+This is prevented by bit stuffing.
+
+For example:
+	> 111111111111011111101111110 contains the flag pattern, 01111110.
+	> This is changed to 1111101111101101111101011111010.
+
+The address field in the frame structure is used to identify stations.
+
+This is only relevant on a multi-point link, but is always included.
+
+It is usually 8 bits long, but can be extended.
+
+There are three types of frame, each with their own control field format.
+
+Information Frames
+	> Carry data.
+	> Can also carry piggybacked frame sequence numbers for flow/error control.
+
+Supervisory Frames
+	> Carry flow and error control data when not piggybacked.
+
+Unencumbered Frames
+	> Provide link control functions like setup and disconnect.
+
+The information field is present in Information Frames.
+
+This is where the data is stored. The length is variable up to a predefined system limit, but
+must be a multiple of 8 bits.
+
+The FCS field is used in error detection, calculated using all bits excluding flags.
+
+It is used for cyclic redundancy checks, for which a 16-bit technique is normally used.
+
+All HDLC interactions follow three distinct phases of operation:
+	> Initialisation
+		- The link is set up.
+		- Certain parameters are agreed by each station.
+
+	> Data Transfer
+		- Data is exchanged.
+
+	> Termination or Disconnect
+		- The link is disconnected.
+
+In initialisation, either station may initialise the link by sending one of 6 set mode commands.
+
+Most commly used one is SABM, set asynchronous balanced mode, used with 2 combined stations.
+
+The receiving station responds with an unencumbered acknowledgement, or UA, to accept, or
+disconnect mode, or DM, to reject.
+
+Only unencumbered frames are used in this phase.
+
+In data transfer, each Information Frame contains two sequence numbers:
+	> One relates to the outgoing frame, i.e. this frame number.
+	> The other is a piggypacked ACK with the number of the next frame expected.
+
+When piggybacking is not being used, supervisory frames are used for flow and error control.
+
+The first frame transmitted is always numbered zero.
+
+Either station can initiate the disconnect phase: This is achieved using an unencumbered frame
+containing the DISC message.
+
+The remote station must respond with an unencumbered frame containing the UA message.
+
+
+
+
+Topic - 13 - Intro to LANs
+----------------------------------
+A local area network is a private commuications network.
+
+They are used to interconnect the computing resources within an organisation.
+
+All devices attach to a shared transmission medium, and can provide data rates up to 1Gbps.
+
+This allows:
+	> Proliferation of computing devices.
+	> Growth in multimedia applications.
+	> Increased client/server applications.
+
+LAN can be classified based on their topology or layout, their transmission medium, or
+the access control used for the transmission medium.
+
+There are three broad types:
+	> PC LAN, or Access Layer
+		- Connect low cost devices.
+		- Used in most organisations.
+		- Cheap to implement and maintain, low speed and performance.
+	> Backend LAN, or Core Layer
+		- Used to connect high-cost devices.
+		- Bulk data transfer.
+		- Costly to implement and maintain, high speed and performance.
+	> Backbone LAN, or Distribution Layer
+		- Connects PC and Backend LANs.
+
+The use of a single LAN is undesirable, due to reliability, cost, and capacity.
+
+The three main LAN topologies are Bus, Ring, and Star.
+
+Bus:
+> Linear
+> Stations attach to bus using tap.
+> No closed loops.
+> Transmissions go both directions.
+> Bus ended in terminator device which removes signal.
+> Example is Ethernet.
+
+Ring:
+> Set of interconnected repeaters in a ring.
+> Repeaters recieve data on one link and retransmit bit-by-bit onto another.
+> Uni-directional links.
+> Each station attaches at repeater.
+> Transmission signal must be physically removed from the network.
+> Example is IBM Token Ring.
+
+Star:
+> Central hub, shared medium or switched LAN.
+> Each station is attached by two links, TX and RX.
+> All transmissions go by hub.
+> Example is ATM.
+
+Data on LANs is transmitted via Frames.
+
+Each frame contains data plus control information.
+
+Stations must gain access to the shared TX medium, and access must be provided fairly by some
+controlling mechanism.
+
+
+
+
+Topic - 14 - Access Techniques
+----------------------------------
+LANs can gain access to the TX medium using MAC, or medium access control.
+
+Gaining access to the LAN is fundamental for TX between stations.
+
+Access can be controlled centrally or distributedly, stations either obtain permission,
+or access is controlled by all stations together.
+
+Central Control:
+	> Advantages:
+		- Access logic at stations is simple.
+		- No co-ordination between stations.
+	> Disadvantages:
+		- Single point of failure.
+		- Potential bottleneck.
+
+Distributed access is more common, and comes up later.
+
+There are three generalised access control techniques:
+	> Reservation (Not Covered)
+	> Round Robin
+		- Each station takes turns.
+		- Very suited to stream traffic, long and continuous TX.
+	> Contention
+		- Each station contends for access when needed.
+		- Technique is distributed by nature.
+		- Works on a FISO basis.
+		- Very suited to bursty, i.e. short and sporadic traffic.
+
+Ethernet, which is an example of a Bus or Star LAN, uses a Contention MAC technique.
+	> Carrier Sense Multiple Access with Collision Detection, or CSMA/CD
+		- Random, requires each station to contend for access to TX medium.
+		- Most common technique for bus and star LANs.
+		- Defined under 802.3 standard.
+
+Under CSMA, if a station wishes to transmit data frames, the following steps occur:
+	1. The station listens to the medium for activity. This is carrier sense.
+	2. If the medium is clear of traffic, it begins transmission immediately.
+	3. If the medium is in use, the station waits a random period of time before it
+	   attempts to transmit the data frame.
+
+In normal operation, transmitting stations can send multiple frames and would expect ACKs
+in the return direction - ARQ (automatic repeat request) techniques like go-back-n or SelRej.
+
+However, it is possible with this technique for two stations to transmit at the same time,
+leading to a collision and a garbled transmission.
+
+Collisions are an example of frames going missing. They can lead to scenarios of out-of-
+sequence frames or missing RR messages.
+
+In the ARQ techniques, a TX station:
+	> Sets a timer for each frame TX.
+	> Expects an ACK from the destination station.
+	> Takes action after a timeout period using a Poll bit.
+
+CSMA results in poor utilization of the link. The medium remains unusable in the time to
+clear the collision, and the TX station is reliant upon a non-returned ACK to detect it.
+
+CSMA/CD was made to include collision detection to counteract this.
+
+As before, the station listens to the medium before attempting to transmit.
+
+During transmission, the station continues to listen for a collision:
+	> If a collision is detected, the station ceases transmission entirely.
+	> The station then transmits a brief jamming signal to inform all others.
+	> The station waits a random (delta) time before attempting a retransmit.
+
+Additional collisions are dealt with using a binary exponential backoff.
+
+If a collision occurs between transmissions from two stations, and they both attempt to
+retransmit ASAP, they will just get another collision, leading eventually to deadlock.
+
+To prevent this, the BEB algorithm is used.
+
+After a collision, time is divided into discrete slots, called Tslots.
+
+Their length is equal to 2t, where t is the maximum propogation delay in the network.
+
+The stations involved randomly pick an integer from set K, i.e. {0, 1}, and wait that
+number of time slots before trying again.
+
+This set is called the contention window.
+
+If the sources collide again because they picked the same integer, the set is doubled and
+becomes {0, 1, 2, 3}.
+
+Now the sources in the second collision use the second set, and wait that number of time
+slots before trying again.
+
+Before they try to transmit, they listen to the channel and transmit only if the channel
+is idle.
+
+This causes the source which picked the smallest integer in the contention window to
+succeed in transmitting its frame.
+
+The widening in size of the contention window is per-frame, meaning:
+	> Stations A and B transmit frames A1 and B1.
+	> They collide, A1 picks 0, and B1 picks 1, and A1 wins and transmits first.
+	> Now A transmits A2 and B transmits B1.
+	> When they collide, A2 picks from {0, 1} and B1 picks from {0, 1, 2, 3}.
+
+This use of this exponential backoff to determine the random delay time for transmission
+helps to prevent multiple devices from retransmitting their packets simulteneously and
+causing another collision.
+
+The maximum delay time is usually set to 1024 Tslot, where one Tslot is the time
+taken for a signal to travel from one end of the network segment to the other.
+
+The backoff algorithm is implemented in hardware on the network interface card.
+
+When a collision is detected, the NIC generates a random number between 0 and 2^N-1, where
+N is the number of collisions that have occured.
+
+The NIC then multiplies the random number by the slot time to determine the delay time before
+retransmitting.
+
+The 2^N-1 is what gives us the contention window sets, i.e. 2 collisions is (2^2)-1, or
+{0, 1, 2, 3}.
+
+If the maximum number of retransmissions is reached without successful transmission, the
+device gives up and reports a transmission error.
+
+In CSMA/CD, the size of a frame must be large enough such that the collision can be detected
+by the sender while still sending the frame.
+
+As a result, the transmission delay must be at least twice the maximum propogation delay.
+
+Without CSMA/CD, collisions would not be detected.
+
+If the affected frame was a data frame, then the reciever would likely interpret the next
+frame as out-of-sequence, and return a REJ message.
+
+If the collided frame was returning an ACK, the transmitter would not recieve an RR.
+
+Overall time to send multiple frames would be extended, and commuicating stations would
+have to rely on timers and REJ messages to recover from collisions.
+
+With Collision Detection added, we can detect collisions.
+
+The TX station can stop transmitting and wait before attempting again.
+
+Collision detection in part addresses some of the issues normally addresed with error
+control, namely lost frames.
+
+Consequently, the overall time to send multiple frames is reduced, as the TX only has to wait
+for the collision to disappear from the segment in order to retransmit the frame.
+
+The use of CSMA/CD is beneficial, as it reduces the downtime of the LAN segment.
+
+The time to deliver multiple frames is improved.
+
+Frame length, however, is critical.
+
+Short frames prevent collision detection, and so frames need a minimum length.
+
+Consequently, the MAC frame format includes a specal field called the Pad, consisting of
+extra octets of random data added to the frame.
+
+This is where we get the 802.3 MAC frame format, with a structure as such:
+	> Preamble			7 Octets
+	> SOF				1 Octet
+	> Dest MAC Address		6 Octets
+	> Source MAC Address		6 Octets
+	> LLC PDU/Data			46 to 1500 Octets
+	> PAD				Included in 46 to 1500 above
+	> Cyclic Redundancy Check	4 Octets
+
+Ring LANs consist of a number of stations, each of which is connected to a repeater.
+
+These in turn are each connected to two other repeaters by unidirectional TX links in a ring.
+
+Data are transferred bit-by-bit around the ring from one repeater to the next.
+
+The repeaters regenerate and retransmit each bit.
+
+Repeaters primarily perform three functions:
+	> Frame Insertion - Frames are placed onto the TX medium.
+	> Frame Reception - As a frame passes, the address field is copied, and if it
+	  matches the station, the entire frame is copied.
+	> Frame Removal - A repeater can remove a frame by not repeting it on.
+
+The most commonly used MAC technique for ring LANs is IBM token ring.
+	> This is a Round Robin technique, and is defined under the 802.5 standard.
+
+Token Ring uses a small frame, called a token.
+
+This token circles the ring indefinitely.
+
+A station wishing to transmit must seize the token, and remove it from the LAN.
+
+The token is then transformed into a start-of-frame field for a data frame.
+
+The token is effectively removed from the ring, and replaced by a data frame.
+
+When the frame returns to the TX station, it removes the frame from the ring, and inserts
+a new token.
+
+This is where we get the 802.5 MAC frame format, with a structure as such:
+	> Start Delimiter		1 Octets
+	> Access Control		1 Octet
+	> Frame Control			1 Octets
+	> Destination Address		6 Octets
+	> Source Addresss		6 Octets
+	> Data				0 Octets
+	> FCS				4 Octets
+	> End Delimiter			1 Octet
+
+Advantages of token ring:
+	> Access is efficient and fair under heavy traffic loads.
+
+Disadvantages of token ring:
+	> Access can be inefficient under light traffic loads.
+	> There is a requirement for token maintenence, in case of loss or duplication.
+
+Star LANs use a central component known as a hub.
+
+There are two types, shared-medium and switched-LAN.
+
+Shared-Medium Hub / Hub-Star LAN
+	> TX from any station is repeated to all stations.
+	> Only one station can transmit at a time.
+	> This is the same behaviour as a Bus LAN.
+	> Known as a star-shaped bus.
+	> Can use pre-existing wiring as a result.
+
+Switched LAN Hub
+	> Acts as a switch, i.e. the incoming frame is only passed to the addressed station.
+	> Frames from other stations can be switched simultaneously.
+	> Greater performance can be achieved with this.
+
+Switched LANs provide greater performance because there is no contention.
+
+Multiple simultaneous communications between pairs of stations can be facilitated.
+
+The specification for wireless LANs, or WLANs, is called 802.11.
+
+This specification defines two types of architecture:
+	> Basic Service Set (BSS)
+	> The Extended Service Set (ESS)
+
+The BSS typically comprises a number of mobile stations and a central base station known as
+an access point.
+
+The ESS typically comprises two or more BSSs with APs.
+
+The APs are usually connected via a distribution network, typically a wired LAN.
+
+Like BSSs, ESSs define two types of stations.
+	> Stationary stations, which usually connect via the wired LAN.
+	> Mobile stations, some of which can only communicate within a single BSS.
+
+The access technique employed on a wireless LAN is CSMA/CA rather than CD.
+
+This stands for Collision Avoidance.
+
+Before a station can transmit a frame, it must detect activity on the shared medium.
+
+Timers and Back-Off periods are used in the event that the medium is in use.
+
+As with wired Bus LANs, collisions can occur.
+
+Collision Detection relies on a transmitting station being able to detect a collision,
+but this is not always the case with a WLAN.
+
+Due to distances between stations, not all transmissions are visible to all stations,
+causing the Hidden Station Problem.
+
+As a result, the approach to collisions is to avoid them to begin with.
+
+The CSMA/CA technique uses two messages: Ready To Send, and Clear To Send.
+
+The timers used are called Short Inter Frame Space, and Distributed Inter Frame Space,
+as well as Network Allocation Vector.
+
+Within CSMA/CA, the DCF or Distributed Coordination Function controls the time a station
+waits before initiating transmission in a free medium.
+
+it also assigns time slots to network participants for further actions, creating a
+binding time structure.
+
+In the first step, participants monitor the network for the duration of the DIFS to
+determine if it's currently free.
+
+Here this means that no other station within range is sending a signal at the same time.
+
+The DIFS results from the SIFS almost double the slot time, which is between 28-50 micro S.
+
+If participants determine that the channel is free, they wait a random amount of time
+before they start sending.
+
+This duration corresponds to the contention window. This window doubles with each collision
+as per the same binary exponential back-off used in CSMA/CD.
+
+After sending the data packet, the recipient node sends a notification, if the RTS/CTS
+procedure is also utilised.
+
+This station also waits a fixed time before sending. SIFS is the time taken to process a
+data package. The duration depends on the 802.11 standard, and is between 10 and 16 micro S.
+
+The frames RTS and CTS are part of the optional extension. The procedure is upstream data
+transmission.
+
+If a participant determines the TX medium is free, the device first sends an RTS frame to
+the RX.
+
+With this, the output makes it clear it wants to start a TX and will occupy the medium for
+a certain time.
+
+The RX, in return, sends a CTS frame, and all other in-range participants are informed that
+the TX is currently occupied.
+
+Only then does the original device transmit the data.
+
+Now it is not possible for the participants in a wireless network to detect collisions or
+other interference during a transmission.
+
+For this reason, the recieving station needs to send an ACK when the data packet has
+arrived correctly.
+
+If the ACK doesn't appear, the sender assumes a complication has arisen, and resends.
+
+This station has preference for use of the medium, and doesn't have to wait again.
+
+The RTS/CTS extension helps reduce collisions on the initial RTS frame.
+
+It is still likely though that two participants might send a request to the same station at
+the same time.
+
+In cases like this, the reciever does not send a CTS frame, because the RTS has not arrived
+correctly.
+
+It is in this way that RTS/CTS can solve the Hidden Station Problem, by putting only the RTS
+frames at risk instead of the data.
+
+This can slow down the network though, because when all other stations are halted from
+transmitting by the CTS, even stations whose transmissions would not have caused a collision
+are stopped.
+
+This is called the Exposed Station Problem.
+
+Before a device in the network starts a transmission, it first sends information in the
+duration field of the RTS frame to all other participants.
+
+The station reveals how long the network will be occupied by the transmission, and every
+other device enters this info in their personal Network Allocation Vector, or NAV.
+
+This is managed internally and specifies the time when a delivery attempt is possible again.
+
+The NAV counts down continuously and is only replenished by new information from other
+stations.
+
+A NAV can increase the timer by a maximum of 33 microseconds. This is the maximum duration
+for which a transmitter may block the medium.
+
+The devices in the network are inactive while the NAV has not yet expired. This saves
+energy.
+
+Only when the counter is set to zero does the participant become active again and check the
+network.
+
+The NAV is not only adjusted by an RTS, but by CTS and ACK as well.
+
+The latter is the signal for all participants to reset the NAV to 0.
+
+When participants in a network follow CSMA/CA, there are certain steps adhered to.
+
+First, stations monitor the transmission medium, the radion channel, for transmissions.
+
+If the medium is currently occupied, a random back-off is initiated, and the station waits
+it out.
+
+This ensures that participants do not start to check the network at the same time, and
+cannot start transmitting data at the same time. 
+
+If the network is free, the station initiates DCF. The channel is checked more thoroughly
+for the duration of DIFS.
+
+If it remains free for this time, a random backoff starts, and then the RTS/CTS exchange
+begins.
+
+If the request to send has successfully arrived at the reciever and no collision has occured,
+the sender recieves permission from the returning CTS to occupy the medium.
+
+As this happens, all other participants are informed that the network is in use.
+
+This causes them to raise their NAV again and wait to try again to see if the channel is
+free.
+
+Then the station begins transmitting, and, when finished,the reciever waits the duration of
+an SIFS before responding with an ACK to confirm success and to set the NAV to 0.
+
+This all comes together with the 802.11 MAC frame format:
+	> FC				2 Octets
+	> D				2 Octets
+	> Address 1			6 Octets
+	> Address 2			6 Octets
+	> Address 3			6 Octets
+	> SC				2 Octets
+	> Address 4			6 Octets
+	> Frame Body			0 to 2312 Octets
+	> FCS				4 Octets
+
+
+
+
+Topic - 15 - Hardware Addressing
+----------------------------------
+LAN technologies facilitate sharing of information between all locally connected stations.
+
+Direct communication between specific pairs is achieved using an addressing scheme.
+
+Each station is assigned a hardware address, or MAC address, which is unique.
+
+An example of an ethernet MAC address is 00:40:05:1c:0e:9f.
+
+Ethernet MAC addresses are 48-bits long, and represented in Hex format.
+
+The header within each transmitted frame contains the sender and reciever address,
+
+This allows the LAN interface, or Network Interface Card (NIC) to filter out frames without
+conferring with the CPU.
+
+The NIC only interrupts the CPU when it has data specific to the station.
+
+Different addressing schemes are employed on different LAN topologies.
+
+Each station's address must be unique on the LAN to which it connects.
+
+Address allocation can be:
+	> Static - H/W manufacturer sets address.
+	> Dynamic - Station sets their address at boot time.
+	> Configurable - The administrator sets the address.
+
+There are three possible types of communication on a LAN, each requiring their own address:
+	> Unicast - This is station-to-station communication.
+	> Broadcast - This is station-to-ALL communication.
+	> Multicast - This is station-to-SOME communication.
+
+Unicast communication requires the use of unique MAC addresses, wherein all NICs are
+configured with a unique MAC address.
+
+Broadcast requires one address to be recognised by all stations, and all NICs are
+configured to recognise a broadcast address of all ones, or FF:FF:FF:FF:FF:FF.
+
+Multicast requires one address to be recognised by some stations.
+
+
+
+
+Topic - 16 - Extending LANs (Bridges)
+----------------------------------
+Where there is need to extend or interconnect LANs, one of three devices can be used.
+	> Repeaters
+		- Used to connect identical LANs, i.e. those using the same MAC protocols.
+		- Repeaters do not process frames.
+	> Bridges
+		- Connects LANs using similar or different MAC protocols (802.3/5 etc).
+		- Bridges do process frames.
+	> Routers
+		- Similar to bridges, but can connect together different LAN technologies.
+		- Used in internetworking.
+
+Repeaters are used to overcome the distance limitation of LANs.
+	- TX signals attenuate over distance.
+	- The length of a LAN segment is restricted due to attenuation.
+	- When there is a need to connect stations beyond this, a repeater is used.
+	- A repeater connects two segments of LAN.
+	- Repeaters regenerate attenuated bits. For each one, a fresh one is reproduced.
+	- Repeaters forward every frame with no filtering.
+
+Bridges facilitate the interconnection of small LANs to create a larger LAN.
+
+This is often preferable to just using one larger LAN.
+
+Advantages of using small interconnected LANs include:
+	> Reliability - The effects of a fault are more easily restricted.
+	> Performance - Smaller LANs provide better performance to locally attached devices.
+	> The majority of traffic is often between locally connected stations.
+	> Security - With some topologies, all LANs can see all frames.
+	> The use of a bridge facilitates isolation of high-security traffic and users.
+	> Geography - Facilitates extending a LAN to isolated station clusters.
+
+Bridges can also connect more than two LANs together.
+
+Basic bridges only understand one frame format, e.g. 802.3, 802.5.
+
+These are sometimes called MAC relay bridges.
+
+Basic Bridges provide the following functionality:
+	> Store and Forward
+		- Operating in promiscuous mode a bridge reads all frames on one LAN.
+		- It retransmits them to an outgoing port with another LAN only if the
+		  destination station is on that LAN.
+		- The retransmission is without modification, bit-by-bit.
+		- This function is performed in both directions.
+	> Routing and Addressing
+		- Not all frames are copied, only those relevant to a LAN segment.
+		- This implies a routing capability.
+
+The use of a bridge does not affect how stations communicate with each other.
+
+Unique MAC addresses are used for routing frames between stations connected to the same
+bridged network.
+
+A routing strategy is used to decide which frames are forwarded onto another LAN.
+
+There are two routing strategies to consider: Fixed Routing and Address Learning.
+
+Fixed Routing involves:
+	> For each pair of source/dest stations a route is created in a table and stored.
+	> Based on the dest address in a recieved MAC frame, it looks at the table.
+	> Based on the table, it determines if the frame is to be forwarded.
+
+This is simple, and requires minimal processing overhead, but can become very complicated
+when multiple bridges are in use.
+
+Address Learning is an alternative approach to routing.
+
+Here, the bridge can learn the location of each station automatically, because:
+	> Each incoming MAC frame contains a source address field.
+	> Each LAN connects to one port only.
+
+Using both of these identifiers, the bridge constructs a routing table automatically.
+
+Address Learning starts at boot time. Initially the table is empty.
+
+As MAC frames arrive, the bridge constructs the routing table using the source MAC address
+and source port information.
+
+After a period of time known as the steady-state period, the table is complete.
+	> Frame filtering can commence in earnest.
+
+Bridges that use an address learning strategy are known as transparent bridges.
+
+Stations connected to the LAN are unaware of the existence of the bridge.
+
+A problem with transparent bridges is looping. This arises from the use of redundant bridges.
+
+Redundant bridges are used for reliability, in the event that one fails, another can
+take over.
+
+Because both bridges see all frames, what happens is something like this:
+	> Host A on LAN 1 sends a frame to Host D on LAN 2.
+	> Bridge 1 and Bridge 2 both see it, and forward it to LAN 2.
+	> They both in their routing table set A to be on Port 1.
+	> Each bridge sees the frame the other has forwarded.
+	> They both forward them back to LAN 1, and set A in the table to be on port 2.
+	> Repeat Ad Nauseam.
+
+To overcome such a loop, we use graph theory to create a loop-free bridge network.
+
+We create a Spanning Tree of the network by representing it as a graph:
+	> Nodes or Vertices represent the bridges and LANs to which they connect.
+	> Connecting Arcs or Edges represent connections between LANs and bridges.
+	> Each Edge is assigned a Cost Metric, or Weight (1 = Bridge to LAN, 0 = Opposite).
+
+First, we find the root bridge. This is the bridge with the lowest value ID.
+
+Then, we find the shortest path from the root bridge, to every other bridge and LAN.
+
+Then, we eliminate redundant routes. The routes with the shortest paths become the spanning
+tree.
+
+All bridge ports in the spanning tree are marked as forwarding ports, the others as blocking
+ports.
+
+Advantages of using bridges are as follows:
+	> Parallelism
+		- Not every frame arriving at the bridge is copied to another LAN.
+		- This allows two pairs of stations to communicate simultaneously.
+		- (Provided each pair is on a seperate LAN separated by a bridge.)
+
+	> Optimised Performance
+		- Stations that are likely to communicate with each other frequently can
+		  be moved to the same LAN to ensure maximum efficieny.
+		- (Principal of Locality of Reference).
+		- Collision Domains are smaller, reducing collision likelihood and contention.
+		- Without bridging, stations percieve the speed as (Data Rate/#. Stations).
+		- This is significantly improved by bridging.
+
+In summary, bridges are used to connect together LANs, creating a small interconnected
+web of LANs rather than a single large one.
+
+They can connect LANs with similar or different MAC protocols.
+
+They contain routing functionality to filter frames:
+	> Facilitates parallelism, improving performance of each connected LAN.
+	> Collisions are not copied between LANs, reducing collision domain and contention.
+
+They also contain a Store and Forward functionality:
+	> Facilitates connecting fast, busy LANs to slower ones.
+
+
+
+
+Topic - 17 - Intro to Internetworking
+----------------------------------
+It is not unreasonable to assume that an organisation may use multiple kinds of technologies
+within their LAN structures.
+
+This can lead to the creation of islands of networks, due to differences in frame formats,
+electrical characteristics, and addressing schemes.
+
+This is problematic, as there is a need to facilitate communication between any two hosts
+regardless of the type of LAN they attach to.
+
+Universal Service is a fundamental concept in networking.
+
+With this, a user on any host in any part of an organization can send messages or data to any
+other user without any knowledge of the underlying network tech.
+
+The provision of universal service can be difficult to achieve due to it requiring several
+problems associated with the interface of different kinds of network technologies be fixed.
+
+Internetworking is the solution to this. It requires new hardware, and new software.
+
+Additional hardware provides a physical connection between LANs using the correct NIC.
+
+Additional software is required to:
+	> Addres lack of uniqueness in MAC addresses.
+	> Address lack of summary routing when using MAC addresses.
+	> Introduce a single unique framing structure or format understood by all hosts.
+
+The resulting system is a connection of physical networks known as an Internet.
+
+There is no restriction on the size of an internet, but reliability, efficiency, and performance
+are all design considerations.
+
+The hardware component of an internet is called a router.
+
+It is a special purpose computer used to interconnect networks.
+
+Like any other computer, it contains a CPU, RAM, I/O interfaces (Network Interface Cards), etc.
+
+To provide universal service, routers must pass data between LANs.
+
+Internet Protocol software, or IP software, addresses the differences in addressing and framing.
+
+IP introduces a single globally-unique addressing scheme, which is where we get IP addresses.
+
+It also introduces a single framing structure called a packet or datagram, understood by all
+computers.
+
+The routers combined with the IP software makes universal access possible.
+
+However, internets are really an abstraction. No such network exists in reality, and consequently
+they are called virtual networks.
+
+
+
+
+
+
+

@@ -1,0 +1,209 @@
+Software Engineering 2 - 2022 Paper
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Question 1
+---------------
+a) Unit tests are run on the smallest unit of design, whether that be a procedure, class, or component.
+They test local data structures, basic algorithms, and error handling.
+Integration tests are run on multiple classes or parts of code in tandem, testing how they work together,
+and how the system works as a whole instead of as parts.
+Functional testing involves testing operations and methods across the system.
+
+b) The adapter design pattern is intended to adapt or convert the interface of a class into another interface
+that clients expect. Adapter lets classes work together that couldn't otherwise due to incompatible interfaces.
+Adapter can be used:
+> When you want to use an existing class, and its interface doesn't match what you need.
+> When you want to create a reusable class that cooperates with unrelated or unforseen classes.
+
+Class and Obejct adapters have differing tradeoffs.
+	> Class Adapter
+		- Adapts adaptee to target by comitting to a concrete adapter class.
+		- Won't work when we want to adapt class and all subclasses.
+		- Lets adapter override some of adaptee's behaviour.
+	> Object Adapter
+		- Lets a single adapter work with many adaptees - adaptee plus subclasses.
+		- Makes it harder to override adaptee behaviour.
+
+
+
+
+Question 2
+---------------
+a) https://imgur.com/a/PwJ2X2y
+Guard Condition for recordArrival(): [self.selected.table.places >= self.selected.covers]
+
+b) 
+	Staff			BookingSystem		Restaurant		Booking
+	|-----display(date)---->|			|			|
+	|			|---getBookings(date)-->|			|
+	|			|			|-------getDate()------>|
+	|			|			|			|
+	|			|			|<-----return date------|
+	|			|<---return bookings----|			|
+	|			|			|			|
+	|			|-------		|			|
+	|			|      |updateDisplay()	|			|
+	|			|<------		|			|
+
+
+
+	Staff			BookingSystem		Current : Booking	Selected : Booking
+	|--selectBooking(id)--->|			|			|
+	|			|-----getDetails()----->|			|
+	|			|			|			|
+	|---recordArrival()---->|			|			|
+	|			|--setArrivalTime(now)--|---------------------->|
+	|			|			|			|
+	|			|-------		|			|
+	|			|      |updateDisplay()	|			|
+	|			|<------		|			|
+
+
+The recordArrival() operation is liked with setArrivalTime(). Because setArrivalTime() is only used on reservations,
+not walk-ins, but also we want to maintain a consistent interface across all bookings, setArrivalTime() is defined
+in Booking, where it does nothing, and overriden in Reservation.
+
+c) 
+context Booking
+	inv timeOverlap: --assumes a 2 hour booking
+		Booking.allInstances() -> forAll
+		(
+			i, j | i <> j and i.table implies (i.getTime() <= j.getTime() + 120 or
+			i.getTime() + 120 >= j.getTime())
+		)
+
+context BookingSystem
+	inv currentBooking:
+		current->includes(selected)
+
+
+
+
+Question 3
+---------------
+a) Layered architecture results from the idea of a seperation of concerns, and aims to insulate the system from
+the effects of change. For example, the UI will often change, but the application layer does not use the
+presentation layer, and so system changes should be restricted to presentation layer classes.
+
+b) If you were to have the existing classes manage persistency, it would weaken cohesion. A new class, or new
+classes, should be created to handle the responsibility.
+Persistence is only relevant to concrete classes, not abstract ones. For these classes, we define a mapper class.
+We keep persistency out of domain model classes by defining persistency subclasses, containing an object ID
+for use in a database.
+The mapper classes then deal with the persistency subclasses.
+
+c) When the operation is called, the following steps are taken:
+
+1. The method checks if a customer with name "n" and password "p" is in the cache, which is implemented as a hash
+table. If so, the corresponding object is returned.
+
+2. If the customer is not in the cache, the method queries the database for the object.
+
+3. The customer info from the database is stored in the cache to optimise subsequent requests.
+
+4. The method returns the customer object retrieved from either the cache or the database.
+
+The implicit design pattern in this class is the singleton pattern, as it ensures that only one instance of
+the customerMapper class exists.
+
+import java.util.Hashtable;
+public class CustomerMapper {
+    // Singleton instance
+    private static CustomerMapper instance;
+
+    // Hashtable for caching customers
+    private Hashtable<String, Customer> cache;
+
+    // Private constructor to prevent external instantiation
+    private CustomerMapper() {
+        this.cache = new Hashtable<>();
+    }
+
+    // Static method to obtain the Singleton instance
+    public static synchronized CustomerMapper getInstance() {
+        if (instance == null) {
+            instance = new CustomerMapper();
+        }
+        return instance;
+    }
+} 
+
+
+
+
+Question 4
+---------------
+a) Design by contract refers to an approach in software development wherein designers should define precise
+and verifiable interface specifications for software components, using pre- and post-conditions, and invariants.
+DbC is affected by subclassing and polymorphism by polymorphism helpding keep their subclasses and operations
+consistent with their superclasses. Subclassing can strengthen invariants and post-conditions by making them
+more restrictive. However, pre-conditions cannot be strengthened by subclassing, as a superclass operation could
+potentially fail when applied to an instance of the subclass.
+
+b) Designers are obligated to satisfy postconditions, and benefit from not needing to check input values.
+
+Clients are obligated to satisfy preconditions, and benefit from not needing to check output values.
+
+c)
+context receivablesAccount
+	inv cannotBeBoth:
+		unprocessedInvoices->intersection(processedInvoices)->isEmpty()
+
+context ARProcessor::ProcessInvoices (arAccounts : Set(RecievablesAccount))
+	pre someUnprocessed:
+		arAccounts->forAll(processedInvoices->notEmpty())
+
+	post becomeProcessed:
+		arAccounts->forAll
+		(
+			unprocessedInvoices->isEmpty() and processedInvoices->includes(unprocessedInvoices@pre)
+		) 
+
+
+
+
+Question 5
+---------------
+a) The six key practices of the agile methodology XP are as follows:
+	> Test Driven Development
+		- Development is driven by testing.
+		- Unit tests implemented before code and run continuously.
+		- Customers write functional tests.
+	> Pair Programming
+		- Two developers at one workstation.
+		- On writes code, other reviews as it is written.
+		- Roles switched frequently.
+		- Promotoes collaboration, shared knowledge, and code review.
+		- Results in better quality code.
+	> Continuous Integration
+		- New code is integrated into code base as soon as is ready.
+		- System integrated and built many times daily.
+		- All tetst run have to be passed for change to be accepted.
+	> Refactoring
+		- Improving internal code structure without changing behaviour.
+		- Encourages developers to refactor code continuously.
+		- Promotes clean, maintainable code.
+		- Helps reduce technical debt, and improve readability.
+	> Simple Design
+		- XP advocates keeping software as simple as possible while meeting requirements.
+		- Focuses on minimizing unnecessary complexity, duplication, and dependencies.
+		- Emphasizes clarity, flexibility, maintainability.
+	> On-Site Customer
+		- Promotes direct and continuous involvement of customer or product owner.
+		- Allows for real-time feedback, clarification, and prioritization of features.
+		- Ensures the right product is built, aligning with customer needs.
+
+b) The diagram shows a shift in the practice of developing software to refactoring over anticipating.
+Where before, developrs tried to anticipate designs and how they might change, developers today value constant
+change, and constant refactoring of code. With the rate of change in technology and the modern market, it only
+makes sense to constantly change the internal design of code, even if not changing functionality, to keep it
+efficient, clean, maintainable, and reduce technical debt.
+
+
+
+
+
+
+
+
+
