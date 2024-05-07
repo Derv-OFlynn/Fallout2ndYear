@@ -2354,33 +2354,25 @@ The size of the <mark style="background: #69E772;">frame header</mark> may vary 
 #DataComms 
 ### <mark style="background: #69E772;">Binding Protocol Addresses</mark>
 
-IP protocol software works with IP addresses when 
-forwarding <mark style="background: #69E772;">packets</mark>:
+IP protocol software works with IP addresses when forwarding <mark style="background: #69E772;">packets</mark>:
 
 The outcome of the routing process is the IP address of the <mark style="background: #69E772;">Next Hop</mark>.
 
-The <mark style="background: #69E772;">Next Hop</mark> can be another router or, it can be the 
-destination host residing on a <mark style="background: #69E772;">directly connected</mark> LAN.
+The <mark style="background: #69E772;">Next Hop</mark> can be another router or, it can be the destination host residing on a <mark style="background: #69E772;">directly connected</mark> LAN.
 
 Refer to examples given in class. 
 
 Recall that IP addresses cannot be used when forwarding <mark style="background: #69E772;">frames</mark> across a <mark style="background: #69E772;">physical network</mark>: Only MAC addresses are relevant for this task.
 
-Therefore the <mark style="background: #69E772;">Next Hop</mark> IP address must be translated to 
-an equivalent <mark style="background: #69E772;">hardware/MAC</mark> address before the frame 
-can be transmitted: This translation is known as <mark style="background: #69E772;">Address Resolution</mark>.
+Therefore the <mark style="background: #69E772;">Next Hop</mark> IP address must be translated to an equivalent <mark style="background: #69E772;">hardware/MAC</mark> address before the frame can be transmitted: This translation is known as <mark style="background: #69E772;">Address Resolution</mark>.
 
 Once translated, the IP address is said to be resolved.
 
 Address resolution is <mark style="background: #69E772;">local</mark> to a network.
 
-Any host connected to a LAN can only resolve the IP 
-addresses of other stations/routers connected to the 
-same LAN:
+Any host connected to a LAN can only resolve the IP addresses of other stations/routers connected to the same LAN:
 
-Hosts A, B and router R1 can resolve each others IP 
-addresses but, neither hosts A nor B can resolve Hosts C, 
-D, E, F or router R2s’ IP addresses.
+Hosts A, B and router R1 can resolve each others IP addresses but, neither hosts A nor B can resolve Hosts C, D, E, F or router R2s’ IP addresses.
 
 ![](https://i.imgur.com/O8122e5.png)
 
@@ -2398,8 +2390,7 @@ However, there are three categories of address resolution algorithms as follows:
 Here an array is used to store information about 
 address bindings.
 
-The main advantages of the table lookup approach 
-are:
+The main advantages of the table lookup approach are:
 - It can be used to store arbitrary address bindings. 
 - A protocol address can be mapped to an arbitrary hardware address .
 - It is straightforward and easy to program.
