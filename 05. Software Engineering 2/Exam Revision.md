@@ -56,3 +56,8 @@
 
 ![](https://i.imgur.com/vP70B1z.png)
 ![](https://i.imgur.com/8nufNxE.png)
+
+
+### <mark style="background: #69E7E4;">OCL ARProcessor Contract:</mark>
+
+![](https://i.imgur.com/p1k7CST.png)
