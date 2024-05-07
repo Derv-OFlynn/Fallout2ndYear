@@ -1,0 +1,74 @@
+Human Computer Interaction - Art Sloan Revision
+---------------------------------------------------------
+
+2 Hour Exam, Answer Q1 and any TWO other questions.
+
+Q1 is 40 Mark, all other questions are 30 Marks.
+
+Date and Time - Friday 10th May, 2:00pm - 4:00pm.
+
+Set for CQ007 and CQ008, may change.
+
+Disciplines associated with HCI:
+	> CS
+	> Psychology
+	> Sociology
+	> Anthropology
+	> Ergonomics
+	> Physiology
+	> Design
+	> Art
+	> Engineering
+	> Linguistics
+	> Philosophy
+	> Artificial Intelligence
+
+There are a number of accessibility issues associated with aging:
+	> Sensory - Eyeshight, hearing.
+	> Physical - Coordination.
+	> Cognitive - Memory.
+
+Low Fidelity and High Fidelity prototype design.
+
+Participatory design involves end-users and stakeholders in the design process.
+
+Universal Design has several factors:
+	> Visual Impairment
+		- Allow text resizing.
+		- Have good colour contrast.
+		- Make sure the interface works with screen readers.
+		- Use proper alternative attributes.
+
+	> Mobility and Dexterity
+		- Recognise not everyone will use a mouse.
+		- Make keyboard accessible.
+		- Increase hit areas of links and buttons.
+
+	> Cognitive
+		- Make it clear where in the website the user is.
+		- Organize text correctly with proper headings.
+		- Make text easily scannable.
+		- Clearly mark links.
+		- Use lots of graphics.
+
+	> Auditory
+		- Provide captions and subtitles.
+		- Don't autoplay any sound.
+		- Don't rely on auditory indicators.
+
+Nielsen's 10 Heuristics
+	> Visibility of System Status
+	> Match Between System and Real World
+	> User Control and Freedom
+	> Consistency and Standards
+	> Error Prevention
+	> Recognition over Recall
+	> Flexibility and Efficiency of Use
+	> Aesthetic and Minimalist Design
+	> Help users Recognise, Diagnose, and Recover from Errors
+	> Help and Documentation
+
+
+
+
+

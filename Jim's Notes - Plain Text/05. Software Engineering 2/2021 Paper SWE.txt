@@ -1,0 +1,232 @@
+Software Engineering 2 - 2021 Paper
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Question 1
+---------------
+a) Unit testing involves testing performed on the smallest functional unit of code.
+Integration testing involves testing multiple classes together, and testing how they interact.
+
+b) I don't remember ever doing Python Test Cases, and I have no idea how to write a unit test.
+
+
+
+
+Question 2
+---------------
+a) Several considerations to make - how should BookingSystem retrieve the bookings to display?
+Having BookingSystem do this would weaken cohesion. This responsibility is better assigned to another object.
+Additionally, the dates of individual bookings must be checked. This new object will need to send a message
+to Booking to get the date.
+
+	Staff				BookingSystem			Restuarant			Booking
+	|--------display(date)--------->|				|				|
+	|				|-------getBookings(date)------>|				|
+	|				|				|----------getDate()----------->|
+	|				|				|				|
+	|				|				|<--------return date-----------|
+	|				|<------return bookings---------|				|
+	|				|				|				|
+	|				|--------			|				|
+	|				|	|			|				|
+	|				|	| updateDisplay()	|				|
+	|				|<-------			|				|
+	|				|				|				|
+
+
+The class diagram has changed, and now has the extra object, Restaurant, to keep track of bookings,
+as well as new operations like getBookings(), getDate(), and updateDisplay().
+
+When realizing the recordArrival(), there are several factors to consider:
+	> We only want to record arrivals on reservations, not walk-ins.
+	> We need to be able to distinguish the currently selected booking to mark it as arrived.
+
+We need the operation setArrivalTime() for the reservation, not walk-in, but we want to keep a common interface
+for all bookings. We define the operation in the booking class, and have it do nothing, then override it in the
+reservation class, which inherits from booking.
+
+We can use role names Current and Selected to mark the selected booking. Current marks the one we are looking at,
+and Selected marks the one we have selected. When we use selectBooking, Current becomes Selected.
+
+This realization for recordArrival() has added new role names/associations, and new operations to the class diagram.
+
+b) 
+model RestaurantSystem
+
+class Customer
+	attributes
+		name : String
+		phoneNumber : String
+end
+
+
+abstract class Booking
+	attributes
+		covers : Integer
+		date : String
+		time : Integer
+end
+		
+
+
+class Reservation < Booking
+end
+
+
+class WalkIn < Booking
+end
+
+
+class Table
+	attributes
+		places : Integer
+end
+
+
+
+
+association isAt between
+	Booking[*] role bookings
+	Table[1]
+end
+
+association Makes between
+	Customer[1]
+	Reservation[*] role reservations
+end
+
+
+
+
+constraints
+	context Booking
+		inv timeOverlap: --assumes a 2 hour booking
+			Booking.allInstances() -> forAll(
+				 i, j | i <> j and i.table implies (i.getTime() <= j.getTime() + 120 or
+				 i.getTime() + 120 >= j.getTime())
+				)
+
+
+
+
+
+
+Question 3
+---------------
+a) A layered architecture is a way to designing software to allow for a seperation of concerns.
+The layers aim to insulate the system from the effects of change.
+For example, the UI will often change, but the application layer does not use the presentation layer, and so
+changes to the system are restricted to presentation layer classes.
+
+b) Using existing classes to save and load objects risks weakening cohesion, so we must add new classes.
+We take each class which needs persistency, and define a mapper class for each.
+We keep persistency out of domain model classes by defining a persistency subclass, containing an object ID
+for use in a database.
+The mapper classes then deal with the persistency subclasses, as follows:
+
+	> TableMapper --------> PersistentTable ------> Table
+				- Object ID		- number
+							- places
+
+c) When the operation is called, the following steps are taken:
+
+1. The method checks if a customer with name "n" and password "p" is in the cache, which is implemented as a hash
+table. If so, the corresponding object is returned.
+
+2. If the customer is not in the cache, the method queries the database for the object.
+
+3. The customer info from the database is stored in the cache to optimise subsequent requests.
+
+4. The method returns the customer object retrieved from either the cache or the database.
+
+The implicit design pattern in this class is the singleton pattern, as it ensures that only one instance of
+the customerMapper class exists.
+
+import java.util.Hashtable;
+public class CustomerMapper {
+    // Singleton instance
+    private static CustomerMapper instance;
+
+    // Hashtable for caching customers
+    private Hashtable<String, Customer> cache;
+
+    // Private constructor to prevent external instantiation
+    private CustomerMapper() {
+        this.cache = new Hashtable<>();
+    }
+
+    // Static method to obtain the Singleton instance
+    public static synchronized CustomerMapper getInstance() {
+        if (instance == null) {
+            instance = new CustomerMapper();
+        }
+        return instance;
+    }
+}
+
+
+
+
+Question 4
+---------------
+a) Design by Contract refers to an approach to software design wherein designers should define precise
+and verifiable interface specifications for software components, using postconditions, preconditions, and invariants.
+
+b) Designers are obligated to satisfy postconditions, and benefit from not needing to check input values.
+Clients are obligated to satisfy preconditions, and benefit from having no need to check output values.
+
+c) 
+context receivablesAccount
+	inv cannotBeBoth:
+		unprocessedInvoices->intersection(processedInvoices)->isEmpty()
+
+context ARProcessor::ProcessInvoices (arAccounts : Set(RecievablesAccount))
+	pre someUnprocessed:
+		arAccounts->forAll (unprocessedInvoices->notEmpty())
+
+context ARProcessor::ProcessInvoices (arAccounts : Set(RecievablesAccount))
+	post becomeProcessed:
+		arAccounts forAll->
+		(
+			unprocessedInvoices->isEmpty() and processedInvoices->includes(unprocessedInvoices@pre)
+		)
+
+
+
+
+Question 5
+---------------
+a) The six key practices of the agile methodology XP are as follows:
+	> Test Driven Development
+		- Development is driven by testing.
+		- Unit tests implemented before code and run continuously.
+		- Customers write functional tests.
+	> Pair Programming
+		- Two developers at one workstation.
+		- On writes code, other reviews as it is written.
+		- Roles switched frequently.
+		- Promotoes collaboration, shared knowledge, and code review.
+		- Results in better quality code.
+	> Continuous Integration
+		- New code is integrated into code base as soon as is ready.
+		- System integrated and built many times daily.
+		- All tetst run have to be passed for change to be accepted.
+	> Refactoring
+		- Improving internal code structure without changing behaviour.
+		- Encourages developers to refactor code continuously.
+		- Promotes clean, maintainable code.
+		- Helps reduce technical debt, and improve readability.
+	> Simple Design
+		- XP advocates keeping software as simple as possible while meeting requirements.
+		- Focuses on minimizing unnecessary complexity, duplication, and dependencies.
+		- Emphasizes clarity, flexibility, maintainability.
+	> On-Site Customer
+		- Promotes direct and continuous involvement of customer or product owner.
+		- Allows for real-time feedback, clarification, and prioritization of features.
+		- Ensures the right product is built, aligning with customer needs.
+
+b) The diagram shows a shift in the practice of developing software to refactoring over anticipating.
+Where before, developrs tried to anticipate designs and how they might change, developers today value constant
+change, and constant refactoring of code. With the rate of change in technology and the modern market, it only
+makes sense to constantly change the internal design of code, even if not changing functionality, to keep it
+efficient, clean, maintainable, and reduce technical debt.
+
