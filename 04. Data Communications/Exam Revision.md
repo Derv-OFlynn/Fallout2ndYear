@@ -561,18 +561,12 @@ Protocols are <mark style="background:#69E772;">synonymous</mark> with data comm
 ### <mark style="background:#69E772;">Data Link Control Requirements:</mark>
 
 There are six basic requirements for effective Data Link Control as follows:
-
-<mark style="background:#69E772;">Frame Synchronisation:</mark> Frames must be recognisable by the Receiver
-
-<mark style="background:#69E772;">Flow Control:</mark> The Sender must <mark style="background:#69E772;">not</mark> overload the receiver
-
-<mark style="background:#69E772;">Error Control:</mark> Errors should be detectable by the Receiver
-
-<mark style="background:#69E772;">Addressing:</mark> For a multi-point configuration each station must be uniquely identifiable
-
-<mark style="background:#69E772;">Control and Data on the Same Link:</mark> The receiver must not have to wait for control information to arrive before it can process a frame
-
-<mark style="background:#69E772;">Link Management:</mark> Procedures for establishing and relinquishing the link must be adhered to
+- <mark style="background:#69E772;">Frame Synchronisation:</mark> Frames must be recognisable by the Receiver
+- <mark style="background:#69E772;">Flow Control:</mark> The Sender must <mark style="background:#69E772;">not</mark> overload the receiver
+- <mark style="background:#69E772;">Error Control:</mark> Errors should be detectable by the Receiver
+- <mark style="background:#69E772;">Addressing:</mark> For a multi-point configuration each station must be uniquely identifiable
+- <mark style="background:#69E772;">Control and Data on the Same Link:</mark> The receiver must not have to wait for control information to arrive before it can process a frame
+- <mark style="background:#69E772;">Link Management:</mark> Procedures for establishing and relinquishing the link must be adhered to.
 
 ### <mark style="background:#69E772;">Flow Control:</mark>
 
@@ -599,7 +593,7 @@ This technique only allows for the transmission of a single frame in either dire
 
 ### <mark style="background:#69E772;">Sliding Window Flow Control:</mark>
 
-Here both stations use an <mark style="background:#69E772;">extended</mark> buffer size to hold multiple frame
+Here both stations use an <mark style="background:#69E772;">extended</mark> buffer size to hold multiple frames.
 
 The Sending and Receiving stations maintain a list of frames already sent/received
 
@@ -790,7 +784,7 @@ Hence, <mark style="background:#69E772;">Go-back-N</mark> ARQ is often preferred
 
 The first three of the <mark style="background:#69E772;">six</mark> Data Link Control requirements have been examined through an exploration of various techniques:
 - <mark style="background: #69E772;">Frame Synchronisation</mark> (recall <mark style="background:#69E772;">Asynchronous/Synchronous</mark> communications),	
--  <mark style="background: #69E772;">Flow Control</mark> (recall <mark style="background:#69E772;">Stop-and-Wait</mark> and <mark style="background:#69E772;">Sliding Windows</mark> Flow Control),
+- <mark style="background: #69E772;">Flow Control</mark> (recall <mark style="background:#69E772;">Stop-and-Wait</mark> and <mark style="background:#69E772;">Sliding Windows</mark> Flow Control),
 - <mark style="background: #69E772;">Error Control</mark> (recall <mark style="background:#69E772;">Stop-and-Wait</mark>, <mark style="background:#69E772;">Go-back-N</mark> and <mark style="background:#69E772;">Selective Reject ARQ</mark>)
 - <mark style="background: #69E772;">Addressing</mark>
 - <mark style="background: #69E772;">Control and Data on same link</mark>
@@ -2376,6 +2370,14 @@ Hosts A, B and router R1 can resolve each others IP addresses but, neither hosts
 
 ![](https://i.imgur.com/O8122e5.png)
 
+### <mark style="background: #69E772;">Next Hop Routing:</mark>
+
+Next hop routing is about determining the next router or "hop" for a packet based on its destination IP address. 
+
+When a packet arrives at a router, it checks its routing table to find the best match for the destination IP address. The router then forwards the packet to the next hop router or outgoing interface. 
+
+This process repeats until the packet reaches its final destination. Ultimately, next hop routing ensures efficient packet delivery in IP networks by dynamically selecting the next router based on destination IP addresses.
+
 ### <mark style="background: #69E772;">Address Resolution Techniques:</mark>
 
 The algorithm used to translate a protocol address into a hardware address depends upon the protocol and hardware addressing schemes in use.
@@ -2409,3 +2411,27 @@ AND operation):
 ``hardware_address = ip_address AND Oxff``
 
 Closed-form computation can be very efficient because both the <mark style="background: #69E772;">hardware</mark> and <mark style="background: #69E772;">IP addresses</mark> can be changed
+
+### <mark style="background: #69E772;">VLSM:</mark>
+
+VLSM stands for Variable Length Subnet Masking. It's a technique used in IP addressing that allows network administrators to divide an IP address space into subnets of different sizes, thereby maximizing the efficiency of address allocation.
+
+In traditional subnetting, the subnet masks used are fixed in length, meaning that all subnets within a network have the same number of host addresses. However, with VLSM, subnet masks can vary in length for different subnets within the same network, allowing for more efficient allocation of IP addresses.
+
+VLSM is particularly useful in situations where different subnets require different numbers of hosts. By allocating smaller subnets with fewer hosts where they are needed and larger subnets with more hosts where necessary, VLSM helps conserve IP address space.
+
+For example, in a network where one subnet needs only a few hosts while another subnet requires a larger number of hosts, VLSM allows the administrator to assign smaller subnets to the former and larger subnets to the latter, optimizing address utilization.
+
+Overall, VLSM is a flexible approach to subnetting that enables more efficient utilization of IP address space by allowing for variable subnet sizes within a network
+
+
+### <mark style="background: #69E772;">Last minute IP Address allocation notes:</mark>
+
+- The /n at the end of am IP address indicates how many addresses are in the block. Minus n from 32. The amount of address = 2<sup>32-n</sup>, e.g. /24 means there are 2<sup>8</sup> = 256 address in the block. There are 24 bits for the network and 8 bits for the host.
+- If you can do an even split, every address gets the same mask.
+- In this example each subnet needs at least 25 host addresses. It also needs a network address and a broadcast address, so 27. 32 is the closest power of 2 to 27 so the magic number is 32. 
+- The mask is equal to 255.255.255.224 
+- The first network address starts at 0. You add the magic number to get the network address of each subsequent network e.g. if the magic number = 32 then Subnet A's network address ends in 0, Subnet B's network address ends in 32, network C's is 64, etc.
+- The First Host address of a subnet is the network address + 1. The first host address A ends in 1, in B it ends in 33, etc
+- The Broadcast address of a subnet is the last address before the next subnet begins. The Broadcast address of A ends in 31. The broadcast of B ends in 63, etc
+- The Last host address of the network is the broadcast address -1. The last host address of subnet A ends in 30, the last host of B ends in 62.
