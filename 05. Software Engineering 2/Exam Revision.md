@@ -26,7 +26,7 @@
 ![](https://i.imgur.com/cTK0rNP.png)
 
 
-### <mark style="background: #69E7E4;">Design by Contact polymorphism/subclassing:</mark>
+### <mark style="background: #69E7E4;">Design by Contract polymorphism/subclassing:</mark>
 
 ![](https://i.imgur.com/I2ZGiro.png)
 

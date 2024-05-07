@@ -34,7 +34,7 @@ This course is concerned with the <mark style="background: #69E772;">communicati
 - Switching Networks
 - <mark style="background: #69E772;">Local Area Networks:</mark> Topologies and operation, protocols, Access Control techniques
 
-### <mark style="background: #69E772;">0.2 Data Transmission:</mark>
+# <mark style="background: #69E772;">0.2 Data Transmission:</mark>
 #DataComms 
 
 ### <mark style="background:#69E772;">Model of Communications System:</mark>
@@ -106,7 +106,7 @@ The successful transmission of data depends upon <mark style="background:#69E772
 
 The general equation applies:
 
-``s(t) = Asin(2π.ft + Ø)
+``s(t) = Asin(2π.ft + Ø)``
 
 Where:
 - <mark style="background:#69E772;">Amplitude (A)</mark> is the peak value of the waveform
@@ -1128,14 +1128,10 @@ To counteract this inefficiency CSMA was extended to include <mark style="backgr
 As before, the station listens to the medium before attempting to transmit
 
 <mark style="background:#69E772;">During</mark> transmission the station <mark style="background:#69E772;">continues</mark> to <mark style="background:#69E772;">listen</mark> to the medium for a <mark style="background:#69E772;">collision</mark>, known as <mark style="background:#69E772;">Collision Detection</mark>:
-
-If present, the station ceases transmission immediately
-
-The station then transmits a brief jamming signal to inform all other stations of collision
-
-The station waits a random amount of time (delta) before attempting to retransmit
-
-Additional collisions are dealt with using a <mark style="background:#69E772;">binary exponential backoff</mark>
+- If present, the station ceases transmission immediately
+- The station then transmits a brief jamming signal to inform all other stations of collision
+- The station waits a random amount of time (delta) before attempting to retransmit
+- Additional collisions are dealt with using a <mark style="background:#69E772;">binary exponential backoff</mark>
 
 ### <mark style="background:#69E772;">CSMA versus CSMA/CD:</mark>
 
