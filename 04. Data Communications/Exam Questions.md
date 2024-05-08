@@ -1,8 +1,15 @@
 ### <mark style="background: #69E772;">Go-Back-N vs. Stop-And-Wait:</mark>
 
+![](https://i.imgur.com/F3SHsoe.png)
+
 ![](https://i.imgur.com/lFm1aEq.png)
 
+
+![](https://i.imgur.com/853uHyg.png)
+
 ![](https://i.imgur.com/tVgdX8W.png)
+
+![](https://i.imgur.com/U6MSfHE.png)
 
 
 ![](https://i.imgur.com/GWHC4oe.png)
@@ -10,9 +17,13 @@
 
 ### <mark style="background: #69E772;">Contention and CSMA:</mark>
 
+![](https://i.imgur.com/onRnPfg.png)
+
 ![](https://i.imgur.com/iQXk7Xc.png)
 
 ### <mark style="background: #69E772;">Effect of Contention on Performance:</mark>
+
+![](https://i.imgur.com/9aLZh4j.png)
 
 ![](https://i.imgur.com/JTrZy9B.png)
 

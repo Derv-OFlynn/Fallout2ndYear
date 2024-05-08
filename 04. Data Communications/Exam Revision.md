@@ -2435,3 +2435,8 @@ Overall, VLSM is a flexible approach to subnetting that enables more efficient u
 - The First Host address of a subnet is the network address + 1. The first host address A ends in 1, in B it ends in 33, etc
 - The Broadcast address of a subnet is the last address before the next subnet begins. The Broadcast address of A ends in 31. The broadcast of B ends in 63, etc
 - The Last host address of the network is the broadcast address -1. The last host address of subnet A ends in 30, the last host of B ends in 62.
+
+
+### <mark style="background: #69E772;">OSI Model:</mark>
+
+![](https://i.imgur.com/5vN2eSO.png)
