@@ -827,7 +827,6 @@ All active stations scan incoming bit streams:
 - Initially to determine "start of a frame"
 - The station continues to scan the bits looking for the "end of the frame"
 
-
 The same flag pattern may be used to signify end and start of two consecutive frames
 
 The flag pattern (01111110) must not be allowed to occur inside frame
@@ -861,11 +860,11 @@ There are three <mark style="background:#69E772;">types</mark> of frame and each
 
 Present in I-frames.
 
-This is where the data is stored
+This is where the data is stored.
 
-Its length is variable up to some predefined system specific limit
+Its length is variable up to some predefined system specific limit.
 
-However, it must be a multiple of 8 bits
+However, it must be a multiple of 8 bits.
 
 ### <mark style="background:#69E772;">HDLC - The FCS Field:</mark>
 
@@ -893,9 +892,9 @@ Either station may initialise the link by sending one of 6 <mark style="backgrou
 
 Most commonly used is SABM i.e. Set Asynchronous Balanced Mode. Used with two <mark style="background:#69E772;">combined</mark> stations.
 
-The receiving station responds with an <mark style="background:#69E772;">Unnumbered Acknowledgement</mark> (UA) to accept or, <mark style="background:#69E772;">Disconnect Mode</mark> (DM) to reject the request
+The receiving station responds with an <mark style="background:#69E772;">Unnumbered Acknowledgement</mark> (UA) to accept or, <mark style="background:#69E772;">Disconnect Mode</mark> (DM) to reject the request.
 
-Only 'U' frames are used during this phase
+Only 'U' frames are used during this phase.
 
 ### <mark style="background:#69E772;">Data Transfer:</mark>
 
@@ -984,7 +983,7 @@ Transmissions travel in both directions i.e. <mark style="background:#69E772;">b
 
 The bus is terminated by a <mark style="background:#69E772;">terminator</mark> device which removes the transmission signal.
 
-Example of a bus LAN is an <mark style="background:#69E772;">ethernet</mark>
+Example of a bus LAN is an <mark style="background:#69E772;">ethernet</mark>.
 
 ### <mark style="background:#69E772;">Ring LAN characteristics:</mark>
 
@@ -2427,7 +2426,7 @@ Overall, VLSM is a flexible approach to subnetting that enables more efficient u
 
 ### <mark style="background: #69E772;">Last minute IP Address allocation notes:</mark>
 
-- The /n at the end of am IP address indicates how many addresses are in the block. Minus n from 32. The amount of address = 2<sup>32-n</sup>, e.g. /24 means there are 2<sup>8</sup> = 256 address in the block. There are 24 bits for the network and 8 bits for the host.
+- The /n at the end of an IP address indicates how many addresses are in the block. Minus n from 32. The amount of address = 2<sup>32-n</sup>, e.g. /24 means there are 2<sup>8</sup> = 256 address in the block. There are 24 bits for the network and 8 bits for the host.
 - If you can do an even split, every address gets the same mask.
 - In this example each subnet needs at least 25 host addresses. It also needs a network address and a broadcast address, so 27. 32 is the closest power of 2 to 27 so the magic number is 32. 
 - The mask is equal to 255.255.255.224 
