@@ -17,3 +17,21 @@
 ![](https://i.imgur.com/JTrZy9B.png)
 
 ![](https://i.imgur.com/WcqBBug.png)
+
+### <mark style="background: #69E772;">Frames using HDLC:</mark>
+
+![](https://i.imgur.com/qhgwZ93.png)
+
+![](https://i.imgur.com/z2r1ztO.png)
+
+![](https://i.imgur.com/qtVDVFF.png)
+
+![](https://i.imgur.com/fE7FjqZ.png)
+
+### <mark style="background: #69E772;">Bridges:</mark>
+
+![](https://i.imgur.com/Vrj7D98.png)
+
+### <mark style="background: #69E772;">Next Hop Routing:</mark>
+
+![](https://i.imgur.com/S4pWh8E.png)
