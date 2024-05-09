@@ -90,7 +90,8 @@ Human Centred Design is more focused on understanding and meeting user needs, wh
 Personas are a useful tool in a human centred design approach to understand and communicate user needs and requirements.  
 
 If designers want to test potential solutions, but don’t have continuous access to the end-users, they can create fictional characters that can be used to represent a collection of the kinds of people who could be using that potential solution.  
-This is called a <mark style="background: #BABD00;">personas</mark>.
+
+This is called a <mark style="background: #BABD00;">persona</mark>.
 
 ### <mark style="background: #BABD00;">Benefits of Using Personas:</mark>
 

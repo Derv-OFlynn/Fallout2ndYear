@@ -17,7 +17,8 @@
 
 <mark style="background: #BABD00;">d. Human Centred Design considerations - 8</mark>
 
-![](https://i.imgur.com/5aqr3ps.png)
+![](https://i.imgur.com/1M9ew1E.png)
+
 
 <mark style="background: #BABD00;">e. Universal Design Drivers - 4 </mark>
 
@@ -37,11 +38,12 @@
 
 <mark style="background: #BABD00;">b. Persona (useful information) -</mark>
 
-![](https://i.imgur.com/9znGyOF.png)
+![](https://i.imgur.com/89Q8Tlv.png)
+
 
 <mark style="background: #BABD00;">c. Persona (pros and cons) - 8</mark>
 
-![](https://i.imgur.com/Kt0ZXRT.png)
+![](https://i.imgur.com/ivAngbv.png)
 
 
 <mark style="background: #BABD00;">d. Empathy map quadrants - 10</mark>
