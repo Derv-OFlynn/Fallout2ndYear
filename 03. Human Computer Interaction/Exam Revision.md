@@ -5,9 +5,14 @@ Summer Rev only:
 
 Human-centred design is a creative approach to problem solving that starts with the people that you are designing with and ends with new solutions that are purpose-built to suit their needs.  
 
-Human-centred design is about cultivating deep empathy with the people you’re designing with; generating ideas; building prototypes; sharing what you’ve made together; and eventually, putting your innovative new solution out in the world.  
-- Users should be involved throughout design and development.  
-- Iteration is needed throughout.
+Human-centred design is about:
+- cultivating deep empathy with the people you’re designing with; generating ideas; building prototypes; 
+- sharing what you’ve made together; 
+- and eventually, putting your innovative new solution out in the world.  
+
+Users should be involved throughout design and development.  
+
+Iteration is needed throughout.
 
 ### <mark style="background: #BABD00;">HCI Disciplines:</mark>
 
@@ -362,15 +367,14 @@ The design communicates necessary information effectively to the user, regardles
 Real world example: User of both audio and captions on video.
 
 <mark style="background: #BABD00;">(5.) Tolerance for error:</mark>  
-The design minimizes hazards and the adverse consequences of accidental or unintended actions. 
+The design minimises hazards and the adverse consequences of accidental or unintended actions. 
 
 Real world example: Undo feature in digital applications  
 
 <mark style="background: #BABD00;">(6.) Low physical effort:</mark>  
 The design can be used efficiently and comfortably and with a minimum of fatigue.  
 
-Real world example: An automatic door opener can facilitate access to a room or  
-building.
+Real world example: An automatic door opener can facilitate access to a room or building.
 
 <mark style="background: #BABD00;">(7.) Size and space for approach and use:</mark>  
 Appropriate size and space is provided for approach, reach, manipulation, and use regardless of user's body size, posture, or mobility.  
