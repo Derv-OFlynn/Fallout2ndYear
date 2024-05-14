@@ -6,6 +6,7 @@
 
 ### <mark style="background: #BD6500;">Array to binary tree:</mark>
 
+##### <mark style="background: #FF5582A6;">(hPos INCORRECT!)</mark>
 ![](https://i.imgur.com/XpmBHB6.png)
 
 ![](https://i.imgur.com/Ho0F2Ve.png)
@@ -25,3 +26,7 @@
 ### <mark style="background: #BD6500;">Quick Sort Partitions:</mark>
 
 ![](https://i.imgur.com/lwXWd5F.png)
+
+![](https://i.imgur.com/O6LfrEa.png)
+
+![](https://i.imgur.com/rYNl2dH.png)
