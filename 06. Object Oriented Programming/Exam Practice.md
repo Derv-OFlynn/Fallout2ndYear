@@ -40,3 +40,24 @@
 
 ![](https://i.imgur.com/lYblrgU.png)
 ![](https://i.imgur.com/axIM98k.png)
+
+### <mark style="background: #AD21D9;">Java Packages:</mark>
+
+![](https://i.imgur.com/S7BAD3c.png)
+
+### <mark style="background: #AD21D9;">Cellular Automata:</mark>
+
+![](https://i.imgur.com/CnGvEKW.png)
+
+
+### <mark style="background: #AD21D9;">Sound:</mark>
+
+![](https://i.imgur.com/pMCIsJY.png)
+
+### <mark style="background: #AD21D9;">Git:</mark>
+
+![](https://i.imgur.com/TstbY6w.png)
+
+### <mark style="background: #AD21D9;">Processing Functions:</mark>
+
+![](https://i.imgur.com/eEtuNUe.png)

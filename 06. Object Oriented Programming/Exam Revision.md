@@ -1,7 +1,7 @@
 3 hours
 
 Section A - Python Do 2 out of 3
-Section B - Python Do 2 out of 3
+Section B - Java Do 2 out of 3
 
 # <mark style="background: #AD21D9;">Classes</mark>
 
