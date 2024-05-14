@@ -20,3 +20,8 @@
 
 ### <mark style="background: #BD6500;">Comb Sort:</mark>
 
+![](https://i.imgur.com/7fQqFFy.png)
+
+### <mark style="background: #BD6500;">Quick Sort Partitions:</mark>
+
+![](https://i.imgur.com/lwXWd5F.png)
