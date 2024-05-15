@@ -6,10 +6,12 @@
 
 ### <mark style="background: #BD6500;">Array to binary tree:</mark>
 
-##### <mark style="background: #FF5582A6;">(hPos INCORRECT!)</mark>
-![](https://i.imgur.com/XpmBHB6.png)
 
-![](https://i.imgur.com/Ho0F2Ve.png)
+![](https://i.imgur.com/2AAIrOK.png)
+
+
+![](https://i.imgur.com/uugDL5l.png)
+
 
 ### <mark style="background: #BD6500;">Pseudocode recursive maxHeapify(int k):</mark>
 
